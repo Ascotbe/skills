@@ -7,3 +7,9 @@ logs/
 state/sync-loop.pid
 repositories/**/.git/
 repositories/**/.sync-git/
+
+# Empty or locally-conflicted mirrors have no publishable worktree yet.
+repositories/factory-ai/factory/
+repositories/openai/openai-cookbook/
+repositories/sanity-io/next-sanity/
+repositories/sanity-io/plugins/
