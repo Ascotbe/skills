@@ -1,0 +1,6 @@
+{
+  "Shpigford/skills": {
+    "cloneUrl": "https://github.com/MaTriXy/skills-shpigford.git",
+    "reason": "The original URL returns 404. This public fork preserves Josh Pigford's original commit history, including the readme and screenshots skills listed by the manifest."
+  }
+}
