@@ -5,4 +5,5 @@ __pycache__/
 # intentionally tracked as a publishable snapshot.
 logs/
 state/sync-loop.pid
+repositories/**/.git/
 repositories/**/.sync-git/
