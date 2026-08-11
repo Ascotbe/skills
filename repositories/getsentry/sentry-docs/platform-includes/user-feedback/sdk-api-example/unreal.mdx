@@ -1,0 +1,21 @@
+```cpp
+USentrySubsystem* SentrySubsystem = GEngine->GetEngineSubsystem<USentrySubsystem>();
+
+FString EventId = SentrySubsystem->CaptureMessage("Message with feedback");
+
+USentryFeedback* UserFeedback = NewObject<USentryFeedback>();
+UserFeedback->Initialize("Feedback message");
+UserFeedback->SetName("Jon Doe");
+UserFeedback->SetContactEmail("test@sentry.io");
+UserFeedback->SetAssociatedEvent(EventId);
+
+SentrySubsystem->CaptureFeedback(UserFeedback);
+
+// OR
+
+SentrySubsystem->CaptureFeedbackWithParams("Feedback message", "Jon Doe", "test@sentry.io", EventId);
+```
+
+The same result can be achieved by calling corresponding functions in blueprint:
+
+![Capture user feedback](./img/unreal_user_feedback.png)

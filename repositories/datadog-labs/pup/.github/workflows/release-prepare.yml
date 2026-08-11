@@ -1,0 +1,200 @@
+name: Prepare Release
+
+on:
+  schedule:
+    - cron: '0 0 * * 1-5'  # Mon–Fri at 00:00 UTC
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Version bump type'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
+        required: true
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Gate: on scheduled runs, skip if no commits since the last tag.
+  # Manual workflow_dispatch runs always proceed.
+  # ---------------------------------------------------------------------------
+  check:
+    name: Check for changes
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Check for changes since last tag
+        id: check
+        run: |
+          CURRENT_TAG=$(git describe --tags --abbrev=0)
+          COMMITS=$(git rev-list "${CURRENT_TAG}..HEAD" --count)
+          echo "Commits since ${CURRENT_TAG}: ${COMMITS}"
+          if [[ "$COMMITS" == "0" && "${{ github.event_name }}" == "schedule" ]]; then
+            echo "No commits since ${CURRENT_TAG} — skipping scheduled release."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  # ---------------------------------------------------------------------------
+  # Release: bump Cargo.toml/Cargo.lock on a release/<tag> branch and open a PR.
+  # Merging the PR triggers release-tag.yml, which creates the tag and triggers
+  # release.yml.
+  # ---------------------------------------------------------------------------
+  release:
+    name: Open Release PR
+    needs: check
+    if: needs.check.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DataDog/dd-octo-sts-action@96a25462dbcb10ebf0bfd6e2ccc917d2ab235b9a # v1.0.4
+        id: octo-sts
+        with:
+          scope: datadog/pup
+          policy: release
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Compute next version
+        id: version
+        run: |
+          CURRENT_TAG=$(git describe --tags --abbrev=0)
+          VERSION="${CURRENT_TAG#v}"
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+          BUMP="${{ inputs.bump || 'patch' }}"
+          case "$BUMP" in
+            major) MAJOR=$((MAJOR+1)); MINOR=0; PATCH=0 ;;
+            minor) MINOR=$((MINOR+1)); PATCH=0 ;;
+            patch) PATCH=$((PATCH+1)) ;;
+          esac
+          NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}"
+          NEW_TAG="v${NEW_VERSION}"
+          BRANCH="release/${NEW_TAG}"
+          echo "current-tag=${CURRENT_TAG}" >> "$GITHUB_OUTPUT"
+          echo "new-version=${NEW_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "new-tag=${NEW_TAG}" >> "$GITHUB_OUTPUT"
+          echo "branch=${BRANCH}" >> "$GITHUB_OUTPUT"
+          echo "Current: ${CURRENT_TAG}"
+          echo "Next:    ${NEW_TAG} (${BUMP} bump)"
+
+      - name: Preflight check
+        env:
+          GH_TOKEN: ${{ steps.octo-sts.outputs.token }}
+          NEW_TAG: ${{ steps.version.outputs.new-tag }}
+          BRANCH: ${{ steps.version.outputs.branch }}
+        run: |
+          if git tag -l "$NEW_TAG" | grep -q .; then
+            echo "::error::Tag '${NEW_TAG}' already exists."
+            exit 1
+          fi
+          if gh api "repos/${GITHUB_REPOSITORY}/git/refs/heads/${BRANCH}" >/dev/null 2>&1; then
+            echo "::error::Branch '${BRANCH}' already exists."
+            exit 1
+          fi
+
+      - name: Install Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+
+      - name: Cache Rust dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: ${{ runner.os }}-cargo-release-prep-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-release-prep-
+
+      - name: Bump Cargo.toml
+        run: |
+          NEW_VERSION="${{ steps.version.outputs.new-version }}"
+          sed -i "s/^version = \"[0-9]*\.[0-9]*\.[0-9]*\"/version = \"${NEW_VERSION}\"/" Cargo.toml
+          CARGO_VERSION=$(grep '^version = ' Cargo.toml | head -1 | sed 's/version = "\(.*\)"/\1/')
+          if [[ "$CARGO_VERSION" != "$NEW_VERSION" ]]; then
+            echo "::error::Cargo.toml version update failed (got '${CARGO_VERSION}', expected '${NEW_VERSION}')"
+            exit 1
+          fi
+
+      - name: Refresh Cargo.lock
+        run: cargo check --quiet 2>&1 | grep -v "^$" || true
+
+      - name: Create release branch via API (signed commit)
+        id: commit
+        env:
+          GH_TOKEN: ${{ steps.octo-sts.outputs.token }}
+          NEW_TAG: ${{ steps.version.outputs.new-tag }}
+          CURRENT_TAG: ${{ steps.version.outputs.current-tag }}
+          NEW_VERSION: ${{ steps.version.outputs.new-version }}
+          BRANCH: ${{ steps.version.outputs.branch }}
+        run: |
+          set -euo pipefail
+          REPO="${GITHUB_REPOSITORY}"
+
+          BASE_SHA=$(gh api "repos/${REPO}/git/refs/heads/main" --jq .object.sha)
+          BASE_TREE=$(gh api "repos/${REPO}/git/commits/${BASE_SHA}" --jq .tree.sha)
+
+          CARGO_TOML_BLOB=$(jq -n --rawfile c Cargo.toml '{content: $c, encoding: "utf-8"}' \
+            | gh api "repos/${REPO}/git/blobs" --input - --jq .sha)
+          CARGO_LOCK_BLOB=$(jq -n --rawfile c Cargo.lock '{content: $c, encoding: "utf-8"}' \
+            | gh api "repos/${REPO}/git/blobs" --input - --jq .sha)
+
+          TREE_SHA=$(jq -n \
+            --arg base "${BASE_TREE}" \
+            --arg toml "${CARGO_TOML_BLOB}" \
+            --arg lock "${CARGO_LOCK_BLOB}" \
+            '{
+              base_tree: $base,
+              tree: [
+                {path: "Cargo.toml", mode: "100644", type: "blob", sha: $toml},
+                {path: "Cargo.lock", mode: "100644", type: "blob", sha: $lock}
+              ]
+            }' | gh api "repos/${REPO}/git/trees" --input - --jq .sha)
+
+          MESSAGE=$(printf 'chore(release): bump version to %s\n\n- Update Cargo.toml package version %s → %s\n- Refresh Cargo.lock' \
+            "${NEW_TAG}" "${CURRENT_TAG#v}" "${NEW_VERSION}")
+
+          COMMIT_SHA=$(jq -n \
+            --arg msg "${MESSAGE}" \
+            --arg tree "${TREE_SHA}" \
+            --arg parent "${BASE_SHA}" \
+            '{message: $msg, tree: $tree, parents: [$parent]}' \
+            | gh api "repos/${REPO}/git/commits" --input - --jq .sha)
+
+          gh api "repos/${REPO}/git/refs" \
+            -f ref="refs/heads/${BRANCH}" \
+            -f sha="${COMMIT_SHA}"
+
+          echo "commit-sha=${COMMIT_SHA}" >> "$GITHUB_OUTPUT"
+          echo "Created signed commit ${COMMIT_SHA} on ${BRANCH}"
+
+      - name: Open Release PR
+        env:
+          GH_TOKEN: ${{ steps.octo-sts.outputs.token }}
+          NEW_TAG: ${{ steps.version.outputs.new-tag }}
+          CURRENT_TAG: ${{ steps.version.outputs.current-tag }}
+          BRANCH: ${{ steps.version.outputs.branch }}
+        run: |
+          BODY=$(printf 'Automated version bump from %s to %s.\n\nMerging this PR triggers `release-tag.yml`, which creates the `%s` tag and in turn triggers `release.yml` (goreleaser).' \
+            "${CURRENT_TAG}" "${NEW_TAG}" "${NEW_TAG}")
+          gh pr create \
+            --base main \
+            --head "${BRANCH}" \
+            --title "chore(release): bump version to ${NEW_TAG}" \
+            --body "${BODY}"

@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "kernel-abi-check",
+    "kernel-builder",
+    "kernels-data",
+    "kernels-data/bindings/python",
+]
+resolver = "2"

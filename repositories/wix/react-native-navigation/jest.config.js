@@ -1,0 +1,52 @@
+let preset = 'react-native';
+try {
+  require.resolve('@react-native/jest-preset');
+  preset = '@react-native/jest-preset';
+} catch (_) {}
+
+module.exports = {
+  preset,
+  transformIgnorePatterns: [
+    'node_modules/(?!(@react-native|react-native|react-native-ui-lib|react-native-animatable|react-native-reanimated|react-native-webview)/)',
+  ],
+  transform: {
+    '\\.[jt]sx?$': 'babel-jest',
+  },
+  roots: [
+    '<rootDir>/src/',
+    '<rootDir>/playground/src/',
+    '<rootDir>/integration/',
+    '<rootDir>/scripts/',
+    '<rootDir>/playground/e2e/',
+    '<rootDir>/autolink/',
+  ],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect', './jest-setup.js'],
+  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/lib/'],
+  moduleNameMapper: {
+    '^react-native$': '<rootDir>/node_modules/react-native',
+    '^react-native-gesture-handler$': '<rootDir>/node_modules/react-native-gesture-handler',
+    '^react-native-webview$': '<rootDir>/__mocks__/react-native-webview.js',
+    'react-native-navigation/Mock': '<rootDir>/src/Mock/index',
+    'react-native-navigation': '<rootDir>/src',
+    '^src$': '<rootDir>/src',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/playground/img/layouts@2x.png',
+  },
+  collectCoverageFrom: [
+    'src/**/*.(ts|tsx)',
+    'Mock/**/*.(ts|tsx)',
+    'integration/**/*.js',
+    '!dist/index.js',
+    '!dist/Navigation.js',
+    '!dist/adapters/**/*',
+    '!dist/interfaces/**/*',
+    '!dist/**/*.test.*',
+    '!integration/**/*.test.*',
+    '!integration/*.test.*',
+    '!e2e/**/*test.js',
+  ],
+  resetMocks: true,
+  resetModules: true,
+  coverageReporters: ['json', 'lcov', 'text', 'html'],
+  testEnvironment: 'node',
+};

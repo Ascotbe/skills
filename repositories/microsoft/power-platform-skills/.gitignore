@@ -1,0 +1,53 @@
+# Eval artifacts (generated during test runs)
+evals/artifacts/
+evals/temp/
+
+# Eval reports (aggregated results)
+evals/reports/
+evals/**/*-workspace/
+*-workspace/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local settings
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+.playwright-mcp/
+
+# oh-my-claudecode scratch state
+.omc/

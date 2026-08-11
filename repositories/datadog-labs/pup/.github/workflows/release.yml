@@ -1,0 +1,324 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch: {} # allows triggering from release-prepare.yml
+
+permissions:
+  contents: write
+  id-token: write  # Required for cosign keyless signing
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Linux builds — parallel with macOS and WASM
+  # ---------------------------------------------------------------------------
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    env:
+      RUSTFLAGS: "-C target-feature=+crt-static"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Fetch all tags
+        run: git fetch --force --tags
+      - name: Install Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add x86_64-unknown-linux-musl aarch64-unknown-linux-musl
+      - name: Cache Rust dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: ${{ runner.os }}-cargo-release-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-release-
+      - uses: ./.github/actions/install-musl-toolchain
+      - name: Install syft
+        uses: anchore/sbom-action/download-syft@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+      - uses: goreleaser/goreleaser-action@f06c13b6b1a9625abc9e6e439d9c05a8f2190e94 # v7.2.3
+        with:
+          distribution: goreleaser
+          version: "~> v2"
+          args: release --clean --config .goreleaser-linux.yaml --skip=publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dist-linux
+          path: |
+            dist/*.tar.gz
+            dist/*.sbom.json
+          retention-days: 1
+
+  # ---------------------------------------------------------------------------
+  # macOS builds — parallel with Linux and WASM
+  # ---------------------------------------------------------------------------
+  build-macos:
+    name: Build macOS
+    runs-on: macos-latest-xlarge
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Fetch all tags
+        run: git fetch --force --tags
+      - name: Install Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add x86_64-apple-darwin
+      - name: Cache Rust dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: ${{ runner.os }}-cargo-release-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-release-
+      - name: Install syft
+        uses: anchore/sbom-action/download-syft@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+      - uses: goreleaser/goreleaser-action@f06c13b6b1a9625abc9e6e439d9c05a8f2190e94 # v7.2.3
+        with:
+          distribution: goreleaser
+          version: "~> v2"
+          args: release --clean --config .goreleaser-macos.yaml --skip=publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dist-macos
+          path: |
+            dist/*.tar.gz
+            dist/*.sbom.json
+          retention-days: 1
+
+  # ---------------------------------------------------------------------------
+  # WASM builds — parallel with Linux and macOS
+  # ---------------------------------------------------------------------------
+  build-wasm:
+    name: Build WASM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Install Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add wasm32-wasip2 wasm32-unknown-unknown
+      - name: Cache Rust dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: ${{ runner.os }}-cargo-wasm-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-wasm-
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      - name: Build WASI
+        run: |
+          cargo build --release --target wasm32-wasip2 --no-default-features --features wasi
+          mkdir -p wasm-out
+          cp target/wasm32-wasip2/release/pup.wasm wasm-out/pup_wasi.wasm
+      - name: Build browser WASM
+        run: |
+          wasm-pack build --target web --no-default-features --features browser
+          tar czf wasm-out/pup_browser_wasm.tar.gz -C pkg .
+      - name: Upload artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dist-wasm
+          path: wasm-out/
+          retention-days: 1
+
+  # ---------------------------------------------------------------------------
+  # Windows build — parallel with everything else
+  # ---------------------------------------------------------------------------
+  build-windows:
+    name: Build Windows
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Enable long paths
+        run: git config --global core.longpaths true
+      - name: Install NASM
+        run: |
+          choco install nasm -y
+          echo "C:\Program Files\NASM" >> "$GITHUB_PATH"
+      - name: Install Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+      - name: Cache Rust dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: ${{ runner.os }}-cargo-release-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-release-
+      - name: Build
+        run: cargo build --release
+      - name: Get version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+      - name: Package
+        run: |
+          mkdir -p staging
+          cp target/release/pup.exe staging/
+          cp LICENSE staging/
+          cp LICENSE-3rdparty.csv staging/
+          cp README.md staging/
+          cd staging
+          7z a "../pup_${{ steps.version.outputs.version }}_Windows_x86_64.zip" .
+      - name: Upload artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dist-windows
+          path: "pup_*_Windows_x86_64.zip"
+          retention-days: 1
+
+  # ---------------------------------------------------------------------------
+  # Finalize — collect all artifacts, checksum, sign, publish release
+  # ---------------------------------------------------------------------------
+  finalize:
+    name: Publish Release
+    needs: [build-linux, build-macos, build-wasm, build-windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          path: collected/
+
+      - name: Get version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Collect release assets
+        run: |
+          mkdir -p release-assets
+          echo "=== Downloaded artifacts ==="
+          find collected/ -type f | sort
+
+          # Goreleaser archives and SBOMs (upload-artifact preserves relative paths under dist/)
+          find collected/dist-linux collected/dist-macos -type f \( -name '*.tar.gz' -o -name '*.sbom.json' \) \
+            -exec cp {} release-assets/ \;
+
+          # WASM
+          cp collected/dist-wasm/pup_wasi.wasm release-assets/
+          cp collected/dist-wasm/pup_browser_wasm.tar.gz release-assets/
+
+          # Windows
+          cp collected/dist-windows/*.zip release-assets/
+
+          echo "=== Release assets ==="
+          ls -la release-assets/
+
+      - name: Generate checksums
+        working-directory: release-assets
+        run: |
+          CHECKSUMS="pup_${{ steps.version.outputs.version }}_checksums.txt"
+          sha256sum * > "$CHECKSUMS"
+          echo "=== Checksums ==="
+          cat "$CHECKSUMS"
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+
+      - name: Sign checksums
+        working-directory: release-assets
+        run: |
+          CHECKSUMS="pup_${{ steps.version.outputs.version }}_checksums.txt"
+          cosign sign-blob \
+            --bundle="${CHECKSUMS}.sigstore.json" \
+            "$CHECKSUMS" \
+            --yes
+
+      - name: Create GitHub release
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          TAG="${GITHUB_REF_NAME}"
+
+          cat > release-notes.md <<EOF
+          ## Pup ${VERSION}
+
+          ### Installation
+
+          \`\`\`bash
+          # macOS (Apple Silicon)
+          curl -L https://github.com/DataDog/pup/releases/download/${TAG}/pup_${VERSION}_Darwin_arm64.tar.gz | tar xz
+
+          # macOS (Intel)
+          curl -L https://github.com/DataDog/pup/releases/download/${TAG}/pup_${VERSION}_Darwin_x86_64.tar.gz | tar xz
+
+          # Linux (x86_64)
+          curl -L https://github.com/DataDog/pup/releases/download/${TAG}/pup_${VERSION}_Linux_x86_64.tar.gz | tar xz
+
+          # Linux (arm64)
+          curl -L https://github.com/DataDog/pup/releases/download/${TAG}/pup_${VERSION}_Linux_arm64.tar.gz | tar xz
+
+          # Windows (x86_64)
+          curl -L https://github.com/DataDog/pup/releases/download/${TAG}/pup_${VERSION}_Windows_x86_64.zip -o pup.zip
+          tar -xf pup.zip
+          \`\`\`
+
+          ### WASM
+
+          - **WASI** (\`pup_wasi.wasm\`): Run in Wasmtime or any WASI Preview 2 runtime
+          - **Browser WASM** (\`pup_browser_wasm.tar.gz\`): npm-ready package with \`PupClient\` JS class and TypeScript definitions
+
+          ### Verifying
+
+          \`\`\`bash
+          # Verify checksums
+          sha256sum -c pup_${VERSION}_checksums.txt
+
+          # Verify signature (requires cosign)
+          cosign verify-blob \\
+            --bundle pup_${VERSION}_checksums.txt.sigstore.json \\
+            pup_${VERSION}_checksums.txt
+          \`\`\`
+          EOF
+
+          # Strip leading whitespace from heredoc (indented in YAML)
+          sed -i 's/^          //' release-notes.md
+
+          gh release create "$TAG" \
+            --title "Release $VERSION" \
+            --notes-file release-notes.md \
+            --generate-notes \
+            release-assets/*
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,44 @@
+node_modules
+*.log
+.DS_Store
+.serena
+thoughts
+todos.md
+intelligence
+dist
+load-test.ts
+.history
+tsconfig.tsbuildinfo
+
+# Claude/Cursor plans and todos
+plans/
+todos/
+
+# E2E testing
+e2e/test-results/
+e2e/playwright-report/
+e2e/.playwright/
+e2e/blob-report/
+.playwright-mcp/
+
+# Auth state (may contain tokens)
+playwright/.auth/
+
+.env*
+!.env*.example
+
+# SSL certificates (local development only)
+certs/
+
+# Bun lockfile (migrated to pnpm)
+bun.lock
+bun.lockb
+
+# Generated SBOMs (produced during release)
+sbom.cdx.json
+
+# Generated release manifest (produced by tools/sync-versions.ts plan)
+release-manifest.json
+
+# Prepared release bundle (produced by prepare-release workflow)
+prepared-release/

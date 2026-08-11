@@ -1,0 +1,44 @@
+# Rust
+target/
+*.rs.bk
+
+# Binary
+pup
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Config files with potential secrets
+.env
+
+# HTTP Archive files (captured browser traffic — may contain session cookies)
+*.har
+
+# Test harness outputs (generated artifacts — written to /tmp/pup-dev/)
+scripts/__pycache__
+.env.local
+.envrc
+
+# Zig toolchain (extracted by cargo-zigbuild)
+zig-*/
+
+# wasm-pack output
+pkg/
+wasm-out/
+
+# Test artifacts
+tests/mockdd/mockdd
+tests/compare_bin
+tests/gen_commands_bin
+/tmp/
+
+# worktrees
+.claude/worktrees/

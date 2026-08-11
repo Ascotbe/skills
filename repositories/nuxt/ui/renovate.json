@@ -1,0 +1,58 @@
+{
+  "extends": [
+    "github>nuxt/renovate-config-nuxt"
+  ],
+  "timezone": "Europe/Paris",
+  "schedule": ["* 6-9 * * 1"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "baseBranchPatterns": [
+    "v4"
+  ],
+  "ignoreDeps": [
+    "actions/stale"
+  ],
+  "packageRules": [
+    {
+      "groupName": "reka-ui",
+      "matchPackageNames": [
+        "reka-ui",
+        "vaul-vue"
+      ]
+    },
+    {
+      "groupName": "tiptap",
+      "matchPackageNames": [
+        "@tiptap/*"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "tailwind-variants"
+      ],
+      "allowedVersions": "<3.3.0"
+    },
+    {
+      "matchPackageNames": [
+        "@nuxt/image"
+      ],
+      "allowedVersions": "<2.1.0"
+    },
+    {
+      "matchDepTypes": [
+        "peerDependencies"
+      ],
+      "enabled": false
+    },
+    {
+      "matchDepTypes": [
+        "resolutions"
+      ],
+      "enabled": false
+    }
+  ],
+  "postUpdateOptions": [
+    "pnpmDedupe"
+  ]
+}

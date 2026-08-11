@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+# Pre-commit, three checks.
+#
+#   1. privacy: blocks a commit that stages a token from the local denylist
+#      (.local/privacy-denylist.txt, gitignored). A no-op when that file is
+#      absent, which is the case for every external contributor.
+#   2. regression suites: runs a plugin's suite when that plugin's shipped files
+#      or its tests are staged. A guard must never ship a regression, and the
+#      only moment anyone reliably runs a suite is the moment they touch it.
+#   3. version bump: blocks a commit that changes what a plugin ships without
+#      moving that plugin's version. Without the bump the change never reaches
+#      an installed copy, because `claude plugin update` compares the number.
+#
+# Enable once per clone:   git config core.hooksPath .githooks
+# Bypass once:             git commit --no-verify
+#
+# Because core.hooksPath is set, `pre-commit install` refuses to run here by
+# design, so the privacy script is invoked directly instead of through the
+# pre-commit framework. Since 1.9.0 the script reads `git diff --cached`, so the
+# framework's stash step no longer changes what it sees: staged blobs either way.
+# The flip side is stated in the skill: a token living only in an unstaged edit
+# is no longer reported.
+set -uo pipefail
+
+root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+staged="$(git diff --cached --name-only)"
+rc=0
+
+# --- 1. privacy denylist -----------------------------------------------------
+# The canonical script ships with the privacy-guard skill in this same repo, so
+# it is called in place rather than copied into scripts/.
+privacy="$root/plugins/privacy-guard/skills/privacy-guard/references/check_privacy.sh"
+if [[ -f "$privacy" ]]; then
+    files=()
+    while IFS= read -r -d '' f; do files+=("$f"); done \
+        < <(git diff --cached --name-only -z --diff-filter=d)
+    if [[ ${#files[@]} -gt 0 ]]; then
+        (cd "$root" && bash "$privacy" "${files[@]}") || exit 1
+    fi
+fi
+
+# --- 2. regression suites ----------------------------------------------------
+# One function for every plugin that has a suite: adding the next one is a line,
+# and the previous shape (a single inlined block ending in `exit 0`) meant any
+# suite added after it would never have run.
+suite() {  # $1 plugin name, $2 regex of staged paths that should trigger it
+    printf '%s\n' "$staged" | grep -qE "$2" || return 0
+    local runner="$root/plugins/$1/tests/run.sh"
+    [[ -f "$runner" ]] || { echo "pre-commit: $runner missing, skipping" >&2; return 0; }
+    echo "pre-commit: $1 changed - running regression suite..."
+    local out status
+    out="$(cd "$root" && bash "$runner" 2>&1)"; status=$?
+    case $status in
+      0) printf '%s\n' "$out" | tail -1 ;;
+      2) printf '%s\n' "$out" >&2
+         echo "pre-commit: could not run the $1 suite (environment) - allowing commit; re-run it manually." >&2 ;;
+      *) printf '%s\n' "$out" >&2
+         echo "pre-commit: $1 tests FAILED - commit blocked. Override with 'git commit --no-verify'." >&2
+         return 1 ;;
+    esac
+    return 0
+}
+
+# The trigger is the whole plugin directory, not a list of the subdirectories that
+# were thought of on the day this was written. The version-bump check below states the
+# same rule for the same reason: an exclusion list covers the cases you remembered.
+suite guardrails    '^plugins/guardrails/'    || rc=1
+suite privacy-guard '^plugins/privacy-guard/' || rc=1
+
+# --- 3. version bump ---------------------------------------------------------
+# Its own bench lives in .githooks/tests/, run here when the check or the bench
+# is staged, for the same reason the plugin suites are.
+if printf '%s\n' "$staged" | grep -qE '^\.githooks/(check-version-bump\.sh|tests/)'; then
+    echo "pre-commit: version-bump check changed - running its bench..."
+    if out="$(bash "$root/.githooks/tests/run.sh" 2>&1)"; then
+        printf '%s\n' "$out" | tail -1
+    else
+        printf '%s\n' "$out" >&2
+        echo "pre-commit: version-bump bench FAILED - commit blocked." >&2
+        rc=1
+    fi
+fi
+bump="$root/.githooks/check-version-bump.sh"
+if [[ -f "$bump" ]]; then
+    bash "$bump" || rc=1
+else
+    echo "pre-commit: $bump missing - the version-bump check did NOT run." >&2
+fi
+
+exit $rc

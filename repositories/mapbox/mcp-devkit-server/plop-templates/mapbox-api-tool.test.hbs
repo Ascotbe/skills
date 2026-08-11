@@ -1,0 +1,113 @@
+// Copyright (c) Mapbox, Inc.
+// Licensed under the MIT License.
+
+process.env.MAPBOX_ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0In0.signature';
+
+import { describe, it, expect, afterEach, vi, beforeEach } from 'vitest';
+import { {{pascalCase name}}Tool } from '../../../src/tools/{{kebabCase name}}-tool/{{pascalCase name}}Tool.js';
+import type { HttpRequest } from '../../../src/utils/types.js';
+
+// TODO: Add sample response data matching your OutputSchema
+const sampleResponse = {
+  // Add expected API response structure here
+  result: 'test data'
+};
+
+describe('{{pascalCase name}}Tool', () => {
+  let mockHttpRequest: ReturnType<typeof vi.fn>;
+  let tool: {{pascalCase name}}Tool;
+
+  beforeEach(() => {
+    // Mock httpRequest function
+    mockHttpRequest = vi.fn();
+    tool = new {{pascalCase name}}Tool({ httpRequest: mockHttpRequest as HttpRequest });
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('should have correct tool metadata', () => {
+    expect(tool.name).toBe('{{snakeCase name}}_tool');
+    expect(tool.description).toBeTruthy();
+    expect(tool.annotations).toBeDefined();
+  });
+
+  it('should make API request with correct headers and return structured content', async () => {
+    // Mock successful API response
+    mockHttpRequest.mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => sampleResponse,
+      headers: new Headers()
+    });
+
+    // TODO: Replace with actual valid input for your tool
+    const testInput = {};
+
+    const result = await tool.run(testInput);
+
+    expect(result.isError).toBe(false);
+    expect(result.content).toBeDefined();
+    expect(result.content[0].type).toBe('text');
+
+    // Verify HTTP request was made
+    expect(mockHttpRequest).toHaveBeenCalled();
+
+    // TODO: Add assertions for your specific API endpoint and parameters
+    // const callUrl = mockHttpRequest.mock.calls[0][0];
+    // expect(callUrl).toContain('your-api-endpoint');
+  });
+
+  it('should handle API errors gracefully', async () => {
+    // Mock failed API response
+    mockHttpRequest.mockResolvedValue({
+      ok: false,
+      status: 400,
+      statusText: 'Bad Request',
+      text: async () => JSON.stringify({ message: 'Invalid parameters' }),
+      json: async () => ({ message: 'Invalid parameters' }),
+      headers: new Headers({ 'content-type': 'application/json' })
+    });
+
+    // TODO: Replace with actual input
+    const testInput = {};
+
+    const result = await tool.run(testInput);
+
+    expect(result.isError).toBe(true);
+    expect(result.content[0]).toMatchObject({
+      type: 'text',
+      text: expect.stringContaining('Invalid parameters')
+    });
+  });
+
+  it('should handle network errors gracefully', async () => {
+    // Mock network error
+    mockHttpRequest.mockRejectedValue(new TypeError('Failed to fetch'));
+
+    // TODO: Replace with actual input
+    const testInput = {};
+
+    const result = await tool.run(testInput);
+
+    expect(result.isError).toBe(true);
+    expect(result.content[0].type).toBe('text');
+  });
+
+  // TODO: Add more specific test cases based on your tool's functionality
+  // it('should handle specific input parameter', async () => {
+  //   mockHttpRequest.mockResolvedValue({
+  //     ok: true,
+  //     status: 200,
+  //     json: async () => sampleResponse,
+  //     headers: new Headers()
+  //   });
+  //
+  //   const testInput = { /* specific input */ };
+  //   const result = await tool.run(testInput);
+  //
+  //   expect(result.isError).toBe(false);
+  //   // Add specific assertions for your tool's logic
+  // });
+});

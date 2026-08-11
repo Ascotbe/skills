@@ -1,0 +1,5240 @@
+{
+  "started_at": "2026-08-11T13:15:09.885008+08:00",
+  "finished_at": "2026-08-11T13:19:32.933522+08:00",
+  "manifest_url": "https://raw.githubusercontent.com/anbeime/skill/main/data/skills.json",
+  "official_url": "https://www.skills.sh/official",
+  "source_counts": {
+    "manifest_repositories": 63,
+    "official_owners": 98,
+    "official_repositories": 474,
+    "official_skill_records": 5477,
+    "combined_repositories": 521,
+    "overlap_repositories": 16,
+    "external_links": 1
+  },
+  "failed_count": 5,
+  "unavailable_count": 32,
+  "results": [
+    {
+      "type": "External",
+      "name": "notiondevs/Notion Skills for Claude",
+      "status": "Downloaded",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\external\\notiondevs-Notion-Skills-for-Claude\\snapshot.html",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "alinaqi/claude-bootstrap",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\alinaqi\\claude-bootstrap",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/anthropic-cookbook",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\anthropic-cookbook",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/anthropic-quickstarts",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\anthropic-quickstarts",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-agent-sdk-demos",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-agent-sdk-demos",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-code",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-code",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-cookbooks",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-cookbooks",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-for-legal",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-for-legal",
+      "checkout_mode": "sparse",
+      "skill_file_count": 151,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-plugins-official",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-plugins-official",
+      "checkout_mode": "sparse",
+      "skill_file_count": 31,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-plugins-public",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-plugins-public",
+      "checkout_mode": "sparse",
+      "skill_file_count": 31,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-quickstarts",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-quickstarts",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/claude-skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\claude-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/cookbook",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\cookbook",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/cwc-workshops",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\cwc-workshops",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/financial-services",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\financial-services",
+      "checkout_mode": "sparse",
+      "skill_file_count": 118,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/financial-services-plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\financial-services-plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 118,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/healthcare",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\healthcare",
+      "checkout_mode": "sparse",
+      "skill_file_count": 11,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/knowledge-work-plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\knowledge-work-plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 212,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/life-sciences",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\life-sciences",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "anthropics/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\anthropics\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "antonbabenko/terraform-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\antonbabenko\\terraform-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "apify/actors-mcp-server",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\apify\\actors-mcp-server",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "apify/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\apify\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "apify/apify-mcp-server",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\apify\\apify-mcp-server",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "apify/awesome-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\apify\\awesome-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "apify/mcpc",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\apify\\mcpc",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "apollographql/apollo-client",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\apollographql\\apollo-client",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "apollographql/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\apollographql\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "astronomer/agents",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\astronomer\\agents",
+      "checkout_mode": "sparse",
+      "skill_file_count": 35,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "auth0/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\auth0\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/claude-code-wordpress.com",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\claude-code-wordpress.com",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/claude-woocommerce-toolkit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\claude-woocommerce-toolkit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/pocket-casts-ios",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\pocket-casts-ios",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/radical-pipelines",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\radical-pipelines",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/studio",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\studio",
+      "checkout_mode": "sparse",
+      "skill_file_count": 36,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/wordpress-activitypub",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\wordpress-activitypub",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/wordpress-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\wordpress-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "automattic/wp-calypso",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\automattic\\wp-calypso",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "AvdLee/SwiftUI-Agent-Skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\AvdLee\\SwiftUI-Agent-Skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "aws/agent-toolkit-for-aws",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\aws\\agent-toolkit-for-aws",
+      "checkout_mode": "sparse",
+      "skill_file_count": 148,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "axiomhq/cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\axiomhq\\cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "axiomhq/gilfoyle",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\axiomhq\\gilfoyle",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "axiomhq/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\axiomhq\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "base/agent-apps",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\base\\agent-apps",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "base/base-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\base\\base-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "base/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\base\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "better-auth/agent-auth",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\better-auth\\agent-auth",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "better-auth/better-icons",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\better-auth\\better-icons",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "better-auth/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\better-auth\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "bitwarden/ai-plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\bitwarden\\ai-plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 59,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "bitwarden/android",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\bitwarden\\android",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "bitwarden/clients",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\bitwarden\\clients",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "box/box-for-ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\box\\box-for-ai",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "brave/brave-core",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\brave\\brave-core",
+      "checkout_mode": "sparse",
+      "skill_file_count": 18,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "brave/brave-search-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\brave\\brave-search-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "browser-use/browser-harness",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\browser-use\\browser-harness",
+      "checkout_mode": "full",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "browser-use/browser-harness-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\browser-use\\browser-harness-js",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "browser-use/browser-use",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\browser-use\\browser-use",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "browser-use/browsercode",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\browser-use\\browsercode",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "browser-use/video-use",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\browser-use\\video-use",
+      "checkout_mode": "full",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "browserbase/browse-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\browserbase\\browse-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "browserbase/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\browserbase\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/agent-device",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\agent-device",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/agent-react-devtools",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\agent-react-devtools",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\ai",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/cordierite",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\cordierite",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/react-native-ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\react-native-ai",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/react-native-harness",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\react-native-harness",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/rozenite",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\rozenite",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "callstackincubator/voltra",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\callstackincubator\\voltra",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "clerk/cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\clerk\\cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "clerk/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\clerk\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 22,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "clickhouse/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\clickhouse\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 11,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "clickhouse/clickhouse",
+      "status": "Failed",
+      "detail": "error: RPC failed; curl 28 Operation too slow. Less than 1024 bytes/sec transferred the last 60 seconds\nfatal: protocol error: bad pack header",
+      "local_path": "D:\\code\\skills\\repositories\\clickhouse\\clickhouse",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "clickhouse/clickhouse-claude-code-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\clickhouse\\clickhouse-claude-code-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "clickhouse/clickhouse-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\clickhouse\\clickhouse-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "clickhouse/nerve",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\clickhouse\\nerve",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "clickhouse/pg_stat_ch",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\clickhouse\\pg_stat_ch",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "CloudAI-X/threejs-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\CloudAI-X\\threejs-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/bids",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\bids",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/chanfana",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\chanfana",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/cloudflare-docs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\cloudflare-docs",
+      "checkout_mode": "sparse",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/com",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\com",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/csops",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\csops",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/cto",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\cto",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/data",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\data",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/devgtm",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\devgtm",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/devtools",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\devtools",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/dlp",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\dlp",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/kumo",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\kumo",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/moltworker",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\moltworker",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/sal",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\sal",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/sandbox-sdk",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\sandbox-sdk",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/vinext",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\vinext",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "cloudflare/workerd",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\cloudflare\\workerd",
+      "checkout_mode": "sparse",
+      "skill_file_count": 17,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "coderabbitai/claude-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\coderabbitai\\claude-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "coderabbitai/codex-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\coderabbitai\\codex-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 291,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "coderabbitai/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\coderabbitai\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "coinbase/agentic-wallet-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\coinbase\\agentic-wallet-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "coinbase/cds",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\coinbase\\cds",
+      "checkout_mode": "sparse",
+      "skill_file_count": 22,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "ComposioHQ/awesome-claude-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\ComposioHQ\\awesome-claude-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "conorluddy/ios-simulator-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\conorluddy\\ios-simulator-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "contentful/adn-tooling",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\contentful\\adn-tooling",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "contentful/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\contentful\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "contentstack/contentstack-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\contentstack\\contentstack-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 42,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "contentstack/contentstack-vibe-docs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\contentstack\\contentstack-vibe-docs",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "convex-dev/convex",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\convex-dev\\convex",
+      "checkout_mode": "sparse",
+      "skill_file_count": 20,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "coreyhaines31/marketingskills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\coreyhaines31\\marketingskills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "czlonkowski/n8n-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\czlonkowski\\n8n-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "dagster-io/dagster-claude-plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\dagster-io\\dagster-claude-plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "dagster-io/erk",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\dagster-io\\erk",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "dagster-io/fake-driven-testing",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\dagster-io\\fake-driven-testing",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "dagster-io/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\dagster-io\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "dash0hq/agent-skills",
+      "status": "Failed",
+      "detail": "fatal: Not possible to fast-forward, aborting.",
+      "local_path": "D:\\code\\skills\\repositories\\dash0hq\\agent-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "datadog-labs/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\datadog-labs\\agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": 40,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "datadog-labs/claude-code-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\datadog-labs\\claude-code-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "datadog-labs/pup",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\datadog-labs\\pup",
+      "checkout_mode": "full",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "dbt-labs/dbt-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\dbt-labs\\dbt-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 15,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "deepgram/deepclaw",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\deepgram\\deepclaw",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "deepgram/deepgram-js-sdk",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\deepgram\\deepgram-js-sdk",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "deepgram/deepgram-python-sdk",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\deepgram\\deepgram-python-sdk",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "deepgram/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\deepgram\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "denoland/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\denoland\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "dmmulroy/cloudflare-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\dmmulroy\\cloudflare-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "efremidze/swift-patterns-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\efremidze\\swift-patterns-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "elevenlabs/packages",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\elevenlabs\\packages",
+      "checkout_mode": "sparse-partial",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 1
+    },
+    {
+      "type": "GitHub",
+      "name": "elevenlabs/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\elevenlabs\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 11,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "encoredev/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\encoredev\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 28,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "exploreomni/omni-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\exploreomni\\omni-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 11,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "exploreomni/omni-claude-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\exploreomni\\omni-claude-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "exploreomni/omni-cursor-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\exploreomni\\omni-cursor-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "expo/expo",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\expo\\expo",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "expo/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\expo\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "facebook/buck2",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\facebook\\buck2",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "facebook/hermes",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\facebook\\hermes",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "facebook/react",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\facebook\\react",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "facebook/relay",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\facebook\\relay",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "factory-ai/factory",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\factory-ai\\factory",
+      "checkout_mode": "empty",
+      "skill_file_count": 0,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "factory-ai/factory-plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\factory-ai\\factory-plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 31,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "factory-ai/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\factory-ai\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "fal-ai-community/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\fal-ai-community\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "figma/dev-mode-mcp-server-guide",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\figma\\dev-mode-mcp-server-guide",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "figma/mcp-server-guide",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\figma\\mcp-server-guide",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firebase/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firebase\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firebase/firebase-tools",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firebase\\firebase-tools",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firebase/genkit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firebase\\genkit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firebase/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firebase\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/agent",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\agent",
+      "checkout_mode": "sparse",
+      "skill_file_count": 38,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/ai-research-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\ai-research-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 83,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/firecrawl-agent",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\firecrawl-agent",
+      "checkout_mode": "sparse",
+      "skill_file_count": 38,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/firecrawl-claude-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\firecrawl-claude-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/firecrawl-claude-skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\firecrawl-claude-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/firecrawl-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\firecrawl-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/firecrawl-cursor-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\firecrawl-cursor-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/firecrawl-workflows",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\firecrawl-workflows",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/openai-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\openai-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 32,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/openclaw",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\openclaw",
+      "checkout_mode": "sparse",
+      "skill_file_count": 59,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/opencode-firecrawl",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\opencode-firecrawl",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "firecrawl/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\firecrawl\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "flutter/flutter",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\flutter\\flutter",
+      "checkout_mode": "sparse",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "flutter/genui",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\flutter\\genui",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "flutter/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\flutter\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 38,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "flutter/website",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\flutter\\website",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "frmoretto/clarity-gate",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\frmoretto\\clarity-gate",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "fvadicamo/dev-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\fvadicamo\\dev-agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 15,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/april-log-summarizer",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\april-log-summarizer",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/dotagents",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\dotagents",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/junior",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\junior",
+      "checkout_mode": "sparse",
+      "skill_file_count": 38,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sdk-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sdk-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry",
+      "checkout_mode": "sparse",
+      "skill_file_count": 26,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 15,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-docs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-docs",
+      "checkout_mode": "full",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-for-ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-for-ai",
+      "checkout_mode": "sparse",
+      "skill_file_count": 34,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-for-claude",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-for-claude",
+      "checkout_mode": "sparse",
+      "skill_file_count": 34,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-for-cursor",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-for-cursor",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-javascript",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-javascript",
+      "checkout_mode": "sparse",
+      "skill_file_count": 19,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-mcp",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-mcp",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-python",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-python",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/sentry-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\sentry-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 28,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/vitest-evals",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\vitest-evals",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/warden",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\warden",
+      "checkout_mode": "sparse",
+      "skill_file_count": 15,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/webvitals.com",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\webvitals.com",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "getsentry/xcodebuildmcp",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\getsentry\\xcodebuildmcp",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/awesome-copilot",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\github\\awesome-copilot",
+      "checkout_mode": "sparse",
+      "skill_file_count": 423,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/copilot-cli-for-beginners",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\github\\copilot-cli-for-beginners",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/copilot-plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\github\\copilot-plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/gh-aw",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\github\\gh-aw",
+      "checkout_mode": "full",
+      "skill_file_count": 47,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/gh-aw-firewall",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\github\\gh-aw-firewall",
+      "checkout_mode": "full",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/gh-stack",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\github\\gh-stack",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/spec-kit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\github\\spec-kit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "github/synapsync",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\github\\synapsync",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "gokapso/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\gokapso\\agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "google-gemini/gemini-api-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-gemini\\gemini-api-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "google-gemini/gemini-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-gemini\\gemini-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 25,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "google-gemini/gemini-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-gemini\\gemini-skill",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "google-gemini/gemini-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-gemini\\gemini-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "google-labs-code/design.md",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-labs-code\\design.md",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "google-labs-code/jules-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-labs-code\\jules-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "google-labs-code/stitch-sdk",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-labs-code\\stitch-sdk",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "google-labs-code/stitch-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\google-labs-code\\stitch-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "hashicorp/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\hashicorp\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 20,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "hashicorp/engineering-agent-skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\hashicorp\\engineering-agent-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "hashicorp/hashicorp-agent-skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\hashicorp\\hashicorp-agent-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "hashicorp/internal-agent-skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\hashicorp\\internal-agent-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "hashicorp/terraform-agent-kit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\hashicorp\\terraform-agent-kit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 20,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "HeshamFS/materials-simulation-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\HeshamFS\\materials-simulation-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/chat-ui",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\chat-ui",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/diffusers",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\diffusers",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/huggingface_hub",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\huggingface_hub",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/kernels",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\kernels",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/prime-rl",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\prime-rl",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/sentence-transformers",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\sentence-transformers",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/transformers",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\transformers",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/transformers-to-mlx",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\transformers-to-mlx",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/trl",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\trl",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huggingface/upskill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huggingface\\upskill",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "huifer/Claude-Ally-Health",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\huifer\\Claude-Ally-Health",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "ibelick/ui-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\ibelick\\ui-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "jeffersonwarrior/claudisms",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\jeffersonwarrior\\claudisms",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "jthack/ffuf_claude_skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\jthack\\ffuf_claude_skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "K-Dense-AI/claude-scientific-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\K-Dense-AI\\claude-scientific-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "kotlin/kotlin-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\kotlin\\kotlin-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "lackeyjb/playwright-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\lackeyjb\\playwright-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "langchain-ai/deepagents",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langchain-ai\\deepagents",
+      "checkout_mode": "sparse",
+      "skill_file_count": 30,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "langchain-ai/deepagentsjs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langchain-ai\\deepagentsjs",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "langchain-ai/langchain-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langchain-ai\\langchain-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 22,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "langchain-ai/langsmith-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langchain-ai\\langsmith-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "langchain-ai/lca-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langchain-ai\\lca-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "langchain-ai/skills-benchmarks",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langchain-ai\\skills-benchmarks",
+      "checkout_mode": "sparse",
+      "skill_file_count": 22,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "langfuse/langfuse",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langfuse\\langfuse",
+      "checkout_mode": "sparse",
+      "skill_file_count": 33,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "langfuse/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\langfuse\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "launchdarkly/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\launchdarkly\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 50,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "launchdarkly/ai-tooling",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\launchdarkly\\ai-tooling",
+      "checkout_mode": "sparse",
+      "skill_file_count": 50,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "launchdarkly/experimental-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\launchdarkly\\experimental-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "livekit/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\livekit\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "makenotion/claude-code-notion-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\makenotion\\claude-code-notion-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "makenotion/cursor-notion-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\makenotion\\cursor-notion-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "makenotion/notion-cookbook",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\makenotion\\notion-cookbook",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "makenotion/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\makenotion\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "mapbox/mapbox-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mapbox\\mapbox-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 19,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "mapbox/mcp-devkit-server",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mapbox\\mcp-devkit-server",
+      "checkout_mode": "full",
+      "skill_file_count": 0,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "massimodeluisa/recursive-decomposition-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\massimodeluisa\\recursive-decomposition-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "mastra-ai/infinite-moves",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mastra-ai\\infinite-moves",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "mastra-ai/mastra",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mastra-ai\\mastra",
+      "checkout_mode": "sparse",
+      "skill_file_count": 42,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "mastra-ai/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mastra-ai\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "mcp-use/mcp-use",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mcp-use\\mcp-use",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "mcp-use/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mcp-use\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "medusajs/medusa-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\medusajs\\medusa-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 18,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "medusajs/medusa-claude-plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\medusajs\\medusa-claude-plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 18,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/a11y-llm-eval",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\a11y-llm-eval",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/agent-framework",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\agent-framework",
+      "checkout_mode": "sparse",
+      "skill_file_count": 31,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/agent-governance-toolkit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\agent-governance-toolkit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 198,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/agent365-devtools",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\agent365-devtools",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/ai-agents-for-beginners",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\ai-agents-for-beginners",
+      "checkout_mode": "sparse",
+      "skill_file_count": 282,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/apm",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\apm",
+      "checkout_mode": "sparse",
+      "skill_file_count": 77,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/aspire",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\aspire",
+      "checkout_mode": "sparse",
+      "skill_file_count": 23,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/aspire-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\aspire-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/azure-devops-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\azure-devops-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/azure-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\azure-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 79,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/build-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\build-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/caira",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\caira",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/data-formulator",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\data-formulator",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/dataverse-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\dataverse-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/debugpy",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\debugpy",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/entra-pocadvisor",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\entra-pocadvisor",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/eval-guide",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\eval-guide",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/fabric-apps-analytic-templates",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\fabric-apps-analytic-templates",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/fabric-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\fabric-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/fast",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\fast",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/fluentui",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\fluentui",
+      "checkout_mode": "sparse",
+      "skill_file_count": 17,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/fluidframework",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\fluidframework",
+      "checkout_mode": "sparse",
+      "skill_file_count": 31,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/foundry-ai-solution-templates-creation",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\foundry-ai-solution-templates-creation",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/hve-core",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\hve-core",
+      "checkout_mode": "sparse",
+      "skill_file_count": 58,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/onnxruntime",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\onnxruntime",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/playwright",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\playwright",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/playwright-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\playwright-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/playwright-python",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\playwright-python",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/power-platform-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\power-platform-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 95,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/powertoys",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\powertoys",
+      "checkout_mode": "sparse",
+      "skill_file_count": 11,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/rushstack",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\rushstack",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/semantic-link-labs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\semantic-link-labs",
+      "checkout_mode": "sparse",
+      "skill_file_count": 15,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 198,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/skills-for-copilot-studio",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\skills-for-copilot-studio",
+      "checkout_mode": "sparse",
+      "skill_file_count": 31,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/skills-for-fabric",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\skills-for-fabric",
+      "checkout_mode": "sparse",
+      "skill_file_count": 95,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/synapseml",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\synapseml",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/teams-sdk",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\teams-sdk",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vcpkg",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vcpkg",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vibe-kit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vibe-kit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vscode",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vscode",
+      "checkout_mode": "sparse",
+      "skill_file_count": 60,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vscode-copilot-chat",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vscode-copilot-chat",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vscode-cosmosdb",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vscode-cosmosdb",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vscode-docs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vscode-docs",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vscode-java-dependency",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vscode-java-dependency",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/vscode-pull-request-github",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\vscode-pull-request-github",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/waza",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\waza",
+      "checkout_mode": "sparse",
+      "skill_file_count": 33,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/webwright",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\webwright",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/win-dev-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\win-dev-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/winappcli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\winappcli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "microsoft/work-iq",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\microsoft\\work-iq",
+      "checkout_mode": "sparse",
+      "skill_file_count": 19,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "modal-labs/modal-client",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\modal-labs\\modal-client",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "mongodb/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\mongodb\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 34,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\muratcankoylan\\Agent-Skills-for-Context-Engineering",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "n8n-io/n8n",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\n8n-io\\n8n",
+      "checkout_mode": "sparse",
+      "skill_file_count": 36,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "n8n-io/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\n8n-io\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "neondatabase/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\neondatabase\\agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "neondatabase/ai-rules",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\neondatabase\\ai-rules",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "neondatabase/better-env",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\neondatabase\\better-env",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "neondatabase/mcp-server-neon",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\neondatabase\\mcp-server-neon",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "neondatabase/neon-for-agent-platforms",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\neondatabase\\neon-for-agent-platforms",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "neondatabase/neon-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\neondatabase\\neon-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "neondatabase/postgres-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\neondatabase\\postgres-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\nextlevelbuilder\\ui-ux-pro-max-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "NotMyself/claude-win11-speckit-update-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\NotMyself\\claude-win11-speckit-update-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "nuxt/image",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\nuxt\\image",
+      "checkout_mode": "full",
+      "skill_file_count": 0,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "nuxt/scripts",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\nuxt\\scripts",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "nuxt/seo",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\nuxt\\seo",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "nuxt/ui",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\nuxt\\ui",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "nvidia/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\nvidia\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 331,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "obra/superpowers",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\obra\\superpowers",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "obra/superpowers-lab",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\obra\\superpowers-lab",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "omkamal/pypict-claude-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\omkamal\\pypict-claude-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "op7418/NanoBanana-PPT-Skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\op7418\\NanoBanana-PPT-Skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/codex",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openai\\codex",
+      "checkout_mode": "sparse",
+      "skill_file_count": 20,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/codex-plugin-cc",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openai\\codex-plugin-cc",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/openai-agents-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openai\\openai-agents-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 19,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/openai-agents-python",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openai\\openai-agents-python",
+      "checkout_mode": "sparse",
+      "skill_file_count": 19,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/openai-cookbook",
+      "status": "Failed",
+      "detail": "error: Your local changes to the following files would be overwritten by merge:\n\tauthors.yaml\n\texamples/codex/jira-github.ipynb\n\texamples/deep_research_api/introduction_to_deep_research_api_agents.ipynb\n\tregistry.yaml\nPlease commit your changes or stash them before you merge.\nAborting",
+      "local_path": "D:\\code\\skills\\repositories\\openai\\openai-cookbook",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/plugins",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openai\\plugins",
+      "checkout_mode": "sparse",
+      "skill_file_count": 608,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openai\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 44,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openai/symphony",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openai\\symphony",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openshift/agentic-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openshift\\agentic-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openshift/hypershift",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openshift\\hypershift",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openshift/lightspeed-service",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openshift\\lightspeed-service",
+      "checkout_mode": "sparse",
+      "skill_file_count": 19,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openshift/oc",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openshift\\oc",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "openshift/release-tests",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\openshift\\release-tests",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "parallel-web/parallel-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\parallel-web\\parallel-agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 11,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "parallel-web/parallel-cursor-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\parallel-web\\parallel-cursor-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "pinecone-io/pckle-cli",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\pinecone-io\\pckle-cli",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "pinecone-io/pckle-skill",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\pinecone-io\\pckle-skill",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "pinecone-io/pinecone-claude-code-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\pinecone-io\\pinecone-claude-code-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "pinecone-io/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\pinecone-io\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "planetscale/database-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\planetscale\\database-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "planetscale/vscode-agent-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\planetscale\\vscode-agent-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "PleasePrompto/notebooklm-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\PleasePrompto\\notebooklm-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "posthog/ai-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\posthog\\ai-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 131,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "posthog/context-mill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\posthog\\context-mill",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "posthog/duckgres",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\posthog\\duckgres",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "posthog/posthog",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\posthog\\posthog",
+      "checkout_mode": "sparse",
+      "skill_file_count": 234,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "posthog/posthog-for-claude",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\posthog\\posthog-for-claude",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "posthog/posthog.com",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\posthog\\posthog.com",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "posthog/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\posthog\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 254,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "prisma/cursor-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\prisma\\cursor-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 40,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "prisma/ignite",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\prisma\\ignite",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "prisma/prisma-next",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\prisma\\prisma-next",
+      "checkout_mode": "sparse",
+      "skill_file_count": 31,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "prisma/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\prisma\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "projectopensea/opensea-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\projectopensea\\opensea-skill",
+      "checkout_mode": "full",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "pulumi/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\pulumi\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "pulumi/agent-skills-private",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\pulumi\\agent-skills-private",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "pytorch/pytorch",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\pytorch\\pytorch",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "redis/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\redis\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "redis/redisinsight",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\redis\\redisinsight",
+      "checkout_mode": "sparse",
+      "skill_file_count": 19,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "remotion-dev/codex-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\remotion-dev\\codex-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 12,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "remotion-dev/html-in-canvas",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\remotion-dev\\html-in-canvas",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "remotion-dev/remotion",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\remotion-dev\\remotion",
+      "checkout_mode": "sparse",
+      "skill_file_count": 66,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "remotion-dev/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\remotion-dev\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "resend/design-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\resend\\design-skills",
+      "checkout_mode": "full",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "resend/email-best-practices",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\resend\\email-best-practices",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "resend/email-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\resend\\email-skills",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "resend/react-email",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\resend\\react-email",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "resend/resend-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\resend\\resend-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "resend/resend-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\resend\\resend-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "rivet-dev/rivet",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\rivet-dev\\rivet",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "rivet-dev/sandbox-agent",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\rivet-dev\\sandbox-agent",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "rivet-dev/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\rivet-dev\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 17,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "robzolkos/skill-rails-upgrade",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\robzolkos\\skill-rails-upgrade",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "Rootly-AI-Labs/Rootly-MCP-server",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\Rootly-AI-Labs\\Rootly-MCP-server",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "runwayml/runway-studio-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\runwayml\\runway-studio-skills",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "runwayml/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\runwayml\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 17,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "sanity-io/agent-context",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\sanity-io\\agent-context",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "sanity-io/agent-toolkit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\sanity-io\\agent-toolkit",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "sanity-io/claude-plugins-official",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\sanity-io\\claude-plugins-official",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "sanity-io/next-sanity",
+      "status": "Failed",
+      "detail": "error: Your local changes to the following files would be overwritten by merge:\n\tAGENTS.md\n\tapps/mvp/app/(website)/no-resolve-perspective/page.tsx\n\tapps/mvp/app/(website)/only-production/page.tsx\n\tapps/mvp/app/(website)/only-visual-editing/page.tsx\n\tapps/mvp/app/(website)/page.tsx\n\tapps/mvp/app/(website)/resolvePreviewCookies.ts\n\tapps/mvp/package.json\n\tapps/static/package.json\n\tpackage.json\n\tpackages/next-sanity/CHANGELOG.md\n\tpackages/next-sanity/package.json\n\tpackages/next-sanity/src/__tests__/exports.spec.ts\n\tpackages/next-sanity/src/client.ts\n\tpackages/next-sanity/src/index.ts\n\tpackages/next-sanity/src/live/conditions/default/index.ts\n\tpackages/next-sanity/src/live/conditions/next-js/defineLive.tsx\n\tpackages/next-sanity/src/live/conditions/react-server/defineLive.tsx\n\tpackages/next-sanity/src/live/shared/resolvePerspectiveFromCookies.ts\n\tpackages/next-sanity/src/live/shared/resolveVariantFromCookies.ts\n\tpackages/next-sanity/src/live/shared/types.ts\n\tpnpm-lock.yaml\n\tpnpm-workspace.yaml\n\tskills-lock.json\n\tskills/sanity-live-cache-components/SKILL.md\n\tskills/sanity-live-cache-components/reference/dynamic-segments.md\n\tskills/sanity-live-cache-components/reference/layouts.md\n\tskills/sanity-live-cache-components/reference/live-helpers.md\n\tskills/sanity-live-cache-components/reference/three-layer-pattern.md\nPlease commit your changes or stash them before you merge.\nAborting",
+      "local_path": "D:\\code\\skills\\repositories\\sanity-io\\next-sanity",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "sanity-io/plugins",
+      "status": "Failed",
+      "detail": "error: Your local changes to the following files would be overwritten by merge:\n\t.agents/skills/plugin-transfer/SKILL.md\n\t.agents/skills/sanity-plugin-best-practices/SKILL.md\n\t.agents/skills/sanity-plugin-best-practices/references/styling.md\n\t.github/workflows/e2e.yml\n\t.github/workflows/renovate.yml\n\t.github/workflows/zizmor.yml\n\tAGENTS.md\n\tdev/e2e-studio/package.json\n\tdev/e2e-studio/sanity.config.ts\n\tdev/test-studio/package.json\n\tdev/test-studio/sanity.cli.ts\n\tdev/test-studio/sanity.config.ts\n\tdev/test-studio/sanity.types.ts\n\tdev/test-studio/schema.json\n\tdev/test-studio/src/async-list/index.tsx\n\tdev/test-studio/src/cloudinary/index.tsx\n\tdev/test-studio/src/document-internationalization-translation/index.tsx\n\tdev/test-studio/src/hierarchical-document-list/index.tsx\n\tdev/test-studio/src/i18n-array-translation/index.tsx\n\tdev/test-studio/src/personalization/index.tsx\n\tdev/test-studio/src/sanity-naive-html-serializer/index.tsx\n\tdev/test-studio/src/script-runner/ScriptRunnerTool.tsx\n\tdev/test-studio/src/studio-secrets/index.tsx\n\tdev/test-studio/turbo.jsonc\n\te2e/README.md\n\te2e/package.json\n\te2e/reporters/summary.ts\n\tpackages/@sanity/plugin-kit/CHANGELOG.md\n\tpackages/@sanity/plugin-kit/package.json\n\tpackages/@sanity/plugin-kit/src/oxlint.ts\n\tplugins/@sanity/assist/CHANGELOG.md\n\tplugins/@sanity/assist/package.json\n\tplugins/@sanity/assist/src/assistDocument/components/instruction/appearance/IconInput.tsx\n\tplugins/@sanity/assist/src/assistDocument/hooks/useInstructionToaster.tsx\n\tplugins/@sanity/assist/src/assistInspector/FieldAutocomplete.tsx\n\tplugins/@sanity/assist/src/assistInspector/InstructionTaskHistoryButton.tsx\n\tplugins/@sanity/assist/src/assistLayout/RunInstructionProvider.tsx\n\tplugins/@sanity/assist/src/fieldActions/PrivateIcon.tsx\n\tplugins/@sanity/assist/src/fieldActions/customFieldActions.tsx\n\tplugins/@sanity/assist/src/index.ts\n\tplugins/@sanity/assist/src/presence/AiFieldPresence.tsx\n\tplugins/@sanity/assist/src/schemas/assistDocumentSchema.tsx\n\tplugins/@sanity/assist/src/translate/FieldTranslationProvider.tsx\n\tplugins/@sanity/assist/src/useApiClient.ts\n\tplugins/@sanity/block-insert-picker/CHANGELOG.md\n\tplugins/@sanity/block-insert-picker/package.json\n\tplugins/@sanity/block-insert-picker/src/blockInsertPicker.test.tsx\n\tplugins/@sanity/block-insert-picker/src/blockInsertPicker.tsx\n\tplugins/@sanity/block-insert-picker/src/index.ts\n\tplugins/@sanity/code-input/CHANGELOG.md\n\tplugins/@sanity/code-input/package.json\n\tplugins/@sanity/code-input/src/CodeInputFullscreen.tsx\n\tplugins/@sanity/code-input/src/index.ts\n\tplugins/@sanity/color-input/CHANGELOG.md\n\tplugins/@sanity/color-input/package.json\n\tplugins/@sanity/color-input/src/index.ts\n\tplugins/@sanity/color-input/src/schemas/color.tsx\n\tplugins/@sanity/color-input/vitest.config.ts\n\tplugins/@sanity/cross-dataset-duplicator/CHANGELOG.md\n\tplugins/@sanity/cross-dataset-duplicator/LICENSE\n\tplugins/@sanity/cross-dataset-duplicator/README.md\n\tplugins/@sanity/cross-dataset-duplicator/package.json\n\tplugins/@sanity/cross-dataset-duplicator/src/components/Duplicator.tsx\n\tplugins/@sanity/cross-dataset-duplicator/src/components/StatusBadge.tsx\n\tplugins/@sanity/cross-dataset-duplicator/src/helpers/constants.ts\n\tplugins/@sanity/cross-dataset-duplicator/src/index.ts\n\tplugins/@sanity/cross-dataset-duplicator/src/types/index.ts\n\tplugins/@sanity/dashboard/CHANGELOG.md\n\tplugins/@sanity/dashboard/package.json\n\tplugins/@sanity/dashboard/src/index.ts\n\tplugins/@sanity/dashboard/src/widgets/projectInfo/ProjectInfo.tsx\n\tplugins/@sanity/debug-live-sync-tags/CHANGELOG.md\n\tplugins/@sanity/debug-live-sync-tags/package.json\n\tplugins/@sanity/debug-live-sync-tags/src/index.ts\n\tplugins/@sanity/document-internationalization/CHANGELOG.md\n\tplugins/@sanity/document-internationalization/package.json\n\tplugins/@sanity/document-internationalization/src/actions/DeleteMetadataAction.test.tsx\n\tplugins/@sanity/document-internationalization/src/actions/DeleteMetadataAction.tsx\n\tplugins/@sanity/document-internationalization/src/actions/DeleteTranslationAction.test.tsx\n\tplugins/@sanity/document-internationalization/src/acti\nAborting",
+      "local_path": "D:\\code\\skills\\repositories\\sanity-io\\plugins",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "sanity-io/sanity",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\sanity-io\\sanity",
+      "checkout_mode": "sparse",
+      "skill_file_count": 16,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "sanjay3290/ai-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\sanjay3290\\ai-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "scarletkc/vexor",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\scarletkc\\vexor",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "SeanZoR/claude-speed-reader",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\SeanZoR\\claude-speed-reader",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "semgrep/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\semgrep\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "semgrep/cursor-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\semgrep\\cursor-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "semgrep/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\semgrep\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "SHADOWPR0/beautiful_prose",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\SHADOWPR0\\beautiful_prose",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "SHADOWPR0/security-bluebook-builder",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\SHADOWPR0\\security-bluebook-builder",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "shopify/flash-list",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\shopify\\flash-list",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "shopify/hydrogen",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\shopify\\hydrogen",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "shopify/liquid-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\shopify\\liquid-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "shopify/shopify-ai-toolkit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\shopify\\shopify-ai-toolkit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 21,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "Shpigford/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\Shpigford\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "signoz/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\signoz\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "streamlit/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\streamlit\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "streamlit/streamlit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\streamlit\\streamlit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 21,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "stripe/agent-toolkit",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\stripe\\agent-toolkit",
+      "checkout_mode": "sparse",
+      "skill_file_count": 35,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "stripe/ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\stripe\\ai",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "stripe/com",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\stripe\\com",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "stripe/link-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\stripe\\link-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "stripe/purl",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\stripe\\purl",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "supabase/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\supabase\\agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "supabase/server",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\supabase\\server",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "supabase/supabase",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\supabase\\supabase",
+      "checkout_mode": "sparse",
+      "skill_file_count": 15,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "sveltejs/ai-tools",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\sveltejs\\ai-tools",
+      "checkout_mode": "sparse",
+      "skill_file_count": 10,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "sveltejs/svelte",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\sveltejs\\svelte",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "tavily-ai/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\tavily-ai\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "tavily-ai/tavily-plugins",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\tavily-ai\\tavily-plugins",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "temporalio/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\temporalio\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "temporalio/claude-temporal-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\temporalio\\claude-temporal-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "temporalio/cursor-temporal-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\temporalio\\cursor-temporal-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "temporalio/skill-temporal-cloud",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\temporalio\\skill-temporal-cloud",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "temporalio/skill-temporal-developer",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\temporalio\\skill-temporal-developer",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "temporalio/skills-temporal-cloud",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\temporalio\\skills-temporal-cloud",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "tinybirdco/tinybird-agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\tinybirdco\\tinybird-agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "tldraw/tldraw",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\tldraw\\tldraw",
+      "checkout_mode": "sparse",
+      "skill_file_count": 27,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "trailofbits/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\trailofbits\\skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "triggerdotdev/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\triggerdotdev\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "triggerdotdev/trigger.dev",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\triggerdotdev\\trigger.dev",
+      "checkout_mode": "sparse",
+      "skill_file_count": 15,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/context7",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\context7",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/context7-mcp",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\context7-mcp",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/qstash-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\qstash-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/ratelimit-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\ratelimit-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/redis-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\redis-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/search-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\search-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 11,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/upstash-redis",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\upstash-redis",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/vector-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\vector-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "upstash/workflow-js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\upstash\\workflow-js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/academy-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\academy-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/agent-browser",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\agent-browser",
+      "checkout_mode": "sparse",
+      "skill_file_count": 8,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/agent-eval",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\agent-eval",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\agent-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/agentic-commerce-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\agentic-commerce-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\ai",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/ai-cli",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\ai-cli",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/ai-python",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\ai-python",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/autoship",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\autoship",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/bash-tool",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\bash-tool",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/before-and-after",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\before-and-after",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/blob-success-fixture",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\blob-success-fixture",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/claude-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\claude-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 9,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/cursor-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\cursor-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/deepsec",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\deepsec",
+      "checkout_mode": "full",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/dev3000",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\dev3000",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/dx-agent-toolkit",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\dx-agent-toolkit",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/emulate",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\emulate",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/json-render",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\json-render",
+      "checkout_mode": "sparse",
+      "skill_file_count": 26,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/migration-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\migration-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/next-browser",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\next-browser",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/next-docs-agentic-rag",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\next-docs-agentic-rag",
+      "checkout_mode": "full",
+      "skill_file_count": 0,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/next-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\next-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/open-agents",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\open-agents",
+      "checkout_mode": "sparse",
+      "skill_file_count": 13,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/openreview",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\openreview",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/opensrc",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\opensrc",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/portless",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\portless",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/py-ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\py-ai",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/ralph-gpu",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\ralph-gpu",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/sandcastle",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\sandcastle",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/sitecore-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\sitecore-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 7,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/skill-geist-learning-labs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\skill-geist-learning-labs",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/skill-remotion-geist",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\skill-remotion-geist",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/slack-agent-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\slack-agent-skill",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/tw-blocks",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\tw-blocks",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/vercel-deploy-codex-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\vercel-deploy-codex-skill",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/vercel-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\vercel-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 50,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/vercel-skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\vercel-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/webreel",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\webreel",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/zero",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\zero",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel-labs/zero-native",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel-labs\\zero-native",
+      "checkout_mode": "sparse",
+      "skill_file_count": 6,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/ai",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\ai",
+      "checkout_mode": "sparse",
+      "skill_file_count": 14,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/ai-elements",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\ai-elements",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/chat",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\chat",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/components.build",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\components.build",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/example",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\example",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/examples",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\examples",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/flags",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\flags",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/internal-agent-skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\internal-agent-skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/microfrontends",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\microfrontends",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/next-forge",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\next-forge",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/next.js",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\next.js",
+      "checkout_mode": "sparse",
+      "skill_file_count": 22,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/nextjs-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\nextjs-skills",
+      "checkout_mode": "full",
+      "skill_file_count": 0,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/sandbox",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\sandbox",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/skills",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\skills",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/slidev-server",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\slidev-server",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/streamdown",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\streamdown",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/turbo",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\turbo",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/turborepo",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\turborepo",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/vercel",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\vercel",
+      "checkout_mode": "sparse",
+      "skill_file_count": 2,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/vercel-deploy-claude-code-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\vercel-deploy-claude-code-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 3,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/vercel-pdf-skill",
+      "status": "Unavailable",
+      "detail": "The repository listed by the catalog is not publicly available.",
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\vercel-pdf-skill",
+      "checkout_mode": null,
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/vercel-plugin",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\vercel-plugin",
+      "checkout_mode": "sparse",
+      "skill_file_count": 50,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "vercel/workflow",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\vercel\\workflow",
+      "checkout_mode": "sparse",
+      "skill_file_count": 4,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "webflow/webflow-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\webflow\\webflow-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 28,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "whopio/whop-payments-network-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\whopio\\whop-payments-network-skill",
+      "checkout_mode": "full",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "wix/react-native-navigation",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\wix\\react-native-navigation",
+      "checkout_mode": "sparse",
+      "skill_file_count": 5,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "wix/skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\wix\\skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 20,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "wordpress/agent-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\wordpress\\agent-skills",
+      "checkout_mode": "sparse",
+      "skill_file_count": 18,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "wordpress/php-mcp-schema",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\wordpress\\php-mcp-schema",
+      "checkout_mode": "sparse",
+      "skill_file_count": 1,
+      "skipped_skill_file_count": 0
+    },
+    {
+      "type": "GitHub",
+      "name": "wrsmith108/linear-claude-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\wrsmith108\\linear-claude-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "wrsmith108/varlock-claude-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\wrsmith108\\varlock-claude-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "wshuyi/x-article-publisher-skill",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\wshuyi\\x-article-publisher-skill",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "yusufkaraaslan/Skill_Seekers",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\yusufkaraaslan\\Skill_Seekers",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "zarazhangrui/frontend-slides",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\zarazhangrui\\frontend-slides",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "zechenzhangAGI/AI-research-SKILLs",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\zechenzhangAGI\\AI-research-SKILLs",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "ZhangHanDong/makepad-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\ZhangHanDong\\makepad-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    },
+    {
+      "type": "GitHub",
+      "name": "zxkane/aws-skills",
+      "status": "Updated",
+      "detail": null,
+      "local_path": "D:\\code\\skills\\repositories\\zxkane\\aws-skills",
+      "checkout_mode": "full",
+      "skill_file_count": null,
+      "skipped_skill_file_count": null
+    }
+  ],
+  "log_path": "D:\\code\\skills\\logs\\sync-20260811-131509.log"
+}

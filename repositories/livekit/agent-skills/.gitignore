@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Local testing
+*.local.md
+
+# Script artifacts
+__pycache__/

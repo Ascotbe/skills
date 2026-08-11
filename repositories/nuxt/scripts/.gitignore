@@ -1,0 +1,39 @@
+node_modules
+dist
+.output
+.idea
+*.iml
+*.swp
+.DS_Store
+*.log*
+coverage
+.env
+.env.*
+!.env.example
+
+# Nuxt
+.nuxt
+playground/.nuxt
+playground/.output
+test/fixtures/**/.nuxt
+test/fixtures/**/.output
+
+# Temp
+.temp
+.tmp
+.cache
+
+# Build
+.vercel_build_output
+.build-*
+.netlify
+
+# Testing
+reports
+*.lcov
+.nyc_output
+test/fixtures/**/proxy-test.json
+test/fixtures/**/sw-status.json
+
+# Skilld references (recreated by `skilld install`)
+.skilld

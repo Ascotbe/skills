@@ -1,0 +1,635 @@
+// Copyright (c) Mapbox, Inc.
+// Licensed under the MIT License.
+
+import { describe, it, expect, afterEach, vi } from 'vitest';
+import {
+  setupHttpRequest,
+  assertHeadersSent
+} from '../../utils/httpPipelineUtils.js';
+import { MapboxApiBasedTool } from '../../../src/tools/MapboxApiBasedTool.js';
+import { ListTokensTool } from '../../../src/tools/list-tokens-tool/ListTokensTool.js';
+import { HttpRequest } from '../../../src//utils/types.js';
+
+// Create a token with username in the payload
+const payload = Buffer.from(JSON.stringify({ u: 'testuser' })).toString(
+  'base64'
+);
+const mockToken = `eyJhbGciOiJIUzI1NiJ9.${payload}.signature`;
+process.env.MAPBOX_ACCESS_TOKEN = mockToken;
+
+type TextContent = { type: 'text'; text: string };
+
+describe('ListTokensTool', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  function createListTokensTool(httpRequest: HttpRequest): ListTokensTool {
+    const tool = new ListTokensTool({ httpRequest });
+    // Mock the log method to prevent actual logging during tests
+    tool['log'] = vi.fn();
+    return tool;
+  }
+
+  describe('tool metadata', () => {
+    it('should have correct name and description', () => {
+      const { httpRequest } = setupHttpRequest();
+      const tool = createListTokensTool(httpRequest);
+
+      expect(tool.name).toBe('list_tokens_tool');
+      expect(tool.description).toBe(
+        'List Mapbox access tokens for the authenticated user with optional filtering and pagination. Returns metadata for all tokens (public and secret), but the actual token value is only included for public tokens (secret token values are omitted for security). When using pagination, the "start" parameter must be obtained from the "next_start" field of the previous response (it is not a token ID)'
+      );
+    });
+
+    it('should have correct input schema', async () => {
+      const { ListTokensSchema } =
+        await import('../../../src/tools/list-tokens-tool/ListTokensTool.input.schema.js');
+      expect(ListTokensSchema).toBeDefined();
+    });
+  });
+
+  describe('validation', () => {
+    it('validates limit range', async () => {
+      const { httpRequest } = setupHttpRequest();
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({ limit: 101 });
+
+      expect(result.isError).toBe(true);
+      expect(result.content[0]).toHaveProperty('type', 'text');
+      const errorText = (result.content[0] as TextContent).text;
+      expect(errorText).toContain('too_big');
+    });
+
+    it('validates sortby enum values', async () => {
+      const { httpRequest } = setupHttpRequest();
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({
+        sortby: 'invalid' as unknown as 'created' | 'modified'
+      });
+
+      expect(result.isError).toBe(true);
+      expect(result.content[0]).toHaveProperty('type', 'text');
+    });
+
+    it('validates usage enum values', async () => {
+      const { httpRequest } = setupHttpRequest();
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({
+        usage: 'invalid' as unknown as 'pk'
+      });
+
+      expect(result.isError).toBe(true);
+      expect(result.content[0]).toHaveProperty('type', 'text');
+    });
+
+    it('throws error when unable to extract username from token', async () => {
+      const originalEnvToken = process.env.MAPBOX_ACCESS_TOKEN;
+
+      try {
+        // Set a token without username in payload
+        const invalidPayload = Buffer.from(
+          JSON.stringify({ sub: 'test' })
+        ).toString('base64');
+        const invalidToken = `eyJhbGciOiJIUzI1NiJ9.${invalidPayload}.signature`;
+
+        vi.stubEnv('MAPBOX_ACCESS_TOKEN', invalidToken);
+
+        // Setup fetch mock to prevent actual API calls
+        const { httpRequest } = setupHttpRequest({
+          ok: true,
+          status: 200,
+          statusText: 'OK',
+          headers: new Headers(),
+          json: async () => []
+        } as Response);
+
+        const toolWithInvalidToken = createListTokensTool(httpRequest);
+
+        const result = await toolWithInvalidToken.run({});
+
+        expect(result.isError).toBe(true);
+        expect(result.content[0]).toHaveProperty('type', 'text');
+        const errorText = (result.content[0] as TextContent).text;
+        expect(errorText).toContain(
+          'MAPBOX_ACCESS_TOKEN does not contain username in payload'
+        );
+      } finally {
+        // Restore
+        vi.unstubAllEnvs();
+        if (originalEnvToken) {
+          vi.stubEnv('MAPBOX_ACCESS_TOKEN', originalEnvToken);
+        }
+      }
+    });
+  });
+
+  describe('execute', () => {
+    it('lists all tokens without filters', async () => {
+      const mockTokens = [
+        {
+          id: 'cktest123',
+          note: 'Default public token',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.test123',
+          scopes: ['styles:read', 'fonts:read'],
+          created: '2023-01-01T00:00:00.000Z',
+          modified: '2023-01-01T00:00:00.000Z',
+          default: false
+        },
+        {
+          id: 'cktest456',
+          note: 'Secret token',
+          usage: 'sk',
+          client: 'api',
+          token: 'sk.eyJ1IjoidGVzdHVzZXIifQ.test456',
+          scopes: ['styles:read', 'fonts:read', 'tokens:read'],
+          created: '2023-02-01T00:00:00.000Z',
+          modified: '2023-02-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest({
+        ok: true,
+        headers: new Headers(),
+        json: async () => mockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({});
+
+      expect(result.isError).toBe(false);
+      expect(result.content[0]).toHaveProperty('type', 'text');
+
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(2);
+      expect(responseData.count).toBe(2);
+      expect(responseData.tokens[0].id).toBe('cktest123');
+      expect(responseData.tokens[1].id).toBe('cktest456');
+
+      // Verify the request
+      expect(mockHttpRequest).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'https://api.mapbox.com/tokens/v2/testuser?access_token='
+        ),
+        {
+          method: 'GET',
+          headers: expect.objectContaining({
+            'Content-Type': 'application/json'
+          })
+        }
+      );
+
+      // Verify User-Agent header was sent
+      assertHeadersSent(mockHttpRequest);
+    });
+
+    it('filters by default token', async () => {
+      const mockTokens = [
+        {
+          id: 'ckdefault',
+          note: 'Default public token',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.default',
+          default: true,
+          scopes: ['styles:read', 'fonts:read'],
+          created: '2023-01-01T00:00:00.000Z',
+          modified: '2023-01-01T00:00:00.000Z'
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers: new Headers(),
+        json: async () => mockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({ default: true });
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      expect(responseData.tokens[0].default).toBe(true);
+
+      // Verify the request included the default parameter
+      expect(mockHttpRequest).toHaveBeenCalledWith(
+        expect.stringContaining('default=true'),
+        expect.any(Object)
+      );
+    });
+
+    it('applies pagination parameters', async () => {
+      const mockTokens = [
+        {
+          id: 'cktest789',
+          note: 'Token 3',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.test789',
+          scopes: ['styles:read'],
+          created: '2023-03-01T00:00:00.000Z',
+          modified: '2023-03-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      const headers = new Headers();
+      headers.set(
+        'Link',
+        '<https://api.mapbox.com/tokens/v2/testuser?limit=10&start=cktest999>; rel="next"'
+      );
+
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers,
+        json: async () => mockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({
+        limit: 10,
+        start: 'cktest789',
+        sortby: 'created'
+      });
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+
+      // Verify all parameters were included in the request
+      const callUrl = mockHttpRequest.mock.calls[0][0] as string;
+      expect(callUrl).toContain('limit=10');
+      expect(callUrl).toContain('start=cktest789');
+      expect(callUrl).toContain('sortby=created');
+    });
+
+    it('returns next page start token when limit is provided and next page exists', async () => {
+      const mockTokens = [
+        {
+          id: 'cktest789',
+          note: 'Token 3',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.test789',
+          scopes: ['styles:read'],
+          created: '2023-03-01T00:00:00.000Z',
+          modified: '2023-03-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      const headers = new Headers();
+      headers.set(
+        'Link',
+        '<https://api.mapbox.com/tokens/v2/testuser?limit=10&start=cktest999>; rel="next"'
+      );
+
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers,
+        json: async () => mockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({ limit: 10 });
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      expect(responseData.next_start).toBe('cktest999');
+    });
+
+    it('returns next page start token when start is provided and next page exists', async () => {
+      const mockTokens = [
+        {
+          id: 'cktest789',
+          note: 'Token 3',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.test789',
+          scopes: ['styles:read'],
+          created: '2023-03-01T00:00:00.000Z',
+          modified: '2023-03-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      const headers = new Headers();
+      headers.set(
+        'Link',
+        '<https://api.mapbox.com/tokens/v2/testuser?limit=10&start=cktest999>; rel="next"'
+      );
+
+      const { httpRequest } = setupHttpRequest({
+        ok: true,
+        headers,
+        json: async () => mockTokens
+      });
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({ start: 'cktest789' });
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      expect(responseData.next_start).toBe('cktest999');
+    });
+
+    it('does not return next page start token when no pagination parameters are provided', async () => {
+      const mockTokens = [
+        {
+          id: 'cktest789',
+          note: 'Token 3',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.test789',
+          scopes: ['styles:read'],
+          created: '2023-03-01T00:00:00.000Z',
+          modified: '2023-03-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      // First page with Link header
+      const headers1 = new Headers();
+      headers1.set(
+        'Link',
+        '<https://api.mapbox.com/tokens/v2/testuser?limit=10&start=cktest999>; rel="next"'
+      );
+
+      // Second page without Link header (end of results)
+      const headers2 = new Headers();
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      // Reset from default response
+      mockHttpRequest.mockReset();
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers: headers1,
+        json: async () => mockTokens
+      } as Response);
+
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers: headers2,
+        json: async () => [] // Empty array for second page
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({});
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      expect(responseData.next_start).toBeUndefined();
+    });
+
+    it('does not return next page start token when no Link header is present', async () => {
+      const mockTokens = [
+        {
+          id: 'cktest789',
+          note: 'Token 3',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.test789',
+          scopes: ['styles:read'],
+          created: '2023-03-01T00:00:00.000Z',
+          modified: '2023-03-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers: new Headers(),
+        json: async () => mockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({ limit: 10 });
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      expect(responseData.next_start).toBeUndefined();
+    });
+
+    it('refuses cross-origin Link header to prevent token exfiltration', async () => {
+      const mockTokens = [
+        {
+          id: 'cktest123',
+          note: 'Token',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.test123',
+          scopes: ['styles:read'],
+          created: '2023-01-01T00:00:00.000Z',
+          modified: '2023-01-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      const headers = new Headers();
+      headers.set('Link', '<https://attacker.example.com/collect>; rel="next"');
+
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers,
+        json: async () => mockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({});
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      // Pagination should stop — no second request made to the attacker URL
+      expect(mockHttpRequest).toHaveBeenCalledTimes(1);
+    });
+
+    it('filters by token usage type', async () => {
+      const mockTokens = [
+        {
+          id: 'pktest123',
+          note: 'Public token',
+          usage: 'pk',
+          client: 'api',
+          token: 'pk.eyJ1IjoidGVzdHVzZXIifQ.pub123',
+          scopes: ['styles:read'],
+          created: '2023-04-01T00:00:00.000Z',
+          modified: '2023-04-01T00:00:00.000Z',
+          default: false
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers: new Headers(),
+        json: async () => mockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({ usage: 'pk' });
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      expect(responseData.tokens[0].usage).toBe('pk');
+
+      // Verify the usage parameter was included
+      expect(mockHttpRequest).toHaveBeenCalledWith(
+        expect.stringContaining('usage=pk'),
+        expect.any(Object)
+      );
+    });
+
+    it('handles API errors gracefully', async () => {
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: false,
+        status: 401,
+        statusText: 'Unauthorized',
+        text: async () =>
+          '{"message": "Invalid access token", "code": "TokenInvalid"}'
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({});
+
+      expect(result.isError).toBe(true);
+      expect(result.content[0]).toHaveProperty('type', 'text');
+      const errorText = (result.content[0] as TextContent).text;
+      expect(errorText).toContain('Failed to list tokens: 401');
+    });
+
+    it('handles network errors', async () => {
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      mockHttpRequest.mockRejectedValueOnce(new Error('Network error'));
+
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({});
+
+      expect(result.isError).toBe(true);
+      expect(result.content[0]).toHaveProperty('type', 'text');
+      const errorText = (result.content[0] as TextContent).text;
+      expect(errorText).toContain('Network error');
+    });
+
+    it('uses custom API endpoint when provided', async () => {
+      const originalEndpoint = MapboxApiBasedTool.mapboxApiEndpoint;
+
+      try {
+        // Temporarily modify the static property
+        vi.stubEnv('MAPBOX_API_ENDPOINT', 'https://api.staging.mapbox.com/');
+
+        const mockTokens: object[] = [];
+
+        const { httpRequest, mockHttpRequest } = setupHttpRequest();
+        mockHttpRequest.mockResolvedValueOnce({
+          ok: true,
+          headers: new Headers(),
+          json: async () => mockTokens
+        } as Response);
+
+        const tool = createListTokensTool(httpRequest);
+
+        await tool.run({});
+
+        expect(mockHttpRequest).toHaveBeenCalledWith(
+          expect.stringContaining('https://api.staging.mapbox.com/tokens/v2/'),
+          expect.any(Object)
+        );
+      } finally {
+        // Restore
+        vi.unstubAllEnvs();
+        if (originalEndpoint) {
+          vi.stubEnv('MAPBOX_API_ENDPOINT', originalEndpoint);
+        }
+      }
+    });
+
+    it('handles response with tokens property', async () => {
+      const mockResponse = {
+        tokens: [
+          {
+            id: 'cktest123',
+            note: 'Test token',
+            usage: 'pk',
+            client: 'api',
+            token: 'pk.test',
+            scopes: ['styles:read'],
+            created: '2023-04-01T00:00:00.000Z',
+            modified: '2023-04-01T00:00:00.000Z',
+            default: false
+          }
+        ]
+      };
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers: new Headers(),
+        json: async () => mockResponse
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+      const result = await tool.run({});
+
+      expect(result.isError).toBe(false);
+      const responseData = JSON.parse((result.content[0] as TextContent).text);
+      expect(responseData.tokens).toHaveLength(1);
+      expect(responseData.count).toBe(1);
+    });
+
+    it('handles schema validation failures gracefully and logs warning', async () => {
+      // API response with tokens that don't match schema (missing required fields)
+      const invalidMockTokens = [
+        {
+          id: 'cktest123',
+          note: 'Test token',
+          // Missing required fields like 'usage', 'client', 'scopes', etc.
+          unexpectedField: 'some value'
+        }
+      ];
+
+      const { httpRequest, mockHttpRequest } = setupHttpRequest();
+      mockHttpRequest.mockResolvedValueOnce({
+        ok: true,
+        headers: new Headers(),
+        json: async () => invalidMockTokens
+      } as Response);
+
+      const tool = createListTokensTool(httpRequest);
+
+      const result = await tool.run({});
+
+      // Schema validation failure now returns an error response
+      expect(result.isError).toBe(true);
+      expect(result.content[0]).toHaveProperty('type', 'text');
+      const errorText = (result.content[0] as { type: string; text: string })
+        .text;
+      expect(errorText).toMatch(
+        /Unexpected API response format from Mapbox API:/
+      );
+      expect(errorText).toContain('"code"');
+    });
+  });
+});

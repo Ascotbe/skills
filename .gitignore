@@ -1,8 +1,8 @@
 __pycache__/
 *.py[cod]
 
-# Generated mirrors, snapshots, state, and logs.
-repositories/
-external/
-state/
+# Runtime-only files. Downloaded repositories, snapshots, and catalog state are
+# intentionally tracked as a publishable snapshot.
 logs/
+state/sync-loop.pid
+repositories/**/.sync-git/

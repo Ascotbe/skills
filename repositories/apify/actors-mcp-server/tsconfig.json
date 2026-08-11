@@ -1,0 +1,17 @@
+{
+    "extends": "@apify/tsconfig",
+    "compilerOptions": {
+        "module": "ES2022",
+        "moduleResolution": "Bundler",
+        "skipLibCheck": true,
+        "noEmit": true,
+    },
+    "include": [
+        "src/**/*",
+        "tests/**/*",
+        "evals/**/*"
+    ],
+    "exclude": [
+        "src/web"
+    ]
+}

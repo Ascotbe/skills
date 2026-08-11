@@ -1,0 +1,39 @@
+# LangChain + LangSmith + DeepAgents Development Guide
+
+This project uses skills that contain up-to-date patterns and CLI tools.
+
+## CRITICAL: Invoke Skills BEFORE Writing Code
+
+**ALWAYS** invoke the relevant skill first - skills have the correct imports, patterns, and scripts that prevent common mistakes.
+
+### LangSmith Skills
+- **langsmith-trace** - Invoke for ANY trace querying or analysis
+- **langsmith-dataset** - Invoke for ANY dataset creation from traces
+- **langsmith-evaluator** - Invoke for ANY evaluator creation
+
+### LangChain Skills
+- **langchain-dependencies** - Invoke when setting up a NEW project or debugging package versions, installation, or dependency issues
+- **langchain-fundamentals** - Invoke for create_agent, @tool decorator, middleware patterns
+- **langchain-rag** - Invoke for RAG pipelines, vector stores, embeddings
+- **langchain-middleware** - Invoke for structured output with Pydantic
+
+### LangGraph Skills
+- **langgraph-fundamentals** - Invoke for StateGraph, state schemas, edges, Command, Send, invoke, streaming, error handling
+- **langgraph-persistence** - Invoke for checkpointers, thread_id, time travel, memory, subgraph scoping
+- **langgraph-human-in-the-loop** - Invoke for interrupts, human review, error handling, approval workflows
+
+### DeepAgents Skills
+- **deep-agents-core** - Invoke for DeepAgents harness architecture
+- **deep-agents-memory** - Invoke for long-term memory with StoreBackend
+- **deep-agents-orchestration** - Invoke for multi-agent coordination
+
+## Debugging Flow: Build → Trace → Dataset → Evaluate
+
+When stuck or debugging, use this powerful workflow:
+1. **Build agent** using LangChain, DeepAgents, or LangGraph patterns
+2. **Run agent** to generate traces in LangSmith
+3. **Query traces** using `langsmith-trace` to find interesting examples
+4. **Create dataset** using `langsmith-dataset` from those traces
+5. **Build evaluator** using `langsmith-evaluator` to measure quality
+
+LangSmith skills use the `langsmith` CLI tool -- run `langsmith --help` to see available commands.

@@ -1,0 +1,25 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Default for all files
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+# Shell scripts conventionally use 4-space indents
+[*.sh]
+indent_size = 4
+
+# Python conventionally uses 4-space indents (PEP 8)
+[*.py]
+indent_size = 4
+
+# Markdown trailing whitespace can be a deliberate line break
+[*.md]
+trim_trailing_whitespace = false

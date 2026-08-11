@@ -1,0 +1,10 @@
+version = 1
+
+agents = ["claude", "cursor"]
+
+[trust]
+github_orgs = ["getsentry"]
+
+[[skills]]
+name = "*"
+source = "getsentry/skills"

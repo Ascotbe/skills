@@ -1,0 +1,12 @@
+```javascript
+Sentry.init({
+  dsn: "___PUBLIC_DSN___",
+  beforeSendTransaction(event) {
+    if (event.transaction === "/unimportant/route") {
+      // Don't send the event to Sentry
+      return null;
+    }
+    return event;
+  },
+});
+```

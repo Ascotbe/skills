@@ -1,0 +1,40 @@
+# Task: Explain a SQL query with JOIN
+# This tests the skill's ability to explain database queries
+id: explain-sql-join-001
+name: Explain SQL JOIN Query
+description: |
+  Test explaining a SQL query with table joins.
+  The skill should explain JOIN, WHERE, ORDER BY, and LIMIT clauses.
+
+tags:
+  - sql
+  - join
+  - intermediate
+
+inputs:
+  prompt: "Help me understand this SQL query"
+  context:
+    language: sql
+    complexity: intermediate
+    concept: table-join
+  files:
+    - path: user_orders.sql
+
+expected:
+  output_contains:
+    - "join"
+  outcomes:
+    - type: task_completed
+  behavior:
+    max_tool_calls: 5
+
+graders:
+  - name: explains_sql_join
+    type: code
+    config:
+      assertions:
+        - "len(output) > 10"
+      # For real testing:
+      # - "'join' in output.lower()"
+      # - "'where' in output.lower() or 'filter' in output.lower()"
+      # - "'order' in output.lower() or 'sort' in output.lower()"

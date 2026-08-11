@@ -1,0 +1,36 @@
+version = 1
+
+[defaults]
+runtime = "pi"
+failOn = "high"
+reportOn = "medium"
+ignorePaths = ["dist/**"]
+
+[[skills]]
+name = "code-review"
+paths = ["packages/*/src/**/*.ts"]
+ignorePaths = ["packages/*/src/**/*.test.ts"]
+
+[[skills.triggers]]
+type = "pull_request"
+actions = ["opened", "synchronize", "reopened"]
+
+[[skills]]
+name = "security-review"
+remote = "getsentry/sentry-skills"
+paths = ["packages/*/src/**/*.ts"]
+ignorePaths = ["packages/*/src/**/*.test.ts"]
+
+[[skills.triggers]]
+type = "pull_request"
+actions = ["opened", "synchronize", "reopened"]
+
+# TODO: enable once getsentry/warden#144 lands
+# [[skills]]
+# name = "warden-lint-judge"
+# remote = "getsentry/skills"
+# scope = "report"
+#
+# [[skills.triggers]]
+# type = "pull_request"
+# actions = ["opened", "synchronize", "reopened"]

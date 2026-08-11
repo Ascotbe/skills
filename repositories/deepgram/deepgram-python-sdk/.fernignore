@@ -1,0 +1,225 @@
+# Custom client implementation extending BaseClient with additional features:
+# - access_token parameter support (Bearer token authentication)
+# - Automatic session ID generation and header injection (x-deepgram-session-id)
+# - transport_factory parameter for plugging in a custom WebSocket transport
+# - reconnect flag (default True) — declarative flag indicating whether the SDK
+#   is expected to manage WebSocket reconnects. Auto-disabled when a custom
+#   transport_factory is provided so transports that own their retry lifecycle
+#   (e.g. SageMaker) aren't double-stacked with future SDK-side reconnect logic.
+# This file is manually maintained and should not be regenerated
+src/deepgram/client.py
+
+# Hand-written security utility: installs a logging.Filter on the third-party
+# `websockets` client/server loggers that masks the Authorization header (API
+# key / access token) in DEBUG handshake logs. No Fern-generated counterpart.
+src/deepgram/_secure_logging.py
+
+# WebSocket socket clients:
+# - except Exception broad catch (supports custom transports, generator narrows to WebSocketException)
+# - _sanitize_numeric_types in agent socket client (float→int for API)
+# - optional message param on control send_ methods (send_keep_alive, send_close_stream, etc.)
+#   so users don't need to instantiate the type themselves for no-payload control messages
+# - listen/v2 send_configure: typing.Any / raw _send shim (generator's ListenV2Configure model
+#   and ListenV2ConfigureSuccess not used)
+# [temporarily frozen — manual patches listed above]
+src/deepgram/agent/v1/socket_client.py
+src/deepgram/listen/v1/socket_client.py
+src/deepgram/listen/v2/socket_client.py
+src/deepgram/speak/v1/socket_client.py
+src/deepgram/speak/v2/socket_client.py
+
+# Backward-compat patch: AgentV1SettingsAgentContext schema restructure as of
+# 2026-05-05. The new schema nests messages under .context.messages; this file
+# carries a model_validator(mode='before') that accepts the legacy `messages=`
+# kwarg and remaps it to `context={"messages": ...}` so existing callers keep
+# producing the correct wire payload, plus a read-side `.messages` property so
+# existing attribute access keeps working.
+src/deepgram/agent/v1/types/agent_v1settings_agent_context.py
+src/deepgram/agent/v1/types/agent_v1settings_agent.py
+src/deepgram/agent/v1/types/agent_v1settings.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent.py
+src/deepgram/agent/v1/requests/agent_v1settings.py
+
+# Backward-compatibility alias shims for renamed generated public types/params.
+# These are hand-written wrappers around the current generated names and must not be regenerated.
+# The *_content_role / *_function_calls_function_calls_item shims (and the double-`Context`
+# variants below) were recreated by hand after the 2026-07-31 regen deleted the underlying
+# generated modules; they now re-export the canonical ConversationHistoryMessageRole /
+# FunctionCallHistoryMessageFunctionCallsItem types so the old public import paths keep working.
+src/deepgram/agent/v1/types/agent_v1history_content.py
+src/deepgram/agent/v1/types/agent_v1history_content_role.py
+src/deepgram/agent/v1/types/agent_v1history_function_calls.py
+src/deepgram/agent/v1/types/agent_v1history_function_calls_function_calls_item.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_context_messages_item_content_role.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_context_messages_item_function_calls_function_calls_item.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_messages_item.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_messages_item_content.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_messages_item_content_role.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_messages_item_function_calls.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_messages_item_function_calls_function_calls_item.py
+src/deepgram/agent/v1/requests/agent_v1history_content.py
+src/deepgram/agent/v1/requests/agent_v1history_function_calls.py
+src/deepgram/agent/v1/requests/agent_v1history_function_calls_function_calls_item.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_context_messages_item_function_calls_function_calls_item.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_messages_item.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_messages_item_content.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_messages_item_function_calls.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_messages_item_function_calls_function_calls_item.py
+src/deepgram/types/create_key_v1request_one.py
+src/deepgram/requests/create_key_v1request_one.py
+
+# Backward-compatibility alias shims for the 2026-07-31 provider/model type renames.
+# The generator renamed these public types (dropping the Speak/Think provider prefixes)
+# with no compat aliases: AnthropicThinkProviderModel->AnthropicModel,
+# GoogleThinkProviderModel->GoogleModel, GroqThinkProviderReasoningMode->GroqReasoningMode,
+# CartesiaSpeakProviderModelId->CartesiaModelId, CartesiaSpeakProviderVoice->CartesiaVoice,
+# DeepgramSpeakProviderModel->DeepgramModel. These hand-written aliases re-export the new
+# names under the old public import paths so existing callers keep working. No Fern
+# equivalent — frozen so the generator won't delete them.
+src/deepgram/types/anthropic_think_provider_model.py
+src/deepgram/types/google_think_provider_model.py
+src/deepgram/types/groq_think_provider_reasoning_mode.py
+src/deepgram/types/cartesia_speak_provider_model_id.py
+src/deepgram/types/cartesia_speak_provider_voice.py
+src/deepgram/types/deepgram_speak_provider_model.py
+src/deepgram/requests/cartesia_speak_provider_voice.py
+
+# Backward-compatibility alias shims for the 2026-05-14 listen-provider rename.
+# The spec deduplicated AgentV1SettingsAgent[Context]ListenProviderV1/V2/V2LanguageHint
+# into a single top-level DeepgramListenProvider* type. These hand-written aliases
+# preserve the old public import paths so existing callers keep working.
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_listen_provider_v1.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_listen_provider_v2.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_listen_provider_v2language_hint.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_listen_provider_v1.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_listen_provider_v2.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_listen_provider_v1.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_listen_provider_v2.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_context_listen_provider_v2language_hint.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_listen_provider_v1.py
+src/deepgram/agent/v1/requests/agent_v1settings_agent_listen_provider_v2.py
+
+# Hand-written compat shims recreating the top-level DeepgramListenProviderV2LanguageHint
+# type/param that Fern removed in the 2026-06-15 regen (Union[str, List[str]]). The
+# *V2LanguageHint listen-provider aliases above import these, and they remain part of the
+# public import surface, so they are recreated by hand and frozen so Fern won't delete them.
+src/deepgram/types/deepgram_listen_provider_v2language_hint.py
+src/deepgram/requests/deepgram_listen_provider_v2language_hint.py
+
+# Behavioral back-compat shim for the language_hint -> language_hints rename (2026-06-15
+# regen). The public field was historically (incorrectly) named `language_hint`, accepting
+# a str or a list; the API field is `language_hints` (a list, and the server uses
+# deny_unknown_fields so the singular key is rejected on the wire). These three generated
+# models carry a hand-added model_validator(mode='before') / root_validator(pre=True) that
+# remaps a legacy `language_hint=` kwarg to `language_hints` and drops the dead singular
+# key. Frozen so Fern won't strip the validator on regen. Remove the shim and unfreeze when
+# the singular alias is intentionally retired in a future major release.
+src/deepgram/types/deepgram_listen_provider_v2.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_listen_provider.py
+src/deepgram/agent/v1/types/agent_v1settings_agent_context_listen_provider.py
+
+# Behavioral back-compat shim for the AgentV1UpdateListen provider retype (2026-07-31
+# regen). The provider field changed from a bare DeepgramListenProviderV2 to the new
+# required discriminated union AgentV1UpdateListenListenProvider (_V1/_V2, discriminant
+# "version"), which rejects the old DeepgramListenProviderV1/V2 payloads. This generated
+# model carries a hand-added model_validator(mode='before') / root_validator(pre=True)
+# that coerces a legacy Deepgram provider (or a dict lacking the version discriminant)
+# into the new shape so existing callers keep working. Frozen so Fern won't strip the
+# validator on regen. Remove the shim and unfreeze when the old provider payloads are
+# intentionally retired in a future major release.
+src/deepgram/agent/v1/types/agent_v1update_listen_listen.py
+
+# Hand-written compat shim recreating ListenV2CloseStreamType, which Fern removed in the
+# 2026-06-15 regen (docs #946). The original generated type wrongly allowed
+# Union[Literal["Finalize","CloseStream","KeepAlive"], Any] — v2 copied v1's control-message
+# enum, but a CloseStream message's `type` can only ever be "CloseStream". Recreated as the
+# corrected single-value Literal["CloseStream"] to preserve the public import path without
+# resurrecting the invalid values. Frozen so Fern won't delete it again.
+src/deepgram/listen/v2/types/listen_v2close_stream_type.py
+
+# Package __init__.py files that carry hand-applied legacy alias re-exports for the
+# above shims. Fern would otherwise regenerate these and strip the legacy entries on
+# every regen. Frozen to preserve the public-import surface for renamed types/params.
+# Re-apply genuine new generator additions to these files manually after each regen.
+src/deepgram/__init__.py
+src/deepgram/agent/__init__.py
+src/deepgram/agent/v1/__init__.py
+src/deepgram/agent/v1/types/__init__.py
+src/deepgram/agent/v1/requests/__init__.py
+src/deepgram/types/__init__.py
+src/deepgram/requests/__init__.py
+# listen __init__.py files re-export the ListenV2CloseStreamType shim above.
+src/deepgram/listen/__init__.py
+src/deepgram/listen/v2/__init__.py
+src/deepgram/listen/v2/types/__init__.py
+
+# Coerces Python bools to lowercase "true"/"false" before urlencode, which
+# otherwise stringifies via str() and produces "True"/"False" — rejected by
+# Deepgram's websocket query strings. HTTP raw_clients hand params to httpx
+# directly and are unaffected; httpx accepts the pre-stringified values fine.
+# [temporarily frozen — manual patches listed above]
+src/deepgram/core/query_encoder.py
+
+# Hand-written custom tests
+tests/custom/test_agent_history.py
+tests/custom/test_agent_update_listen.py
+tests/custom/test_compat_aliases.py
+tests/custom/test_eot_thresholds_feature.py
+tests/custom/test_language_hint_compat.py
+tests/custom/test_language_hints_feature.py
+tests/custom/test_latency_report_stt_compat.py
+tests/custom/test_listen_v2_connect_wire.py
+tests/custom/test_listen_v2_regen_constraints.py
+tests/custom/test_query_encoder.py
+tests/custom/test_secure_logging.py
+tests/custom/test_socket_client_shims.py
+tests/custom/test_speak_v2_connect_wire.py
+tests/custom/test_speak_v2_socket.py
+tests/custom/test_text_builder.py
+tests/custom/test_transport.py
+tests/typecheck/compat_aliases.py
+
+# Wire test with restored compatibility coverage for legacy create-key request alias
+tests/wire/test_manage_v1_projects_keys.py
+
+# Manual standalone tests
+tests/manual
+
+# README with custom examples, migration guide links, and contributing section
+README.md
+
+# Changelog managed by release-please
+CHANGELOG.md
+
+# Contributing guide
+CONTRIBUTING.md
+
+# Reference with Fern-generated REST API docs plus manually maintained WebSocket sections
+reference.md
+
+# TextBuilder helpers for TTS pronunciation and pause controls.
+# Manually maintained — not auto-generated.
+src/deepgram/helpers
+
+# Custom WebSocket transport support:
+# - transport_interface.py: Protocol definitions (SyncTransport, AsyncTransport) for
+#   users implementing custom transports. This is the public-facing interface file.
+# - transport.py: Internal shims, install/restore helpers, and conflict guard.
+# - transports/: Module stub (SageMaker transport moved to separate deepgram-sagemaker package).
+# All are manually maintained and should not be regenerated.
+src/deepgram/transport_interface.py
+src/deepgram/transport.py
+src/deepgram/transports
+
+# Agent files (Claude Code, OpenCode, other agent tools)
+# .agents/skills/ holds agent-agnostic skills discoverable via `npx skills`
+CLAUDE.md
+AGENTS.md
+.claude
+.agents
+
+# Folders to ignore
+.github
+docs
+examples

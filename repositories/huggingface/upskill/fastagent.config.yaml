@@ -1,0 +1,18 @@
+# FastAgent Configuration for upskill
+# This configures the agent harness for skill generation and evaluation
+
+# Default Model Configuration:
+# Format: <provider>.<model_string>.<reasoning_effort?>
+# Examples: anthropic.claude-sonnet-4-20250514, openai.gpt-4.1
+# Aliases: haiku, sonnet, opus (Anthropic), gpt-4.1, o3-mini (OpenAI)
+# Local models: generic.<model_name> (e.g., generic.llama3.2:latest)
+#default_model: kimi
+
+# Logging and Console Configuration
+logger:
+  progress_display: false
+  show_chat: false
+  show_tools: false
+  truncate_tools: true
+  streaming: markdown
+

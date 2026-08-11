@@ -1,0 +1,44 @@
+node_modules/
+dist/
+dist-bin/
+.artifacts/
+*.log
+.DS_Store
+.env*
+*.tgz
+mcp-server/public/screenshots/*
+mcp-server/.next/*
+.gemini/
+.cursor/
+.claude/
+.agents/
+!.agents/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/analyze-bundle/
+!.agents/skills/analyze-bundle/SKILL.md
+!.agents/skills/deepsec/
+!.agents/skills/deepsec/SKILL.md
+.mcp.json
+next-devtools-mcp/
+
+# Vercel project link metadata is local to each checkout/app.
+.vercel/
+**/.vercel/
+.env*.local
+*.tsbuildinfo
+
+# Platform package build artifacts (only package.json should be committed)
+packages/*/bin/
+packages/*/mcp-server/
+packages/*/skills/
+packages/*/src/
+
+mcp-server/next-env.d.ts
+
+# Large video files
+www/public/d3k-christmas-duet.mp4
+www/public/d3k-christmas-duet2.mp4
+www/deepsec/
+.blackboxcli/

@@ -1,0 +1,189 @@
+# Dockerfile.worker — builds cmd/duckgres-worker, the DuckDB-service-only
+# binary. Pinned to a single DuckDB driver version per build via the
+# DUCKDB_GO_VERSION / DUCKDB_BINDINGS_VERSION / DUCKDB_EXTENSION_VERSION /
+# HTTPFS_EXTENSION_TAG build args. The matrix-build CD workflow produces
+# one image per (DuckDB version × arch).
+#
+# The control plane spawns these images as worker pods; their PG wire
+# surface is the all-in-one duckgres binary (or the CP-only binary in
+# cmd/duckgres-controlplane), which routes queries to whichever worker
+# image the per-tenant `image` config-store column points at.
+FROM golang:1.25-bookworm AS builder
+
+RUN apt-get update && apt-get install -y --no-install-recommends gcc g++ libc6-dev curl gzip && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /build
+
+# DuckDB driver pin. Default to whatever the repo's go.mod is currently
+# tracking; override via --build-arg when the matrix produces an image
+# for a specific DuckDB minor version. The corresponding
+# duckdb-go-bindings version must move in lock-step (the duckdb-go-bindings
+# release stream uses the same numeric encoding as duckdb-go/v2 just
+# without the v2 prefix).
+ARG DUCKDB_GO_VERSION=
+ARG DUCKDB_BINDINGS_VERSION=
+ARG TARGETARCH
+
+# Copy ONLY the module files first and apply the per-build DuckDB pin, so the
+# module download + extension fetch below sit in layers keyed solely on
+# go.mod/go.sum + the pin args. On a source-only PR these cache-hit and the
+# final `go build` recompiles only changed first-party code.
+#
+# IMPORTANT: do NOT run `go mod tidy` here. With only go.mod/go.sum present
+# (no .go files), tidy prunes EVERY require directive — it sees zero imports —
+# leaving an empty go.mod that breaks the build. `go get pkg@ver` explicitly
+# records the require regardless of imports, so it pins correctly without
+# source. tidy runs after COPY . ., once the real imports are visible.
+COPY go.mod go.sum ./
+
+RUN if [ -n "$DUCKDB_GO_VERSION" ] && [ -n "$DUCKDB_BINDINGS_VERSION" ]; then \
+      go get "github.com/duckdb/duckdb-go/v2@${DUCKDB_GO_VERSION}" \
+      && go get "github.com/duckdb/duckdb-go-bindings@${DUCKDB_BINDINGS_VERSION}" \
+      && for arch in darwin-arm64 darwin-amd64 linux-arm64 linux-amd64 windows-amd64; do \
+           go get "github.com/duckdb/duckdb-go-bindings/lib/${arch}@${DUCKDB_BINDINGS_VERSION}" 2>/dev/null || true; \
+         done ; \
+    fi
+
+RUN go mod download
+
+# Bundled DuckDB extensions. Downloaded BEFORE `COPY . .` so this layer
+# depends only on the extension/pin args, not on source — a source-only PR
+# keeps the GHA layer-cache hit and skips the 5 downloads. (They previously
+# ran after the source COPY + build, so they re-fetched on every edit.)
+ARG DUCKDB_EXTENSION_VERSION=1.5.5
+ARG HTTPFS_EXTENSION_TAG=v1.5.5-cred-refresh-write-retry
+ARG DUCKLAKE_EXTENSION_TAG=v1.0-posthog.7
+ARG DUCKDB_EXTENSION_REPOSITORY=https://extensions.duckdb.org
+# Repository for postgres_scanner specifically. The checksums content-pin the
+# DuckDB 1.5.5 nightly artifact built from duckdb-postgres ab217c6; CI overrides
+# all three values together for rollback rows.
+ARG POSTGRES_SCANNER_REPOSITORY=https://nightly-extensions.duckdb.org
+ARG POSTGRES_SCANNER_SHA256_AMD64=7ff4913fab203f7895eaa6a9a87a14a7ad659d400deff667f8bf16e58a28937f
+ARG POSTGRES_SCANNER_SHA256_ARM64=9ea7d5a3610f2b460bd2a5075684c5f6dad55fa19745a377b5471f4994a8b460
+
+# Cross-check that DUCKDB_EXTENSION_VERSION (which keys the bundled-extension
+# directory layout) matches the DuckDB version implied by DUCKDB_BINDINGS_VERSION.
+# Encoding is `v0.<major><minor:02d><patch:02d>.0`, so 1.5.5 ↔ v0.10505.0.
+# Without this, a CI matrix slip (e.g. extension_version=1.5.5 while bindings=v0.10503.0)
+# would seed extensions under v1.5.5/ for a 1.5.3 engine that looks under v1.5.3/,
+# silently falling back to upstream extensions.duckdb.org for httpfs/ducklake
+# — the bundled PostHog forks would never load.
+RUN if [ -n "$DUCKDB_BINDINGS_VERSION" ] && [ -n "$DUCKDB_EXTENSION_VERSION" ]; then \
+      major="${DUCKDB_EXTENSION_VERSION%%.*}" ; \
+      rest="${DUCKDB_EXTENSION_VERSION#*.}" ; \
+      minor="${rest%%.*}" ; \
+      patch="${rest##*.}" ; \
+      expected=$(printf 'v0.%d%02d%02d.0' "$major" "$minor" "$patch") ; \
+      if [ "$expected" != "$DUCKDB_BINDINGS_VERSION" ]; then \
+        echo "ERROR: extension/bindings version mismatch — DUCKDB_EXTENSION_VERSION=$DUCKDB_EXTENSION_VERSION implies bindings $expected, but got $DUCKDB_BINDINGS_VERSION" >&2 ; \
+        exit 1 ; \
+      fi ; \
+      echo "Verified: DUCKDB_EXTENSION_VERSION=$DUCKDB_EXTENSION_VERSION matches DUCKDB_BINDINGS_VERSION=$DUCKDB_BINDINGS_VERSION" ; \
+    fi
+
+# `: ${VAR:?msg}` asserts every required input is non-empty — catches a
+# CI matrix row that forgets to pass a build-arg and would otherwise
+# silently fall back to the ARG default, producing a cross-version
+# bundle. The per-file `[ -s ... ]` size check below catches the
+# curl|gunzip failure modes — a curl -fsSL 404 writes nothing, gunzip
+# on empty input exits non-zero, the && chain breaks. (`set -o pipefail`
+# would be cleaner but /bin/sh here is dash, which rejects -o pipefail.)
+RUN : "${DUCKDB_EXTENSION_VERSION:?must be set}" \
+    && : "${HTTPFS_EXTENSION_TAG:?must be set}" \
+    && : "${DUCKLAKE_EXTENSION_TAG:?must be set}" \
+    && : "${DUCKDB_EXTENSION_REPOSITORY:?must be set}" \
+    && : "${POSTGRES_SCANNER_REPOSITORY:?must be set}" \
+    && case "${TARGETARCH}" in \
+         amd64) postgres_scanner_sha256="${POSTGRES_SCANNER_SHA256_AMD64}" ;; \
+         arm64) postgres_scanner_sha256="${POSTGRES_SCANNER_SHA256_ARM64}" ;; \
+         *) echo "ERROR: unsupported TARGETARCH for postgres_scanner: ${TARGETARCH}" >&2; exit 1 ;; \
+       esac \
+    && : "${postgres_scanner_sha256:?postgres_scanner checksum must be set}" \
+    && mkdir -p "/build/duckdb-extensions/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}" \
+    && curl -fsSL "https://github.com/PostHog/duckdb-httpfs/releases/download/${HTTPFS_EXTENSION_TAG}/httpfs-linux-${TARGETARCH}.duckdb_extension" \
+      -o "/build/duckdb-extensions/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}/httpfs.duckdb_extension" \
+    && curl -fsSL "https://github.com/PostHog/ducklake/releases/download/${DUCKLAKE_EXTENSION_TAG}/ducklake-linux-${TARGETARCH}.duckdb_extension" \
+      -o "/build/duckdb-extensions/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}/ducklake.duckdb_extension" \
+    && curl -fsSL "${DUCKDB_EXTENSION_REPOSITORY}/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}/json.duckdb_extension.gz" \
+      | gunzip > "/build/duckdb-extensions/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}/json.duckdb_extension" \
+    && curl -fsSL "${POSTGRES_SCANNER_REPOSITORY}/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}/postgres_scanner.duckdb_extension.gz" \
+      -o /tmp/postgres_scanner.duckdb_extension.gz \
+    && echo "${postgres_scanner_sha256}  /tmp/postgres_scanner.duckdb_extension.gz" | sha256sum -c - \
+    && gunzip -c /tmp/postgres_scanner.duckdb_extension.gz \
+      > "/build/duckdb-extensions/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}/postgres_scanner.duckdb_extension" \
+    && rm /tmp/postgres_scanner.duckdb_extension.gz \
+    && for f in httpfs ducklake json postgres_scanner; do \
+         [ -s "/build/duckdb-extensions/v${DUCKDB_EXTENSION_VERSION}/linux_${TARGETARCH}/$f.duckdb_extension" ] \
+           || { echo "ERROR: $f.duckdb_extension is empty after fetch" >&2; exit 1; }; \
+       done
+
+COPY . .
+
+# COPY . . overlaid the host's (unpinned) go.mod/go.sum back on top of the
+# pinned ones — without this re-pin the build would link the repo-default
+# DuckDB version regardless of the matrix row (the real bug the bindings-pin
+# verify below guards against). Re-apply the pin now that the source — and
+# thus the real import set — is present, so `go mod tidy` keeps every needed
+# require instead of pruning it. The module cache from the pre-COPY layers
+# stays valid: same versions, so `go get` is a fast metadata no-op.
+RUN if [ -n "$DUCKDB_GO_VERSION" ] && [ -n "$DUCKDB_BINDINGS_VERSION" ]; then \
+      go get "github.com/duckdb/duckdb-go/v2@${DUCKDB_GO_VERSION}" \
+      && go get "github.com/duckdb/duckdb-go-bindings@${DUCKDB_BINDINGS_VERSION}" \
+      && for arch in darwin-arm64 darwin-amd64 linux-arm64 linux-amd64 windows-amd64; do \
+           go get "github.com/duckdb/duckdb-go-bindings/lib/${arch}@${DUCKDB_BINDINGS_VERSION}" 2>/dev/null || true; \
+         done \
+      && go mod tidy ; \
+    fi
+
+ARG VERSION=dev
+ARG COMMIT=unknown
+ARG BUILD_TAGS=""
+
+RUN CGO_ENABLED=1 \
+    DUCKGRES_TEST_DUCKDB_EXTENSION_DIRECTORY=/build/duckdb-extensions \
+    go test -count=1 -tags "${BUILD_TAGS}" \
+      -run '^TestDoCopyFromStdinIngestsPostgresBinaryWithBundledScanner$' \
+      ./duckdbservice
+
+RUN CGO_ENABLED=1 go build -tags "${BUILD_TAGS}" \
+    -ldflags "-X main.version=${VERSION} -X main.commit=${COMMIT} -X main.date=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+    -o duckgres-worker \
+    ./cmd/duckgres-worker
+
+# Defense-in-depth: assert the binary actually links against the bindings
+# version the build args asked for. If a future Dockerfile change re-breaks
+# the pinning, this fails the build instead of shipping a silently-wrong
+# image. The DUCKDB_BINDINGS_VERSION arg encodes DuckDB minor (e.g.
+# v0.10501.0 -> DuckDB 1.5.1); the embedded module info in the binary must
+# match exactly.
+RUN if [ -n "$DUCKDB_BINDINGS_VERSION" ]; then \
+      embedded=$(go version -m ./duckgres-worker | awk '$2 == "github.com/duckdb/duckdb-go-bindings" { print $3 }') ; \
+      if [ "$embedded" != "$DUCKDB_BINDINGS_VERSION" ]; then \
+        echo "ERROR: bindings pin mismatch — wanted $DUCKDB_BINDINGS_VERSION, got $embedded" >&2 ; \
+        echo "       (full embedded module info follows)" >&2 ; \
+        go version -m ./duckgres-worker | grep duckdb >&2 ; \
+        exit 1 ; \
+      fi ; \
+      echo "Verified: duckgres-worker linked against duckdb-go-bindings@$embedded" ; \
+    fi
+
+FROM chainguard/wolfi-base:latest
+
+# libstdc++ is the C++ runtime the CGO-linked DuckDB engine needs — present
+# implicitly on debian-slim, but not in wolfi-base.
+RUN apk add --no-cache ca-certificates-bundle libstdc++ \
+    && addgroup -S duckgres && adduser -S -G duckgres -h /app duckgres
+
+WORKDIR /app
+COPY --from=builder /build/duckgres-worker .
+COPY --from=builder /build/duckdb-extensions ./extensions
+RUN mkdir -p data certs && chown -R duckgres:duckgres /app
+
+USER duckgres
+
+# 8816 = Arrow Flight SQL listener (configurable via --duckdb-listen)
+# 9090 = metrics. The CP-side PG wire port (5432) is intentionally absent;
+# this binary does not serve PG wire.
+EXPOSE 8816 9090
+
+ENTRYPOINT ["/app/duckgres-worker"]

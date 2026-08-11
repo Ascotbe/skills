@@ -1,0 +1,86 @@
+Metrics are enabled by default. Once you initialize the SDK, you can send metrics using the `sentry_sdk.metrics` APIs.
+
+The `metrics` namespace exposes three methods that you can use to capture different types of metric information: `count`, `gauge`, and `distribution`.
+
+### Emit a Counter
+
+Counters are one of the more basic types of metrics and can be used to count certain event occurrences.
+
+To emit a counter, do the following:
+
+```python
+import sentry_sdk
+
+# Record five total button clicks
+sentry_sdk.metrics.count(
+	"button_click",
+	5,
+	attributes={
+		"browser": "Firefox",
+		"app_version": "1.0.0"
+	},
+)
+```
+
+### Emit a Distribution
+
+Distributions help you get the most insights from your data by allowing you to obtain aggregations such as `p90`, `min`, `max`, and `avg`.
+
+To emit a distribution, do the following:
+
+```python
+import sentry_sdk
+
+# Add '15.0' to a distribution used for tracking the loading times per page.
+sentry_sdk.metrics.distribution(
+	"page_load",
+	15.0,
+	unit="millisecond",
+	attributes={
+		"page": "/home"
+	},
+)
+```
+
+### Emit a Gauge
+
+Gauges let you obtain aggregates like `min`, `max`, `avg`, `sum`, and `count`. They can be represented in a more space-efficient way than distributions, but they can't be used to get percentiles. If percentiles aren't important to you, we recommend using gauges.
+
+To emit a gauge, do the following:
+
+```python
+import sentry_sdk
+
+# Add '15.0' to a gauge used for tracking the loading times for a page.
+sentry_sdk.metrics.gauge(
+	"page_load",
+	15.0,
+	unit="millisecond",
+	attributes={
+		"page": "/home"
+	},
+)
+```
+
+## Attributes
+
+Attributes let you filter and group metrics in Sentry. Use them for:
+
+- Environment segmentation
+- Feature flag tracking
+- User tier analysis
+
+You've already seen attributes passed directly to individual metric calls in the examples above. See <PlatformLink to="/enriching-events/attributes">Attributes</PlatformLink> for more information on how attributes work across spans, logs, and metrics.
+
+### Shared Attributes
+
+Use `sentry_sdk.set_attribute` to attach attributes that apply to all logs, metrics, and spans (only in <PlatformLink to="/tracing/streamed-spans">stream mode</PlatformLink>). These write to the isolation scope, so they apply for the current request or session:
+
+```python
+import sentry_sdk
+
+sentry_sdk.set_attribute("is_admin", True)
+sentry_sdk.set_attribute("auth_provider", "google")
+```
+
+To target a broader or narrower scope instead, see <PlatformLink to="/enriching-events/attributes">Attributes</PlatformLink>.

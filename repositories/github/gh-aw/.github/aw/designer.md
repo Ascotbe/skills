@@ -1,0 +1,272 @@
+# Workflow Designer
+
+Use this skill to run a structured interview with users who know their goal but not the workflow syntax yet, then generate one complete workflow `.md` file.
+
+## When to Use This Skill
+
+Use this before `.github/aw/create-agentic-workflow.md` when requirements are unclear or incomplete.
+
+- Use `.github/aw/designer.md` to discover and confirm requirements.
+- Use `.github/aw/create-agentic-workflow.md` once requirements are clear and ready for implementation.
+- Use `.github/aw/agentic-chat.md` when the user wants a specification/pseudo-code instead of a runnable workflow file.
+- Load `.github/aw/maintainer.md` when the goal is recurring repository maintenance, backlog reduction, owned-PR upkeep, or long-term code health.
+
+## Interview Framework
+
+Ask one question at a time. Move to the next phase only after the current phase is clear.
+
+### Phase 1: Goal
+
+Ask: **"What do you want to automate?"**
+
+Capture:
+- Workflow name (kebab-case candidate)
+- Brief description
+- Optional emoji
+
+### Phase 1b: Repository Survey for Maintenance Workflows
+
+Before asking the user to choose maintenance tasks, inspect the target repository and establish an evidence-based baseline. Do not ask for information that repository files or GitHub data can answer.
+
+Survey:
+
+- project type and ecosystems from manifests, languages, repository layout, generated files, and monorepo boundaries
+- local rules from `AGENTS.md`, `CONTRIBUTING.md`, `CODEOWNERS`, pull request templates, release documentation, and existing automation
+- recent activity over a representative window: commits, releases, issue and pull request creation/closure, contributor activity, and automation volume
+- issue health: open count, age distribution, unlabelled items, stale items, milestones, recurring categories, response status, and duplicate signals
+- pull request health: open count, age, review state, failed checks, merge conflicts, abandoned work, and bot-owned versus contributor-owned items
+- validation and operational health: available format/lint/build/test commands, recent CI failures, flaky signals, dependency update load, and release cadence
+
+Use bounded queries and report the window, limits, and unavailable data. Separate observed facts from inferred strategy. Based on the survey, recommend two or three low-risk task families, a conservative cadence, per-run limits, state/deduplication needs, and pressure valves. Ask the user only about policy choices that cannot be inferred, such as acceptable maintainer attention, protected areas, or whether contributor-facing comments are allowed.
+
+### Phase 2: Trigger
+
+Ask: **"When should this run?"**
+
+Follow up only if needed:
+- Which event type(s)?
+- Any filters (labels, branches, commands)?
+- Scheduled cadence (daily/weekly/hourly)?
+
+Map to the `on:` block.
+
+### Phase 3: Scope (Read/Write)
+
+Ask:
+- **"What should it read?"** (issues, PRs, code, discussions, CI data)
+- **"What should it create or update?"** (comments, issues, PRs, labels)
+
+Map to:
+- `permissions:` (keep read-only for agent job)
+- `tools:`
+- `safe-outputs:`
+
+### Phase 4: Data Strategy
+
+Ask:
+- **"What data does the agent need to make decisions?"**
+- Follow up: **"Can we pre-fetch and aggregate that data with shell commands so the agent only reads compact JSON?"**
+
+Capture:
+- Whether `steps:` should pre-fetch GitHub data with `gh` + `jq`
+- Output paths under `/tmp/gh-aw/data/`
+- Whether batch work should use sub-agents
+
+Map to:
+- `steps:`
+- Prompt references to pre-computed file paths
+
+### Phase 5: Guardrails
+
+Ask: **"Should it block merging, just advise, or silently log?"**
+
+Capture:
+- Visibility expectations (comment, issue, no visible output)
+- No-op behavior expectation
+
+Guide toward safe output behavior and explicit `noop` instructions.
+
+### Phase 6: Context & Network
+
+Ask: **"Does it need external APIs, web access, package installs, or MCP servers?"**
+
+Follow up:
+- **"Any third-party services or MCP servers to include (for example Slack, Jira, Datadog, custom internal MCP)?"**
+- **"Are you deploying on GitHub.com, GHEC with custom endpoints, or GHES?"**
+- For each integration, identify required auth from source docs and map it to GitHub Actions secrets + workflow env variables.
+- Ask for exact external domains (FQDN/wildcard).
+
+Map to:
+- `network.allowed`
+- Optional MCP/GitHub tool usage in `tools:`
+- `secrets:` / `env:` wiring for integration tokens
+- GHES/GHEC settings such as `engine.api-target` and `aw.json` `ghes: true` (when applicable)
+
+### Phase 7: Engine (optional)
+
+Ask only if ambiguous: **"Any AI engine preference?"**
+
+If no preference, suggest default:
+- "I'd suggest Copilot since you haven't mentioned a preference. Sound good?"
+
+Map to `engine:` only when not default.
+
+### Phase 7b: Skills, LSP & Evals (optional)
+
+Ask only when relevant: **"Does the agent need extra domain knowledge, language-server code intelligence, or automated success checks?"**
+
+Map to:
+- `skills:` — pinned external skills (`owner/repo/skill@sha`) or local paths (`.github/skills/<name>`) when the agent needs domain knowledge (see `.github/aw/skills.md`)
+- `lsp:` — language servers for code intelligence; **experimental** and only valid with `engine: copilot` (see `.github/aw/lsp.md`)
+- `evals:` — binary YES/NO questions checking whether the run met its goals; requires `safe-outputs:` so `agent_output.json` exists (see `.github/aw/evals.md`)
+
+### Phase 8: Confirmation
+
+Present a structured summary and ask for approval before generation.
+
+## Decision Heuristics
+
+Load `.github/aw/designer-mappings.md` for the full trigger, safe-output, network, tool, pattern, integration-auth, and data-strategy mapping tables used to translate interview answers (Phases 2–7) into workflow syntax.
+
+## Token Optimization Defaults
+
+Apply these defaults unless the user explicitly asks otherwise:
+
+1. Use DataOps by default for GitHub reads: pre-fetch/aggregate with `gh` + `jq` in `steps:`, store compact JSON in `/tmp/gh-aw/data/`, and point the prompt to those files (see `.github/aw/token-optimization.md` for details).
+2. Keep tool surface minimal: default to `tools.github.mode: gh-proxy`, include only required toolsets, and prefer `bash` + `gh` for simple reads.
+3. For batch workloads, split items into compact data and suggest sub-agent processing with `model: small`.
+4. Keep prompts compact: concise imperative instructions, explicit file paths, single-line `noop` guidance, and stable instructions before dynamic content.
+
+## Progressive Disclosure Rules
+
+1. Never dump all options at once; ask one targeted question at a time.
+2. Skip questions when answers are inferable from prior user statements.
+3. Offer smart defaults and request confirmation instead of over-questioning.
+4. Ask at most 5 questions before presenting a summary; then ask "anything else?" if needed.
+5. Detect done signals (`that's it`, `looks good`, `generate it`) and proceed to generation.
+
+## Confirmation Format
+
+Use this exact structure:
+
+```text
+📋 Proposed workflow:
+- Name: <workflow-id>
+- Trigger: <event + key options>
+- Engine: <engine or default>
+- Tools: <tool summary>
+- Safe outputs: <list or none>
+- Network: <allowed summary>
+- Integrations/Auth: <service/mcp + required secrets/env vars>
+- Deployment: <GitHub.com or GHEC/GHES details>
+- Intent: <one-sentence task>
+```
+
+Then ask: **"Ready to generate, or want to adjust anything?"**
+
+## Generation Template
+
+After confirmation, generate one workflow file using the same skeleton style as `.github/aw/create-agentic-workflow.md`.
+
+```markdown
+---
+emoji: <emoji>
+description: <brief description>
+on:
+  <trigger config>
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+tools:
+  github:
+    mode: gh-proxy
+    toolsets: [default]
+steps:
+  - name: <optional data prefetch>
+    run: |
+      mkdir -p /tmp/gh-aw/data
+      <gh + jq commands that produce compact JSON>
+safe-outputs:
+  <safe-output-types-if-needed>
+network:
+  allowed:
+    - defaults
+    - <additional entries if needed>
+skills:
+  - <owner/repo/skill@sha or .github/skills/<name> — only if domain knowledge is needed>
+lsp:
+  <language-key>:                 # optional, engine: copilot only (experimental)
+    command: <server-executable>
+    fileExtensions:
+      ".<ext>": <language-id>
+evals:
+  - id: <eval-id>                 # optional, requires safe-outputs
+    question: <binary YES/NO question about the agent output>
+---
+
+# <Workflow Name>
+
+## Task
+
+<clear instructions tied to trigger context>
+If `steps:` includes pre-fetch commands, read the resulting `/tmp/gh-aw/data/*.json` files instead of broad live re-fetches.
+
+## Safe Outputs
+
+- Use configured safe outputs for all visible write actions.
+- Call `noop` with a short reason when no action is needed.
+```
+
+## Validation Checklist
+
+Before final output, run this internal self-check:
+
+- [ ] Agent job permissions remain read-only (writes only via safe outputs)
+- [ ] `safe-outputs:` covers every write action mentioned in prompt/instructions
+- [ ] Network access is scoped; avoid blanket wildcard entries
+- [ ] Trigger matches the user's intended activation event
+- [ ] Prompt instructs agent to call `noop` when no action is needed
+- [ ] Unnecessary defaults are omitted (for example `engine: copilot`)
+- [ ] If reading GitHub data, `steps:` pre-fetches compact JSON (DataOps)
+- [ ] `tools.github.mode` is `gh-proxy` unless broader MCP toolsets are explicitly needed
+- [ ] Only required toolsets are listed (avoid blanket toolset lists)
+- [ ] Prompt references specific pre-computed file paths
+- [ ] For batch processing (>5 items), sub-agent pattern is suggested
+- [ ] Network entries use valid ecosystem identifiers (no `npm`/`pypi`/`docker`-style invalid shorthands)
+- [ ] `skills:` entries are pinned (`owner/repo/skill@sha`) or local paths, and only added when domain knowledge is needed
+- [ ] `lsp:` is only used with `engine: copilot` (experimental; omit otherwise)
+- [ ] `evals:` questions are binary YES/NO and `safe-outputs:` is declared so `agent_output.json` exists
+- [ ] For each third-party service/MCP integration, required secrets/env vars are listed
+- [ ] Auth guidance includes least-privilege token scope recommendations
+- [ ] For GHEC/GHES deployments, `engine.api-target` and GHES compatibility guidance are included when needed
+
+## References (load only when needed)
+
+In-repo references:
+- `.github/aw/designer-mappings.md` (trigger, safe-output, network, tool, pattern, integration-auth, and data-strategy mapping tables)
+- `.github/aw/syntax.md` (index → `.github/aw/syntax-core.md`, `.github/aw/syntax-agentic.md`, `.github/aw/syntax-tools-imports.md`)
+- `.github/aw/safe-outputs.md` (index → `.github/aw/safe-outputs-content.md`, `.github/aw/safe-outputs-management.md`, `.github/aw/safe-outputs-automation.md`, `.github/aw/safe-outputs-runtime.md`)
+- `.github/aw/network.md`
+- `.github/aw/patterns.md`
+- `.github/aw/subagents.md`
+- `.github/aw/token-optimization.md`
+- `.github/aw/triggers.md`
+- `.github/aw/create-agentic-workflow.md`
+- `.github/aw/skills.md`
+- `.github/aw/lsp.md`
+- `.github/aw/evals.md`
+
+Portable HTTPS references:
+- `https://github.com/github/gh-aw/blob/main/.github/aw/designer-mappings.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/syntax.md` (index → `.../syntax-core.md`, `.../syntax-agentic.md`, `.../syntax-tools-imports.md`)
+- `https://github.com/github/gh-aw/blob/main/.github/aw/safe-outputs.md` (index → `.../safe-outputs-content.md`, `.../safe-outputs-management.md`, `.../safe-outputs-automation.md`, `.../safe-outputs-runtime.md`)
+- `https://github.com/github/gh-aw/blob/main/.github/aw/network.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/patterns.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/subagents.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/token-optimization.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/triggers.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/create-agentic-workflow.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/skills.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/lsp.md`
+- `https://github.com/github/gh-aw/blob/main/.github/aw/evals.md`

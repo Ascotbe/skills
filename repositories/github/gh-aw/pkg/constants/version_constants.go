@@ -1,0 +1,215 @@
+package constants
+
+// Version represents a software version string.
+// This semantic type distinguishes version strings from arbitrary strings,
+// enabling future validation logic (e.g., semver parsing) and making
+// version requirements explicit in function signatures.
+//
+// Example usage:
+//
+//	const DefaultCopilotVersion Version = "0.0.369"
+//	func InstallTool(name string, version Version) error { ... }
+type Version string
+
+// String returns the string representation of the version
+func (v Version) String() string {
+	return string(v)
+}
+
+// IsValid returns true if the version is non-empty
+func (v Version) IsValid() bool {
+	return v != ""
+}
+
+// ModelName represents an AI model name identifier.
+// This semantic type distinguishes model names from arbitrary strings,
+// making model selection explicit in function signatures.
+//
+// Example usage:
+//
+//	const DefaultCopilotDetectionModel ModelName = "gpt-5-mini"
+//	func ExecuteWithModel(model ModelName) error { ... }
+type ModelName string
+
+// DefaultClaudeCodeVersion is the default version of the Claude Code CLI.
+const DefaultClaudeCodeVersion Version = "2.1.226"
+
+// DefaultCopilotVersion is the default version of the GitHub Copilot CLI.
+//
+// When unpinning or upgrading this version, verify:
+//   - MCPs are not blocked from loading (tools.mcp configuration still works end-to-end)
+//   - /models does not silently fail on PATs (check that model listing works with PAT auth)
+const DefaultCopilotVersion Version = "1.0.78"
+
+// DefaultCopilotSDKVersion is the default version of the @github/copilot-sdk package.
+const DefaultCopilotSDKVersion Version = "1.0.8"
+
+// DefaultCodexVersion is the default version of the OpenAI Codex CLI
+const DefaultCodexVersion Version = "0.147.0"
+
+// DefaultGeminiVersion is the default version of the Google Gemini CLI
+const DefaultGeminiVersion Version = "0.39.1"
+
+// DefaultPiVersion is the default version of the Pi CLI
+const DefaultPiVersion Version = "0.84.1"
+
+// DefaultGitHubMCPServerVersion is the default version of the GitHub MCP server Docker image
+const DefaultGitHubMCPServerVersion Version = "v1.9.0"
+
+// DefaultFirewallVersion is the default version of the gh-aw-firewall (AWF) binary
+//
+// ⚠️  IMPORTANT: When updating this version, you must run a full rebuild and recompile twice:
+//
+//	make build && make recompile && make recompile
+//
+// The first recompile regenerates all lock files using the new version; the second recompile
+// refreshes the container SHA pins that were resolved during the first pass.
+const DefaultFirewallVersion Version = "v0.27.44"
+
+// AWFExcludeEnvMinVersion is the minimum AWF version that supports the --exclude-env flag.
+// Workflows pinning an older AWF version must not emit --exclude-env flags or the run will fail.
+const AWFExcludeEnvMinVersion Version = "v0.25.3"
+
+// AWFCliProxyMinVersion is the minimum supported AWF version for emitting the CLI proxy flags
+// (--difc-proxy-host, --difc-proxy-ca-cert). Workflows pinning an older AWF version than
+// v0.25.17 must not emit CLI proxy flags or the run will fail.
+const AWFCliProxyMinVersion Version = "v0.25.17"
+
+// AWFAllowHostPortsMinVersion is the minimum AWF version that supports the
+// --allow-host-ports flag. Workflows pinning an older AWF version must not emit
+// --allow-host-ports or the run will fail at startup with an unknown flag error.
+const AWFAllowHostPortsMinVersion Version = "v0.25.24"
+
+// AWFDockerHostPathPrefixMinVersion is the minimum AWF version that supports the
+// --docker-host-path-prefix flag used for ARC/DinD split runner/daemon filesystems.
+// Workflows pinning an older AWF version must not emit this flag.
+const AWFDockerHostPathPrefixMinVersion Version = "v0.25.43"
+
+// AWFTokenSteeringMinVersion is the minimum AWF version that supports
+// apiProxy.enableTokenSteering (mapped from frontmatter firewall.effective-token-steering).
+const AWFTokenSteeringMinVersion Version = "v0.25.44"
+
+// AWFChrootConfigMinVersion is the minimum AWF version that supports
+// chroot.binariesSourcePath and chroot.identity.* in the config file.
+// These fields let AWF handle binary staging and identity resolution natively
+// for ARC/DinD split runner/daemon filesystem topologies, removing the need
+// for bootstrap actions that manually copy binaries and pre-seed /etc/passwd.
+const AWFChrootConfigMinVersion Version = "v0.27.1"
+
+// AWFArcDindMinVersion is the minimum AWF version required for runner.topology=arc-dind.
+// Earlier versions have known sysroot/chroot mount-handling bugs that can prevent
+// the agent container from starting in split-filesystem ARC/DinD environments.
+const AWFArcDindMinVersion Version = "v0.27.20"
+
+// AWFContainerRuntimeMinVersion is the minimum AWF version that supports the
+// containerRuntime field in the container config (gh-aw-firewall#6093).
+const AWFContainerRuntimeMinVersion Version = "v0.27.30"
+
+// AWFLegacySecurityMinVersion is the minimum AWF version that supports the
+// --legacy-security flag and unconditional API proxy (gh-aw-firewall#6207).
+// Workflows pinning an older AWF version must use the old --security-mode compat behavior.
+const AWFLegacySecurityMinVersion Version = "v0.27.32"
+
+// AWFDefaultAiCreditsPricingMinVersion is the minimum AWF version where
+// apiProxy.defaultAiCreditsPricing survives config resolution and reaches the
+// api-proxy container as AWF_DEFAULT_AI_CREDITS_PRICING.
+const AWFDefaultAiCreditsPricingMinVersion Version = "v0.27.43"
+
+// AWFAPIProxyProvidersMinVersion is the minimum AWF version that supports
+// apiProxy.providers in awf-config.json.
+// Workflows pinning an older AWF version must not emit this field because older
+// AWF strict config validation rejects unknown apiProxy properties.
+// v0.27.43 adds apiProxy.providers to awf-config-schema.json.
+const AWFAPIProxyProvidersMinVersion Version = "v0.27.43"
+
+// AWFBoundedQueriesMinVersion is the minimum AWF version that supports
+// the boundedQueries section in awf-config.json.
+// Workflows pinning an older AWF version must not emit this section.
+const AWFBoundedQueriesMinVersion Version = "v0.27.44"
+
+// DefaultGVisorVersion is the pinned gVisor release used by the compiler-generated
+// install step. A specific dated release name is used instead of "latest" to ensure
+// reproducible, verifiable installs. Each release provides SHA-512 files for
+// integrity verification before the binaries are installed with root privileges.
+// Bump this constant after reviewing the release notes at
+// https://github.com/google/gvisor/releases.
+const DefaultGVisorVersion = "20250707.0"
+
+// CopilotNoAskUserMinVersion is the minimum Copilot CLI version that supports the --no-ask-user
+// flag, which enables fully autonomous agentic runs by suppressing interactive prompts.
+// Workflows using an older Copilot CLI version must not emit --no-ask-user or the run will fail.
+const CopilotNoAskUserMinVersion Version = "1.0.19"
+
+// DefaultMCPGatewayVersion is the default version of the MCP Gateway (gh-aw-mcpg) Docker image
+//
+// ⚠️  IMPORTANT: When updating this version, you must run a full rebuild and recompile twice:
+//
+//	make build && make recompile && make recompile
+//
+// The first recompile regenerates all lock files using the new version; the second recompile
+// refreshes the container SHA pins that were resolved during the first pass.
+const DefaultMCPGatewayVersion Version = "v0.4.9"
+
+// MCPGIntegrityReactionsMinVersion is the minimum MCPG version that supports
+// endorsement-reactions and disapproval-reactions in the allow-only policy.
+const MCPGIntegrityReactionsMinVersion Version = "v0.2.18"
+
+// DefaultPlaywrightMCPVersion is the default version of the @playwright/mcp package
+const DefaultPlaywrightMCPVersion Version = "0.0.79"
+
+// DefaultPlaywrightCLIVersion is the default version of the @playwright/cli package.
+// Used when tools.playwright.mode is "cli" to install the CLI tool instead of the MCP server.
+// Keep this version outside the default 3-day npm release-age cooldown window enforced by
+// generated Playwright CLI install steps. See TestDefaultPlaywrightCLIVersionOutsideCooldownWindow.
+const DefaultPlaywrightCLIVersion Version = "0.1.18"
+
+// DefaultPlaywrightBrowserVersion is the default version of the Playwright browser Docker image
+const DefaultPlaywrightBrowserVersion Version = "v1.62.1"
+
+// DefaultMCPSDKVersion is the default version of the @modelcontextprotocol/sdk package
+const DefaultMCPSDKVersion Version = "1.24.0"
+
+// DefaultGitHubScriptVersion is the default version of the actions/github-script action
+const DefaultGitHubScriptVersion Version = "v9"
+
+// DefaultThreatDetectVersion is the version of the gh-aw-threat-detection binary to install.
+// When set to "latest", the install script downloads release assets from GitHub's latest-release
+// download endpoint. This is used when `features: gh-aw-detection: true` is set in the workflow
+// frontmatter, enabling the external threat-detect binary path instead of the inline engine
+// execution path.
+const DefaultThreatDetectVersion Version = "latest"
+
+// GhSkillsMinVersion is the minimum gh CLI version required for frontmatter skill support
+// (installing gh extensions via `gh extension install`). Workflows that install frontmatter
+// skills must have at least this version of gh installed before running skill install steps.
+const GhSkillsMinVersion Version = "2.90.0"
+
+// DefaultBunVersion is the default version of Bun for runtime setup
+const DefaultBunVersion Version = "1.1"
+
+// DefaultNodeVersion is the default version of Node.js for runtime setup
+const DefaultNodeVersion Version = "24"
+
+// DefaultPythonVersion is the default version of Python for runtime setup
+const DefaultPythonVersion Version = "3.12"
+
+// DefaultRubyVersion is the default version of Ruby for runtime setup
+const DefaultRubyVersion Version = "3.3"
+
+// DefaultDotNetVersion is the default version of .NET for runtime setup
+const DefaultDotNetVersion Version = "8.0"
+
+// DefaultJavaVersion is the default version of Java for runtime setup
+const DefaultJavaVersion Version = "21"
+
+// DefaultElixirVersion is the default version of Elixir for runtime setup
+const DefaultElixirVersion Version = "1.17"
+
+// DefaultGoVersion is the default version of Go for runtime setup
+const DefaultGoVersion Version = "1.26"
+
+// DefaultHaskellVersion is the default version of GHC for runtime setup
+const DefaultHaskellVersion Version = "9.10"
+
+// DefaultDenoVersion is the default version of Deno for runtime setup
+const DefaultDenoVersion Version = "2.x"

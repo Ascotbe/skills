@@ -1,0 +1,212 @@
+# Changelog
+
+## [7.6.0](https://github.com/deepgram/deepgram-python-sdk/compare/v7.5.0...v7.6.0) (2026-07-22)
+
+
+### Features
+
+* **regen:** flux stt numerals and aura-2 multilingual tts voices ([#746](https://github.com/deepgram/deepgram-python-sdk/issues/746)) ([17a1deb](https://github.com/deepgram/deepgram-python-sdk/commit/17a1deb43705f0d9c667f12c72a585159a71ad8f))
+
+## [7.5.0](https://github.com/deepgram/deepgram-python-sdk/compare/v7.4.0...v7.5.0) (2026-07-14)
+
+
+### Features
+
+* **Streaming text-to-speech (Flux) via `speak.v2`** — new WebSocket TTS: `client.speak.v2.connect(...)` streams `Speak`/`Flush`/`Close` and returns audio frames plus control messages. Also adds **agent `UpdateListen`/`ListenUpdated`** (swap the listen provider mid-session) and **Flux end-of-turn tuning** (`eot_threshold`, `eager_eot_threshold`, `eot_timeout_ms`). ([#742](https://github.com/deepgram/deepgram-python-sdk/issues/742)) ([69a2445](https://github.com/deepgram/deepgram-python-sdk/commit/69a2445c7c0c5ce1726566331f13030df64062e5))
+* **Flux text-to-speech batch (REST)** endpoint and agent latency report. ([#744](https://github.com/deepgram/deepgram-python-sdk/issues/744)) ([6ca71c4](https://github.com/deepgram/deepgram-python-sdk/commit/6ca71c40e158f5bdf084e6b55572deca1532c465))
+
+## [7.4.0](https://github.com/deepgram/deepgram-python-sdk/compare/v7.3.1...v7.4.0) (2026-06-26)
+
+
+### Features
+
+* **regen:** v2 language_hints, profanity filter, word timings, diarize_model ([#730](https://github.com/deepgram/deepgram-python-sdk/issues/730)) ([da6b7ba](https://github.com/deepgram/deepgram-python-sdk/commit/da6b7ba8b5583a9dcddfd3950b4abd4d2645c9fa))
+
+
+### Bug Fixes
+
+* redact Authorization header from websockets DEBUG logs ([#731](https://github.com/deepgram/deepgram-python-sdk/issues/731)) ([029d877](https://github.com/deepgram/deepgram-python-sdk/commit/029d8771a2957fd5ffbc3c50fb40550098fcfad3))
+
+
+### Documentation
+
+* improve contributor onboarding and setup instructions ([#718](https://github.com/deepgram/deepgram-python-sdk/issues/718)) ([3f7398a](https://github.com/deepgram/deepgram-python-sdk/commit/3f7398a9782a1efcfd99408f1392907aa4e68cf3))
+
+## [7.3.1](https://github.com/deepgram/deepgram-python-sdk/compare/v7.3.0...v7.3.1) (2026-06-03)
+
+
+### Bug Fixes
+
+* widen pydantic-core bound via fern 5.14.8 regen (closes [#701](https://github.com/deepgram/deepgram-python-sdk/issues/701)) ([#724](https://github.com/deepgram/deepgram-python-sdk/issues/724)) ([5c1e845](https://github.com/deepgram/deepgram-python-sdk/commit/5c1e845e677f4dc2aa44695e4c2f6366136f3f75))
+
+## [7.3.0](https://github.com/deepgram/deepgram-python-sdk/compare/v7.2.0...v7.3.0) (2026-06-01)
+
+
+### Features
+
+* **client:** add a declarative `reconnect` flag with transport-factory auto-disable. `DeepgramClient` / `AsyncDeepgramClient` now accept `reconnect: bool = True` (exposed read-only as `client.reconnect`). When a custom `transport_factory` is supplied, `reconnect` auto-sets to `False` to signal that the transport owns its own retry/reconnect lifecycle — e.g. the SageMaker transport's jittered backoff + replay buffers — so SDK-level retries don't stack on top and cause storm-on-storm under burst load. Pass `reconnect=True` explicitly to opt back in. Declarative only for now (the Python SDK has no wrapper reconnect layer; `websockets` doesn't auto-reconnect), fully backwards-compatible, and parity with the same flag in the JS ([#492](https://github.com/deepgram/deepgram-js-sdk/issues/492)) and Java SDKs ([#720](https://github.com/deepgram/deepgram-python-sdk/issues/720)) ([b5d5905](https://github.com/deepgram/deepgram-python-sdk/commit/b5d590577429adeacfe2068df4c33201a158c9de))
+
+## [7.2.0](https://github.com/deepgram/deepgram-python-sdk/compare/v7.1.1...v7.2.0) (2026-05-18)
+
+
+### Features
+
+* **agent:** Diarization v2 is now GA for batch transcription via the listen REST API ([#714](https://github.com/deepgram/deepgram-python-sdk/issues/714)) ([9d9a43d](https://github.com/deepgram/deepgram-python-sdk/commit/9d9a43dbc2bd739068b05e5d136f487b56ef5b7c))
+* **agent:** rename listen-provider types to `DeepgramListenProviderV1`, `DeepgramListenProviderV2`, and `DeepgramListenProviderV2LanguageHint`. The old `AgentV1SettingsAgent[Context]ListenProvider*` names continue to work as backward-compatible aliases ([#714](https://github.com/deepgram/deepgram-python-sdk/issues/714)) ([9d9a43d](https://github.com/deepgram/deepgram-python-sdk/commit/9d9a43dbc2bd739068b05e5d136f487b56ef5b7c))
+
+
+### Bug Fixes
+
+* **agent:** route `agent.v1.settings.think.models.list()` to the correct REST host. Previously this endpoint resolved against the wrong base URL and was unusable ([#715](https://github.com/deepgram/deepgram-python-sdk/issues/715)) ([ffd2e7d](https://github.com/deepgram/deepgram-python-sdk/commit/ffd2e7d7e0e0ea2d72e13e1d4c91ac52e97a5ee8))
+* **environment:** replace `DeepgramClientEnvironment.AGENT` with a new `agent_rest` slot on `DeepgramClientEnvironment`. Callers constructing a custom environment should pass `agent_rest=` instead of `agent=` ([#715](https://github.com/deepgram/deepgram-python-sdk/issues/715)) ([ffd2e7d](https://github.com/deepgram/deepgram-python-sdk/commit/ffd2e7d7e0e0ea2d72e13e1d4c91ac52e97a5ee8))
+
+## [7.1.1](https://github.com/deepgram/deepgram-python-sdk/compare/v7.1.0...v7.1.1) (2026-05-12)
+
+
+### Bug Fixes
+
+* lowercase bool query params on websocket connect ([#712](https://github.com/deepgram/deepgram-python-sdk/issues/712)) ([8899609](https://github.com/deepgram/deepgram-python-sdk/commit/88996096c6114e2f3a5d25ecf9e2128b11ca07f7))
+
+## [7.1.0](https://github.com/deepgram/deepgram-python-sdk/compare/v7.0.0...v7.1.0) (2026-05-06)
+
+
+### Features
+
+* update generated SDK models and restore agent settings compatibility ([#705](https://github.com/deepgram/deepgram-python-sdk/issues/705)) ([0b820c9](https://github.com/deepgram/deepgram-python-sdk/commit/0b820c900b886eb18da4cc88af7de6e10d1926a6))
+
+
+### Documentation
+
+* target Context7 benchmark gaps in Python skills [no-ci] ([#699](https://github.com/deepgram/deepgram-python-sdk/issues/699)) ([a232eb8](https://github.com/deepgram/deepgram-python-sdk/commit/a232eb8c62df2da98cef13c71e33f0b3b78f1095))
+
+## [7.0.0](https://github.com/deepgram/deepgram-python-sdk/compare/v6.1.1...v7.0.0) (2026-04-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* sdk regeneration 2026-04-24 ([#696](https://github.com/deepgram/deepgram-python-sdk/issues/696))
+* sdk regeneration 2026-04-14 ([#690](https://github.com/deepgram/deepgram-python-sdk/issues/690))
+
+### Features
+
+* sdk regeneration 2026-04-14 ([#690](https://github.com/deepgram/deepgram-python-sdk/issues/690)) ([d4d129f](https://github.com/deepgram/deepgram-python-sdk/commit/d4d129f74edb479a3d34c125cc46412c25e072ff))
+* sdk regeneration 2026-04-24 ([#696](https://github.com/deepgram/deepgram-python-sdk/issues/696)) ([4714207](https://github.com/deepgram/deepgram-python-sdk/commit/47142072be6e674d518791579529d67e2555dcc0))
+
+## [6.1.1](https://github.com/deepgram/deepgram-python-sdk/compare/v6.1.0...v6.1.1) (2026-03-27)
+
+
+### Bug Fixes
+
+* **websockets:** restore optional message param on control send_ methods ([#680](https://github.com/deepgram/deepgram-python-sdk/issues/680)) ([0018fc4](https://github.com/deepgram/deepgram-python-sdk/commit/0018fc489dd05f81773086044ff476514ceed0e0))
+
+## [6.1.0](https://github.com/deepgram/deepgram-python-sdk/compare/v6.0.1...v6.1.0) (2026-03-26)
+
+
+### Features
+
+* **agent:** support multi-provider speak/think configuration and typed listen parameters ([#676](https://github.com/deepgram/deepgram-python-sdk/issues/676)) ([5dfb1aa](https://github.com/deepgram/deepgram-python-sdk/commit/5dfb1aa9a2357f8cfc0e08f55284fd8521446bf7))
+
+## [6.0.1](https://github.com/deepgram/deepgram-python-sdk/compare/v6.0.0...v6.0.1) (2026-02-24)
+
+
+### Bug Fixes
+
+* :herb: skip_validation:true to allow unknown messages back from the API ([#669](https://github.com/deepgram/deepgram-python-sdk/issues/669)) ([48354d2](https://github.com/deepgram/deepgram-python-sdk/commit/48354d2b6990684092ec7d6b78878ac8427d4c23))
+
+## [6.0.0](https://github.com/deepgram/deepgram-python-sdk/compare/v6.0.0-rc.2...v6.0.0) (2026-02-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* promote v6.0.0-rc.2 to v6.0.0 stable
+
+### Features
+
+* promote v6.0.0-rc.2 to v6.0.0 stable ([34f543e](https://github.com/deepgram/deepgram-python-sdk/commit/34f543e2e2ca0f5f073ff87158ae1263445b4d48))
+
+## [6.0.0-rc.2](https://github.com/deepgram/deepgram-python-sdk/compare/v6.0.0-rc.1...v6.0.0-rc.2) (2026-02-18)
+
+
+### Bug Fixes
+
+* **sagemaker:** extract SageMaker transport to separate deepgram-sagemaker package ([#665](https://github.com/deepgram/deepgram-python-sdk/issues/665)) ([e6317c5](https://github.com/deepgram/deepgram-python-sdk/commit/e6317c507c7b5536aa5a485abc54a50318baff2b))
+
+
+### Refactors
+
+* **sagemaker:** extract SageMaker transport to separate package ([#663](https://github.com/deepgram/deepgram-python-sdk/issues/663)) ([d82b699](https://github.com/deepgram/deepgram-python-sdk/commit/d82b6993ff2e6e1b4e67e8da3b2f33b13f2da33d))
+* **sagemaker:** move SageMaker transport to separate package ([#662](https://github.com/deepgram/deepgram-python-sdk/issues/662)) ([16d500e](https://github.com/deepgram/deepgram-python-sdk/commit/16d500eca8e88e54e6d0fbf2b11bb2e8e0de5f48))
+
+## [6.0.0-rc.1](https://github.com/deepgram/deepgram-python-sdk/compare/v5.3.2...v6.0.0-rc.1) (2026-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* v6 — fully generated SDK with latest APIs and WebSocket support ([#640](https://github.com/deepgram/deepgram-python-sdk/issues/640))
+
+### Features
+
+* **helpers:** add TextBuilder class for TTS pronunciation and pause controls ([#660](https://github.com/deepgram/deepgram-python-sdk/issues/660)) ([4324120](https://github.com/deepgram/deepgram-python-sdk/commit/43241200a7e025bdc4633bdb47f6708921c82ad1))
+* **sagemaker:** add SageMaker transport support via the separate [`deepgram-sagemaker`](https://pypi.org/project/deepgram-sagemaker/) package (`pip install deepgram-sagemaker`) ([#659](https://github.com/deepgram/deepgram-python-sdk/issues/659))
+* v6 — fully generated SDK with latest APIs and WebSocket support ([#640](https://github.com/deepgram/deepgram-python-sdk/issues/640)) ([bc918fe](https://github.com/deepgram/deepgram-python-sdk/commit/bc918fe23e92eefb5e4c24cbfaad369d4e2818f3))
+* **websockets:** add custom WebSocket transport support ([#658](https://github.com/deepgram/deepgram-python-sdk/issues/658)) ([f6cf0fb](https://github.com/deepgram/deepgram-python-sdk/commit/f6cf0fbc9aaaa844e475e014560cc377819ec1f9))
+
+## [5.3.2](https://github.com/deepgram/deepgram-python-sdk/compare/v5.3.0...v5.3.2) (2026-01-29)
+
+
+### Bug Fixes
+
+* **speak:** correct TTS warning event field names to match API response ([#653](https://github.com/deepgram/deepgram-python-sdk/issues/653)) ([f7ab1da](https://github.com/deepgram/deepgram-python-sdk/commit/f7ab1daac4f6777b806fb1cdaaf1d1084b280506))
+* **types:** change speaker and related fields from float to int ([#652](https://github.com/deepgram/deepgram-python-sdk/issues/652)) ([00ee485](https://github.com/deepgram/deepgram-python-sdk/commit/00ee485252dc7fb3a37914f261a0752469c33553)), closes [#641](https://github.com/deepgram/deepgram-python-sdk/issues/641)
+* **websockets:** support array parameters in Listen v1 and v2 clients ([#650](https://github.com/deepgram/deepgram-python-sdk/issues/650)) ([38cc1e5](https://github.com/deepgram/deepgram-python-sdk/commit/38cc1e5903df1eb7bcf8729361be8c25042216af))
+
+
+### Miscellaneous Chores
+
+* release 5.3.2 ([d61ce8c](https://github.com/deepgram/deepgram-python-sdk/commit/d61ce8c504030e7b6ea7ee3b7be8a642d5f0ee53))
+
+## [5.3.0](https://github.com/deepgram/deepgram-python-sdk/compare/v5.2.0...v5.3.0) (2025-10-30)
+
+
+### Features
+
+* add projects billing fields list methods ([#621](https://github.com/deepgram/deepgram-python-sdk/issues/621)) ([10d67cd](https://github.com/deepgram/deepgram-python-sdk/commit/10d67cd91aef1436a9e85e3b607dc7b81eebba43))
+
+## [5.2.0](https://github.com/deepgram/deepgram-python-sdk/compare/v5.1.0...v5.2.0) (2025-10-21)
+
+
+### Features
+
+* SDK regeneration (21 Oct 2025) ([#609](https://github.com/deepgram/deepgram-python-sdk/issues/609)) ([5b21460](https://github.com/deepgram/deepgram-python-sdk/commit/5b2146058842fe4dc6d6ef4bd9c0777b08f48fab))
+
+## [5.1.0](https://github.com/deepgram/deepgram-python-sdk/compare/v5.0.0...v5.1.0) (2025-10-16)
+
+
+### Features
+
+* mention keep alive in migration guide ([#594](https://github.com/deepgram/deepgram-python-sdk/issues/594)) ([5a8c79e](https://github.com/deepgram/deepgram-python-sdk/commit/5a8c79e814e3efeb81a8c51a0a05d93bc17e6bb5))
+* update the SDK with upstream spec changes ([d77ad96](https://github.com/deepgram/deepgram-python-sdk/commit/d77ad966db62e068fb6e346d247299bc9efd1bd5))
+
+
+### Bug Fixes
+
+* **ci:** reference the correct secret ([#585](https://github.com/deepgram/deepgram-python-sdk/issues/585)) ([09550c7](https://github.com/deepgram/deepgram-python-sdk/commit/09550c7c43b6778d52030bd70a48905c425d1365))
+* corrects order to the release workflow ([#583](https://github.com/deepgram/deepgram-python-sdk/issues/583)) ([3abbac3](https://github.com/deepgram/deepgram-python-sdk/commit/3abbac3271e77e718dde19580a16cdf915c263df))
+* remove testpypi we don't need it in the workflow ([#582](https://github.com/deepgram/deepgram-python-sdk/issues/582)) ([b2e2538](https://github.com/deepgram/deepgram-python-sdk/commit/b2e2538cb9528f48e9a20a839763ff82fe40ab8b))
+* support multiple keyterms for v2 listen client ([#595](https://github.com/deepgram/deepgram-python-sdk/issues/595)) ([7a9d41d](https://github.com/deepgram/deepgram-python-sdk/commit/7a9d41d2b5a48dd094ca20e7f5a227afbdd46dc0))
+
+## [5.0.0](https://github.com/deepgram/deepgram-python-sdk/compare/v4.8.1...v5.0.0) (2025-10-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* This is a significant breaking change, and should be carried out in conjunction with our migration guide.
+
+### Features
+
+* implements new generated SDK architecture, all call signatures ([#572](https://github.com/deepgram/deepgram-python-sdk/issues/572)) ([768d514](https://github.com/deepgram/deepgram-python-sdk/commit/768d51492bf7414067266cdc2cf7b98f1f3981dc))
+
+
+### Bug Fixes
+
+* release-please config fixes ([#579](https://github.com/deepgram/deepgram-python-sdk/issues/579)) ([a603806](https://github.com/deepgram/deepgram-python-sdk/commit/a6038067596f1643cd5c7255f0e5a7ede1ff43fb))

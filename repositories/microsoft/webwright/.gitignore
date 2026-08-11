@@ -1,0 +1,10 @@
+**/__pycache__/
+*.pyc
+*.egg-info/
+outputs/
+.tmp/
+.claude/
+.venv/
+venv/
+runs/
+/library/

@@ -1,0 +1,11 @@
+{
+  "name": "aspire-skills",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bundle": "node scripts/build-aspire-bundles.mjs",
+    "bundle:skills": "node scripts/build-aspire-bundles.mjs --bundle skills",
+    "bundle:extensions": "node scripts/build-aspire-bundles.mjs --bundle extensions"
+  }
+}

@@ -1,0 +1,40 @@
+# Task: Explain a JavaScript async/await pattern
+# This tests the skill's ability to explain asynchronous code
+id: explain-js-async-001
+name: Explain JavaScript Async/Await
+description: |
+  Test explaining asynchronous JavaScript with fetch API.
+  The skill should cover async/await, error handling, and API calls.
+
+tags:
+  - javascript
+  - async
+  - intermediate
+
+inputs:
+  prompt: "What does this code do?"
+  context:
+    language: javascript
+    complexity: intermediate
+    concept: async-await
+  files:
+    - path: fetch_user.js
+
+expected:
+  output_contains:
+    - "async"
+    - "fetch"
+  outcomes:
+    - type: task_completed
+  behavior:
+    max_tool_calls: 5
+
+graders:
+  - name: explains_async_pattern
+    type: code
+    config:
+      assertions:
+        - "len(output) > 10"
+      # For real testing:
+      # - "'async' in output.lower() or 'asynchronous' in output.lower()"
+      # - "'await' in output.lower() or 'promise' in output.lower()"

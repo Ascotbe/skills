@@ -1,0 +1,19 @@
+*
+
+!go.mod
+!go.sum
+!cmd/
+!internal/
+!schemas/
+!web/
+!docs.go
+!docs/graders/
+!version.txt
+
+# Re-exclude some files pulled in by the allowlist above
+**/*_test.go
+**/testdata/
+web/node_modules/
+web/dist/
+web/test-results/
+web/playwright-report/

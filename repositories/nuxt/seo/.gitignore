@@ -1,0 +1,27 @@
+node_modules
+dist
+.output
+.idea
+.vscode
+*.swp
+.DS_Store
+*.log
+coverage
+.env
+.env.*
+!.env.example
+
+# Nuxt
+.nuxt
+.content
+.data
+playground/.nuxt
+playground/.output
+test/fixtures/**/.nuxt
+test/fixtures/**/.output
+
+# Local Netlify folder
+.netlify
+
+# Skilld references (recreated by `skilld install`)
+.skilld

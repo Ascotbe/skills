@@ -1,0 +1,556 @@
+# Copyright Modal Labs 2022
+
+import ast
+import datetime
+import importlib
+import os
+import pkgutil
+import re
+import subprocess
+import sys
+from contextlib import suppress
+from datetime import date
+from pathlib import Path
+
+from invoke import call, task
+
+# Set working directory to the root of the client repository.
+original_cwd = Path.cwd()
+project_root = Path(os.path.dirname(__file__))
+os.chdir(project_root)
+
+
+year = datetime.date.today().year
+copyright_header_start = "# Copyright Modal Labs"
+copyright_header_full = f"{copyright_header_start} {year}"
+
+
+@task(
+    help={
+        "skip_mypy": "skip generating MyPy files",
+        "isolated": "generate with the same environment as testing",
+    },
+)
+def protoc(ctx, skip_mypy: bool = False, isolated: bool = False):
+    """Compile protocol buffer files for gRPC and Modal-specific wrappers.
+
+    Generates Python stubs for api.proto."""
+
+    if isolated:
+        print("Generating protos in isolated environment from requirements.protos.txt")
+        major = sys.version_info.major
+        minor = sys.version_info.minor
+        skip_mypy_flag = " --skip-mypy" if skip_mypy else ""
+        ctx.run(
+            f"uv run --python {major}.{minor} --with-requirements requirements.protos.txt "
+            f"compile_protos.py{skip_mypy_flag}",
+            echo=True,
+        )
+    else:
+        print("Generating protos in the current environment")
+        cmd = f"{sys.executable} compile_protos.py"
+        if skip_mypy:
+            cmd = f"{cmd} --skip-mypy"
+        ctx.run(cmd, echo=True)
+
+
+@task(
+    help={
+        "fix": "Auto-fix issues if possible",
+    },
+)
+def lint(ctx, fix=False):
+    """Run linter on all files."""
+    ctx.run(f"ruff check {'--fix' if fix else ''}", pty=True, echo=True)
+    ctx.run(f"ruff format {'' if fix else '--diff'}", pty=True, echo=True)
+
+
+@task
+def lint_changelog(ctx):
+    """Validate the structure of CHANGELOG.md.
+
+    Checks heading format, version ordering, date ordering, and section grouping."""
+    from packaging.version import Version
+
+    changelog_path = "CHANGELOG.md"
+    with open(changelog_path) as f:
+        lines = f.readlines()
+
+    errors: list[str] = []
+    entry_re = re.compile(r"^### (\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2})\)\s*$")
+    section_re = re.compile(r"^## (.+)\s*$")
+
+    current_section: str | None = None
+    prev_version: Version | None = None
+    prev_date: str | None = None
+
+    for lineno_0, line in enumerate(lines):
+        lineno = lineno_0 + 1
+
+        # Check section headers (## ...)
+        section_match = section_re.match(line)
+        if section_match:
+            section_label = section_match.group(1).strip()
+            if section_label == "Latest":
+                current_section = "Latest"
+            elif re.fullmatch(r"\d+\.\d+", section_label):
+                current_section = section_label
+            else:
+                errors.append(
+                    f"L{lineno}: unexpected section header '## {section_label}' (expected '## Latest' or '## X.Y')"
+                )
+            continue
+
+        # Check entry headers (### ...)
+        if line.startswith("### "):
+            m = entry_re.match(line)
+            if not m:
+                errors.append(
+                    f"L{lineno}: malformed entry header: {line.rstrip()!r} (expected '### X.Y.Z (YYYY-MM-DD)')"
+                )
+                continue
+
+            version_str, date_str = m.group(1), m.group(2)
+            version = Version(version_str)
+
+            # Validate date format
+            try:
+                datetime.date.fromisoformat(date_str)
+            except ValueError:
+                errors.append(f"L{lineno}: invalid date {date_str!r} for version {version_str}")
+
+            # Versions must be strictly decreasing
+            if prev_version is not None and version >= prev_version:
+                errors.append(
+                    f"L{lineno}: version {version_str} is not strictly less than previous version {prev_version}"
+                )
+
+            # Dates must be non-increasing (same day is ok for multiple releases)
+            if prev_date is not None and date_str > prev_date:
+                errors.append(f"L{lineno}: date {date_str} for {version_str} is after previous entry date {prev_date}")
+
+            # Check that entry belongs in the current section
+            minor_prefix = f"{version.major}.{version.minor}"
+            if current_section == "Latest":
+                pass  # Latest section holds the current minor series, no constraint needed
+            elif current_section is not None and current_section != minor_prefix:
+                errors.append(
+                    f"L{lineno}: version {version_str} is under '## {current_section}' "
+                    f"but belongs under '## {minor_prefix}'"
+                )
+
+            prev_version = version
+            prev_date = date_str
+
+    if errors:
+        from rich.console import Console
+
+        console = Console()
+        console.print(f"[bold red]CHANGELOG.md has {len(errors)} error(s):[/bold red]")
+        for error in errors:
+            console.print(f"  {error}")
+        sys.exit(1)
+    else:
+        print(f"CHANGELOG.md OK ({prev_version} ... latest)")
+
+
+@task
+def type_stubs(ctx, verbose: bool = False):
+    """Generate type stub files (.pyi) for synchronicity-wrapped Modal modules.
+
+    We only generate type stubs for modules that contain synchronicity wrapped types.
+    """
+    from synchronicity.synchronizer import SYNCHRONIZER_ATTR
+
+    print("Generating synchronicity type stubs...")
+
+    stubs_to_remove = []
+    for root, _, files in os.walk("modal"):
+        for file in files:
+            if file.endswith(".pyi"):
+                stubs_to_remove.append(os.path.abspath(os.path.join(root, file)))
+    for path in sorted(stubs_to_remove):
+        os.remove(path)
+        if verbose:
+            print(f"Removed {path}")
+
+    def find_modal_modules(root: str = "modal") -> list[str]:
+        modules = []
+        path = importlib.import_module(root).__path__
+        for _, name, is_pkg in pkgutil.iter_modules(path):
+            full_name = f"{root}.{name}"
+            if is_pkg:
+                modules.extend(find_modal_modules(full_name))
+            else:
+                modules.append(full_name)
+        return modules
+
+    def get_wrapped_types(module_name: str) -> list[str]:
+        module = importlib.import_module(module_name)
+        return [
+            name
+            for name, obj in vars(module).items()
+            if not module_name.startswith("modal.cli.")  # CLI handlers are not called into directly
+            and hasattr(obj, "__module__")
+            and obj.__module__ == module_name
+            and not name.startswith("_")  # Avoid deprecation of _App.__getattr__
+            and hasattr(obj, SYNCHRONIZER_ATTR)
+        ]
+
+    modules = [m for m in find_modal_modules() if len(get_wrapped_types(m))]
+    subprocess.check_call(
+        ["python", "-m", "synchronicity.type_stubs", *modules],
+        stdout=None if verbose else subprocess.DEVNULL,
+        stderr=None if verbose else subprocess.DEVNULL,
+    )
+    ctx.run("ruff format modal/ --exclude=*.py --no-respect-gitignore", pty=True)
+
+
+@task()
+def type_check(ctx, stubs: bool = True):
+    """Run static type checking.
+
+    Uses mypy for most files, but since mypy will not check the *implementation* (.py) for files that also have .pyi
+    type stubs, we use pyright for checking the implementation of those files.
+    """
+    if stubs:
+        type_stubs(ctx)
+
+    mypy_exclude_list = [
+        "playground",
+        "test/cls_test.py",  # blocked by mypy bug: https://github.com/python/mypy/issues/16527
+        "test/supports/sibling_hydration_app.py",  # blocked by mypy bug: https://github.com/python/mypy/issues/16527
+        "test/supports/type_assertions_negative.py",
+        "modal_proto",
+    ]
+    excludes = " ".join(f"--exclude {path}" for path in mypy_exclude_list)
+    print("Checking types with mypy...")
+    ctx.run(f"mypy . {excludes}", pty=True)
+
+    # Pyright checks are more limited; see pyproject.toml for configuration
+    print("Checking types with pyright...")
+    ctx.run("pyright", pty=True)
+
+
+@task(
+    help={
+        "pytest_args": "Arguments to pass to pytest",
+    },
+)
+def test(ctx, pytest_args="-v"):
+    """Run all tests."""
+    ctx.run(f"pytest {pytest_args}", pty=sys.platform != "win32")  # win32 doesn't support the 'pty' module
+
+
+@task()
+def doctest(ctx):
+    """Exercise tests in docstring examples."""
+    ctx.run("pytest -v --markdown-docs -m markdown-docs modal", pty=sys.platform != "win32")
+
+
+@task(
+    help={
+        "fix": "Automatically add missing headers",
+    },
+)
+def check_copyright(ctx, fix=False):
+    """Verify all Python files have correct copyright headers.
+
+    Excludes generated, vendored, and third-party code."""
+    invalid_files = []
+    for root, dirs, files in os.walk("."):
+        fns = [
+            os.path.join(root, fn)
+            for fn in files
+            if (
+                fn.endswith(".py")
+                # jupytext notebook formatted .py files can't be detected as notebooks if we put a
+                # copyright comment at the top
+                and not fn.endswith(".notebook.py")
+                # ignore generated protobuf code
+                and "/modal_proto" not in root
+                # vendored code has a different copyright
+                and "_vendor" not in root
+                and "protoc_plugin" not in root
+                # third-party code (i.e., in a local venv) has a different copyright
+                and "/site-packages/" not in root
+                and "/build/" not in root
+                and "/.venv" not in root
+                and not re.search(r"/venv[0-9]*/", root)
+            )
+        ]
+        for fn in fns:
+            head = open(fn).readlines()[:2]
+            if not any(line.startswith(copyright_header_start) for line in head):
+                if fix:
+                    print(f"Fixing {fn}...")
+                    content = copyright_header_full + "\n" + open(fn).read()
+                    with open(fn, "w") as g:
+                        g.write(content)
+                else:
+                    invalid_files.append(fn)
+
+    if invalid_files:
+        for fn in invalid_files:
+            print("Missing copyright:", fn)
+
+        raise Exception(f"{len(invalid_files)} are missing copyright headers! Please run `inv check-copyright --fix`")
+
+
+@task(
+    pre=[
+        call(check_copyright, fix=True),
+        call(lint, fix=True),
+        type_check,
+    ]
+)
+def pre_pr_checks(ctx):
+    """Run all pre-PR validation checks.
+
+    Auto-fixes anything that can be auto-fixed."""
+    ...
+
+
+def _check_prod(no_confirm: bool):
+    from urllib.parse import urlparse
+
+    from modal import config
+
+    server_url = config.config["server_url"]
+    if "localhost" not in urlparse(server_url).netloc and not no_confirm:
+        answer = input(f"🚨 Modal server URL is '{server_url}' not localhost. Continue operation? [y/N]: ")
+        if answer.upper() not in ["Y", "YES"]:
+            exit("Aborting task.")
+    return server_url
+
+
+@task
+def publish_base_mounts(ctx, no_confirm: bool = False):
+    """Publish the client mount and other mounts."""
+    _check_prod(no_confirm)
+    for mount in ["modal_client_package", "python_standalone", "modal_client_dependencies"]:
+        ctx.run(f"{sys.executable} {project_root}/modal_global_objects/mounts/{mount}.py", pty=True)
+
+
+@task(
+    help={
+        "name": "Image name (e.g. 'debian_slim')",
+        "builder_version": "Docker builder version",
+        "allow_global_deployment": "Required flag to confirm global deployment",
+    },
+)
+def publish_base_images(
+    ctx,
+    name: str,
+    builder_version: str = "2024.10",
+    allow_global_deployment: bool = False,
+    no_confirm: bool = False,
+) -> None:
+    """Publish base images. For example, `inv publish-base-images debian_slim`.
+
+    These should be published as global deployments. However, publishing global
+    deployments is *risky* because it would affect all workspaces. Pass the
+    `--allow-global-deployment` flag to confirm this behavior."""
+    if not allow_global_deployment:
+        from rich.console import Console
+
+        console = Console()
+        console.print("This is a dry run. Rerun with `--allow-global-deployment` to publish.", style="yellow")
+
+    _check_prod(no_confirm)
+    ctx.run(
+        f"python -m modal_global_objects.images.base_images {name}",
+        pty=True,
+        env={
+            "MODAL_IMAGE_ALLOW_GLOBAL_DEPLOYMENT": "1" if allow_global_deployment else "",
+            "MODAL_IMAGE_BUILDER_VERSION": builder_version,
+        },
+    )
+
+
+@task()
+def prepare_with_version(ctx, version: str, dry_run: bool = False):
+    """Overrides modal_version/__init__.py with version."""
+    if not version:
+        print("version must be specified")
+        sys.exit(1)
+
+    version_file = "modal_version/__init__.py"
+    with open(version_file) as f:
+        current_file_contents = f.read()
+
+    version_pattern = r'__version__\s*=\s*["\']([^"\']+)["\']'
+
+    if not re.search(version_pattern, current_file_contents):
+        raise RuntimeError(f"Unable to find the line defining __version__ in {version_file}")
+
+    updated_file_contents = re.sub(version_pattern, f'__version__ = "{version}"', current_file_contents)
+
+    if dry_run:
+        print(f"Would update {version_file} to the following:")
+        print(updated_file_contents)
+        return
+
+    with open(version_file, "w") as f:
+        f.write(updated_file_contents)
+
+
+def get_next_dev_version(ctx) -> str:
+    """Bumps the dev release based on the tags for `sdk-py/*`."""
+    from packaging.version import Version
+
+    from modal_version import __version__
+
+    v = Version(__version__)
+
+    if v.is_prerelease:
+        if not v.is_devrelease:
+            raise RuntimeError("We only know how to handle dev versions")
+        # Already a dev release so we keep the version
+        next_version = f"{v.major}.{v.minor}.{v.micro}"
+    else:
+        # Not a dev release so we bump the micro version
+        next_version = f"{v.major}.{v.minor}.{v.micro + 1}"
+
+    # Find any existing dev tags for next_version and bump to the next dev number.
+    # ls-remote queries the remote tags directly
+    result = ctx.run(f"git ls-remote --tags origin 'refs/tags/sdk-py/v{next_version}.dev*'", hide=True)
+
+    max_dev = -1
+    for line in result.stdout.splitlines():
+        # Each line is "<sha>\trefs/tags/<tag>"; skip peeled tag entries (^{})
+        ref = line.split("\t", 1)[-1]
+        if ref.endswith("^{}"):
+            continue
+        tag_version = ref.removeprefix("refs/tags/sdk-py/v")
+        with suppress(Exception):
+            tag_v = Version(tag_version)
+            if tag_v.dev is not None:
+                max_dev = max(max_dev, tag_v.dev)
+
+    return f"{next_version}.dev{max_dev + 1}"
+
+
+@task()
+def version(ctx, dev: bool = False):
+    """Print version for current release or dev release."""
+    if dev:
+        print(get_next_dev_version(ctx))
+    else:
+        from modal_version import __version__
+
+        print(__version__)
+
+
+@task
+def show_deprecations(ctx):
+    """Analyze Modal source code and display all deprecation warnings/errors.
+
+    Shows deprecation date, level, location, function, and message in a formatted table."""
+
+    def get_modal_source_files() -> list[str]:
+        source_files: list[str] = []
+        for root, _, files in os.walk("modal"):
+            for file in files:
+                if file.endswith(".py"):
+                    source_files.append(os.path.join(root, file))
+        return source_files
+
+    class FunctionCallVisitor(ast.NodeVisitor):
+        def __init__(self, fname):
+            self.fname = fname
+            self.deprecations = []
+            self.assignments = {}
+            self.current_class = None
+            self.current_function = None
+
+        def visit_ClassDef(self, node):
+            self.current_class = node.name
+            self.generic_visit(node)
+            self.current_class = None
+
+        def visit_FunctionDef(self, node):
+            self.current_function = node.name
+            self.assignments["__doc__"] = ast.get_docstring(node)
+            self.generic_visit(node)
+            self.current_function = None
+            self.assignments.pop("__doc__", None)
+
+        visit_AsyncFunctionDef = visit_FunctionDef
+
+        def visit_Assign(self, node):
+            for target in node.targets:
+                if isinstance(target, ast.Name):
+                    self.assignments[target.id] = node.value
+            self.generic_visit(node)
+
+        def visit_Attribute(self, node):
+            self.assignments[node.attr] = node.value
+            self.generic_visit(node)
+
+        def visit_Call(self, node):
+            level: str | None = None
+            if isinstance(node.func, ast.Name):
+                if node.func.id == "deprecation_error":
+                    level = "[red]error[/red]"
+                # We may add a flag to make renamed_parameter error instead of warn
+                # in which case this would get a little bit more complicated.
+                elif node.func.id == "renamed_parameter":
+                    level = "[yellow]warning[/yellow]"
+                elif node.func.id == "deprecation_warning":
+                    is_pending = any(
+                        kw.arg == "pending" and isinstance(kw.value, ast.Constant) and kw.value.value is True
+                        for kw in node.keywords
+                    )
+                    level = "[blue]pending[/blue]" if is_pending else "[yellow]warning[/yellow]"
+
+            if level is not None and isinstance(node.func, ast.Name) and isinstance(node.args[0], ast.Tuple):
+                depr_date = date(*(getattr(elt, "n") for elt in node.args[0].elts))
+                function = (
+                    f"{self.current_class}.{self.current_function}" if self.current_class else self.current_function
+                )
+                if node.func.id == "renamed_parameter":
+                    old_name = getattr(node.args[1], "s")
+                    new_name = getattr(node.args[2], "s")
+                    message = f"Renamed parameter: {old_name} -> {new_name}"
+                else:
+                    message = node.args[1]
+                    # Handle a few different ways that the message can get passed to the deprecation helper
+                    # since it's not always a literal string (e.g. it's often a functions .__doc__ attribute)
+                    if isinstance(message, ast.Name):
+                        assert message  # mypy apparently thinks message can be None here
+                        message_str = self.assignments.get(message.id, "")
+                    if isinstance(message, ast.Attribute):
+                        assert message  # mypy apparently thinks message can be None here
+                        message_str = self.assignments.get(message.attr, "")
+                    if isinstance(message, ast.Constant):
+                        assert message  # mypy apparently thinks message can be None here
+                        message_str = str(message.s)
+                    elif isinstance(message, ast.JoinedStr):
+                        assert message  # mypy apparently thinks message can be None here
+                        message_str = "".join(str(v.s) for v in message.values if isinstance(v, ast.Constant))
+                    else:
+                        message_str = str(message)
+                    message = message_str.replace("\n", " ")
+                    if len(message) > (max_length := 80):
+                        message = message[:max_length] + "..."
+
+                self.deprecations.append((str(depr_date), level, f"{self.fname}:{node.lineno}", function, message))
+
+    files = get_modal_source_files()
+    deprecations = []
+    for fname in files:
+        with open(fname) as f:
+            tree = ast.parse(f.read())
+        visitor = FunctionCallVisitor(fname)
+        visitor.visit(tree)
+        deprecations.extend(visitor.deprecations)
+
+    from rich.console import Console
+    from rich.table import Table
+
+    console = Console()
+    table = Table("Date", "Level", "Location", "Function", "Message")
+    for row in sorted(deprecations, key=lambda r: r[0]):
+        table.add_row(*row)
+    console.print(table)

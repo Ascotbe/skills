@@ -1,0 +1,14 @@
+dist/
+node_modules/
+pnpm-lock.yaml
+.pnpm-store/
+coverage/
+.turbo
+.venv/
+.astro/
+.nuxt/
+.next/
+.react-router/
+.svelte-kit/
+.angular/
+.output/

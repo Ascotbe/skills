@@ -1,0 +1,191 @@
+On this page you will learn how to manually propagate trace information into and out of your JavaScript application.
+
+<PlatformCategorySection
+  supported={["browser"]}
+  notSupported={["server", "serverless"]}
+>
+  <PlatformContent includePath="distributed-tracing/custom-instrumentation/browser" />
+</PlatformCategorySection>
+
+<PlatformCategorySection supported={["server", "serverless"]}>
+  <PlatformContent includePath="distributed-tracing/custom-instrumentation/server" />
+</PlatformCategorySection>
+
+### Inject Tracing Information into Outgoing Requests
+
+For distributed tracing to work, the two headers that you extracted and stored in the active root span, `sentry-trace` and `baggage`, must be added to outgoing HTTP requests.
+
+Here's an example of how to collect and inject this tracing information to outgoing requests:
+
+```javascript
+const traceData = Sentry.getTraceData();
+const sentryTraceHeader = traceData["sentry-trace"];
+const sentryBaggageHeader = traceData["baggage"];
+
+// Make outgoing request
+fetch("https://example.com", {
+  method: "GET",
+  headers: {
+    baggage: sentryBaggageHeader,
+    "sentry-trace": sentryTraceHeader,
+  },
+}).then((response) => {
+  // ...
+});
+```
+
+In this example, tracing information is propagated to the project running at `https://example.com`. If this project uses a Sentry SDK, it will extract and save the tracing information for later use.
+
+The two services are now connected with your custom distributed tracing implementation.
+
+### Starting a New Trace
+
+<AvailableSince version="8.5.0" />
+
+In case the SDK's [default behavior](../#trace-duration) for the trace duration does not fit your needs, you can manually start a new trace that will no longer be connected to the current (distributed) trace.
+This means that spans or errors collected by the SDK during this new trace will not be connected to spans or errors collected before or after this new trace.
+
+To start a new trace that remains valid throughout the duration of a callback, use `startNewTrace`:
+
+```javascript {2-9}
+myButton.addEventListener("click", async () => {
+  Sentry.startNewTrace(() => {
+    Sentry.startSpan(
+      { op: "ui.interaction.click", name: "fetch click" },
+      async () => {
+        await fetch("http://example.com");
+      }
+    );
+  });
+});
+```
+
+Once the callback ends, the SDK will continue the previous trace (if available).
+
+## Verification
+
+If you make outgoing requests from your project to other services, check if the headers `sentry-trace` and `baggage` are present in the request. If so, distributed tracing is working.
+
+<PlatformCategorySection supported={["server"]}>
+## Example: Manual Instrumentation for gRPC
+
+### Server-Side Propagation
+
+```javascript
+// gRPC server interceptor with Sentry instrumentation
+function sentryInterceptor(methodDescriptor, nextCall) {
+  // Extract Sentry trace headers from the incoming metadata
+  const metadata = nextCall.metadata.getMap();
+  const sentryTrace = metadata["sentry-trace"];
+  const baggage = metadata["baggage"];
+
+  return new grpc.ServerInterceptingCall(nextCall, {
+    start: (next) => {
+      // Continue the trace using the extracted context
+      Sentry.continueTrace({ sentryTrace, baggage }, () => {
+        // Create a manual span that won't auto-close until we end it
+        Sentry.startSpanManual(
+          {
+            name: methodDescriptor.path,
+            op: "grpc.server",
+            // Make this a transaction in the Sentry UI.
+            // Not available in stream mode – use `parentSpan: null` to make this a service span.
+            forceTransaction: true,
+            attributes: {
+              "grpc.method": methodDescriptor.path,
+              "grpc.service": methodDescriptor.service.serviceName,
+              "grpc.status_code": grpc.status.OK,
+            },
+          },
+          (span) => {
+            // Store the span for later use
+            nextCall.sentrySpan = span;
+            next();
+          }
+        );
+      });
+    },
+    sendStatus: (status, next) => {
+      const span = nextCall.sentrySpan;
+      if (span) {
+        // Update status based on the gRPC result
+        if (status.code !== grpc.status.OK) {
+          span.setStatus({ code: 2, message: "error" });
+          span.setAttribute("grpc.status_code", status.code);
+          span.setAttribute("grpc.status_description", status.details);
+        }
+        // End the span when the call completes
+        span.end();
+      }
+      next(status);
+    },
+  });
+}
+
+// Add the interceptor to your gRPC server
+const server = new grpc.Server({
+  interceptors: [sentryInterceptor],
+});
+
+// In your service implementation, use the active span
+const serviceImplementation = {
+  myMethod: async (call, callback) => {
+    try {
+      const span = call.call?.nextCall?.sentrySpan;
+
+      // Use withActiveSpan to make the span active during service execution
+      await Sentry.withActiveSpan(span, async () => {
+        // Create child spans for operations within the service
+        await Sentry.startSpan(
+          { name: "database.query", op: "db" },
+          async (childSpan) => {
+            // Database operations here
+            const result = await database.query("SELECT * FROM table");
+            childSpan.setAttribute("db.rows_affected", result.rowCount);
+          }
+        );
+
+        callback(null, { result: "success" });
+      });
+    } catch (error) {
+      // Capture the error with the current span as context
+      Sentry.captureException(error);
+      callback(error);
+    }
+  },
+};
+```
+
+### Client-Side Propagation
+
+```javascript
+function createGrpcClient() {
+  // Create client with interceptor
+  return new MyServiceClient(address, grpc.credentials.createInsecure(), {
+    interceptors: [
+      (options, nextCall) => {
+        return new grpc.InterceptingCall(nextCall(options), {
+          start: (callMetadata, listener, next) => {
+            // `callMetadata` is the metadata object for the outgoing gRPC call.
+            // We will add our Sentry tracing headers to this object.
+
+            // Get current trace information from Sentry
+            const traceData = Sentry.getTraceData();
+
+            // Add Sentry trace and baggage headers to the call's metadata
+            if (traceData) {
+              callMetadata.set("sentry-trace", traceData["sentry-trace"]);
+              callMetadata.set("baggage", traceData["baggage"]);
+            }
+
+            // Proceed with the call, now including the Sentry headers in its metadata
+            next(callMetadata, listener);
+          },
+        });
+      },
+    ],
+  });
+}
+```
+
+</PlatformCategorySection>

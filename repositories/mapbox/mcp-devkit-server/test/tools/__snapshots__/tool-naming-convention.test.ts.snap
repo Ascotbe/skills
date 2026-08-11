@@ -1,0 +1,181 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tool Naming Convention > should maintain consistent tool list (snapshot test) 1`] = `
+[
+  {
+    "className": "BoundingBoxTool",
+    "description": "Calculates bounding box of given GeoJSON content, returns as [minX, minY, maxX, maxY]",
+    "toolName": "bounding_box_tool",
+  },
+  {
+    "className": "CheckColorContrastTool",
+    "description": "Checks color contrast ratios between foreground and background colors for WCAG 2.1 accessibility compliance",
+    "toolName": "check_color_contrast_tool",
+  },
+  {
+    "className": "CompareStylesTool",
+    "description": "Compares two Mapbox styles and reports differences in structure, layers, sources, and properties",
+    "toolName": "compare_styles_tool",
+  },
+  {
+    "className": "CoordinateConversionTool",
+    "description": "Converts coordinates between WGS84 (longitude/latitude) and EPSG:3857 (Web Mercator) coordinate systems",
+    "toolName": "coordinate_conversion_tool",
+  },
+  {
+    "className": "CountryBoundingBoxTool",
+    "description": "Gets bounding box for a country by its ISO 3166-1 country code, returns as [minX, minY, maxX, maxY].",
+    "toolName": "country_bounding_box_tool",
+  },
+  {
+    "className": "CreateStyleTool",
+    "description": "Create a new Mapbox style",
+    "toolName": "create_style_tool",
+  },
+  {
+    "className": "CreateTokenTool",
+    "description": "Create a new Mapbox public access token with specified scopes and optional URL restrictions.",
+    "toolName": "create_token_tool",
+  },
+  {
+    "className": "DeleteStyleTool",
+    "description": "Delete a Mapbox style by ID",
+    "toolName": "delete_style_tool",
+  },
+  {
+    "className": "GeojsonPreviewTool",
+    "description": "Generate a geojson.io URL to visualize GeoJSON data. Returns only the URL link.",
+    "toolName": "geojson_preview_tool",
+  },
+  {
+    "className": "GetFeedbackTool",
+    "description": "Get a single user feedback item from the Mapbox Feedback API by its unique ID. Use this tool to retrieve detailed information about a specific user-reported issue, suggestion, or feedback about map data, routing, or POI details. Requires user-feedback:read scope on the access token.",
+    "toolName": "get_feedback_tool",
+  },
+  {
+    "className": "ListFeedbackTool",
+    "description": "List user feedback items from the Mapbox Feedback API with filtering, sorting, and pagination. Use this tool to access user-reported issues, suggestions, and feedback about map data, routing, and POI details. Supports comprehensive filtering by status, category, date ranges, trace IDs, and search text. Requires user-feedback:read scope on the access token.",
+    "toolName": "list_feedback_tool",
+  },
+  {
+    "className": "ListStylesTool",
+    "description": "List styles for a Mapbox account. Use limit parameter to avoid large responses (recommended: limit=5-10). Use start parameter for pagination.",
+    "toolName": "list_styles_tool",
+  },
+  {
+    "className": "ListTokensTool",
+    "description": "List Mapbox access tokens for the authenticated user with optional filtering and pagination. Returns metadata for all tokens (public and secret), but the actual token value is only included for public tokens (secret token values are omitted for security). When using pagination, the "start" parameter must be obtained from the "next_start" field of the previous response (it is not a token ID)",
+    "toolName": "list_tokens_tool",
+  },
+  {
+    "className": "OptimizeStyleTool",
+    "description": "Optimizes Mapbox styles by removing unused sources, duplicate layers, and simplifying expressions",
+    "toolName": "optimize_style_tool",
+  },
+  {
+    "className": "PreviewStyleTool",
+    "description": "Generate preview URL for a Mapbox style using an existing public token",
+    "toolName": "preview_style_tool",
+  },
+  {
+    "className": "RetrieveStyleTool",
+    "description": "Retrieve a specific Mapbox style by ID",
+    "toolName": "retrieve_style_tool",
+  },
+  {
+    "className": "StyleBuilderTool",
+    "description": "Generate Mapbox style JSON for creating new styles or updating existing ones.
+
+The tool intelligently resolves layer types and filter properties using Streets v8 data.
+You don't need exact layer names - the tool automatically finds the correct layer based on your filters.
+
+BASE STYLES:
+• standard: ALWAYS THE DEFAULT - Modern Mapbox Standard with best performance
+• Classic styles: streets-v12/light-v11/dark-v11/satellite-v9/outdoors-v12/satellite-streets-v12/navigation-day-v1/navigation-night-v1
+  Only use Classic when user explicitly says "create a classic style" or working with existing Classic style
+
+STANDARD STYLE CONFIG:
+Use standard_config to customize the basemap:
+• Theme: default/faded/monochrome
+• Light: day/night/dawn/dusk
+• Show/hide: labels, roads, 3D buildings
+• Colors: water, roads, parks, etc.
+
+LAYER ORDERING:
+• Layers are rendered in order - last layer in the array appears visually on top
+• The 'slot' parameter is OPTIONAL - by default, layer order in the array determines visibility
+• For Standard style, you can optionally use 'slot' to control placement:
+  - No slot (default): Above all existing layers in the style
+  - 'top': Behind Place and Transit labels
+  - 'middle': Between basemap and labels
+  - 'bottom': Below most basemap features
+
+LAYER RENDERING:
+• render_type controls HOW to visualize the layer (line, fill, symbol, etc.)
+• Most important: Use render_type:"line" for outlines/borders even on polygon features
+• Default "auto" picks based on geometry, but override for specific effects:
+  - Building outlines → render_type:"line" (not fill!)
+  - Solid buildings → render_type:"fill" or "fill-extrusion" (3D)
+  - Road lines → render_type:"line" (auto works too)
+  - POI dots → render_type:"circle"
+  - Labels → render_type:"symbol"
+
+LAYER ACTIONS:
+• color: Apply a specific color
+• highlight: Make prominent
+• hide: Remove from view
+• show: Display with defaults
+
+AUTO-DETECTION:
+The tool automatically finds the correct layer from your filter_properties.
+Examples:
+• { class: 'park' } → finds 'landuse' layer
+• { type: 'wetland' } → finds 'landuse_overlay' layer
+• { maki: 'restaurant' } → finds 'poi_label' layer
+• { toll: true } → finds 'road' layer
+• { admin_level: 0 } → finds 'admin' layer (for country boundaries)
+• { admin_level: 1 } → finds 'admin' layer (for state/province boundaries)
+
+IMPORTANT LAYER NAMES:
+• Use "admin" for all boundaries (countries, states, etc.)
+• Use "building" (singular, not "buildings")
+• Use "road" for all streets, highways, paths
+
+If a layer type is not recognized, the tool will provide helpful suggestions showing:
+• All available source layers from Streets v8
+• Which fields are available in each layer
+• Examples of how to properly specify layers and filters",
+    "toolName": "style_builder_tool",
+  },
+  {
+    "className": "StyleComparisonTool",
+    "description": "Generate a comparison URL for comparing two Mapbox styles side-by-side",
+    "toolName": "style_comparison_tool",
+  },
+  {
+    "className": "TilequeryTool",
+    "description": "Query vector and raster data from Mapbox tilesets at geographic coordinates",
+    "toolName": "tilequery_tool",
+  },
+  {
+    "className": "UpdateStyleTool",
+    "description": "Update an existing Mapbox style",
+    "toolName": "update_style_tool",
+  },
+  {
+    "className": "ValidateExpressionTool",
+    "description": "Validates Mapbox style expressions for syntax, operators, and argument correctness",
+    "toolName": "validate_expression_tool",
+  },
+  {
+    "className": "ValidateGeojsonTool",
+    "description": "Validates GeoJSON objects for correctness, checking structure, coordinates, and geometry types",
+    "toolName": "validate_geojson_tool",
+  },
+  {
+    "className": "ValidateStyleTool",
+    "description": "Validates Mapbox style JSON against the Mapbox Style Specification, checking for errors, warnings, and providing suggestions for improvement",
+    "toolName": "validate_style_tool",
+  },
+]
+`;

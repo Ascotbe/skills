@@ -1,0 +1,21 @@
+{
+  "name": "@automattic/radical-pipelines",
+  "version": "0.11.0",
+  "private": true,
+  "description": "Radical Pipelines — an agent orchestrator distributed as a Claude Code plugin, an opencode plugin, and a standalone agent skill, served from this repository.",
+  "keywords": [
+    "radical-pipelines"
+  ],
+  "type": "module",
+  "main": "opencode/plugin.mjs",
+  "exports": "./opencode/plugin.mjs",
+  "scripts": {
+    "release:version": "changeset version && node scripts/sync-version.mjs && npm install --package-lock-only --no-audit --no-fund",
+    "test": "node --test 'scripts/test/**/*.test.mjs'",
+    "test:opencode": "node scripts/opencode-integration/run.mjs"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.0"
+  }
+}

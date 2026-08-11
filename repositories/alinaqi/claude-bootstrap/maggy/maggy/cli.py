@@ -1,0 +1,300 @@
+"""Maggy CLI — terminal interface for the engineering platform."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import typer
+
+from maggy.cli_analytics import register as _register_analytics
+from maggy.cli_client import MaggyClient
+from maggy.cli_output import (
+    console,
+    dump_json,
+    render_health,
+    render_inbox,
+    render_sessions,
+)
+
+app = typer.Typer(
+    name="maggy",
+    help="Maggy — AI Engineering Platform",
+    no_args_is_help=False,
+)
+_client = MaggyClient()
+
+
+def _ensure() -> bool:
+    if not _client._check_health():
+        console.print("[dim]Starting Maggy server...[/dim]")
+    if not _client.ensure_server():
+        console.print("[red]Cannot reach Maggy server.[/red]")
+        raise typer.Exit(1)
+    return True
+
+
+@app.callback(invoke_without_command=True)
+def main(ctx: typer.Context) -> None:
+    """Interactive REPL — cwd is the project."""
+    if ctx.invoked_subcommand is not None:
+        return
+    _ensure()
+    from maggy.cli_chat import run_chat
+    from maggy.cli_context import cwd_project
+    name, path = cwd_project()
+    run_chat(_client, name, path, routed=True)
+
+
+@app.command()
+def serve() -> None:
+    """Start the Maggy server + web dashboard."""
+    from maggy.main import main as start_server
+    start_server()
+
+
+@app.command()
+def bootstrap(
+    source: str = typer.Option(
+        None, "--source", "-s",
+        help="Path to a claude-bootstrap checkout (else $MAGGY_BOOTSTRAP_DIR or marker)",
+    ),
+    no_backup: bool = typer.Option(
+        False, "--no-backup", help="Skip the automatic pre-install backup of your existing files",
+    ),
+) -> None:
+    """Install Maggy's skills, hooks, commands, ~/bin model wrappers, and plugins."""
+    from maggy.services.bootstrap import BootstrapError, run_bootstrap
+    from maggy.services.snapshot import create_backup
+    try:
+        if not no_backup:
+            m = create_backup(source)
+            n = sum(len(v) for v in m["captured"].values())
+            if n:
+                console.print(f"[dim]Backed up {n} existing file(s) → {m['id']} "
+                              f"([bold]maggy restore[/bold] to roll back)[/dim]")
+        result = run_bootstrap(source)
+    except BootstrapError as e:
+        console.print(f"[red]{e}[/red]")
+        raise typer.Exit(1)
+    console.print("[green]✓ Bootstrap installed:[/green]")
+    for asset, n in result.items():
+        console.print(f"  {asset}: {n}")
+    console.print("\n[dim]Run [bold]maggy serve[/bold] to start the dashboard.[/dim]")
+
+
+@app.command()
+def backup(
+    source: str = typer.Option(None, "--source", "-s", help="Install source (else marker/env)"),
+) -> None:
+    """Snapshot your existing files (settings.json + anything Maggy would overwrite)."""
+    from maggy.services.bootstrap import BootstrapError
+    from maggy.services.snapshot import create_backup
+    try:
+        m = create_backup(source)
+    except BootstrapError as e:
+        console.print(f"[red]{e}[/red]")
+        raise typer.Exit(1)
+    n = sum(len(v) for v in m["captured"].values())
+    console.print(f"[green]✓ Backup {m['id']}[/green] — captured {n} file(s).")
+    for cat, names in m["captured"].items():
+        console.print(f"  {cat}: {', '.join(names)}")
+    if not n:
+        console.print("[dim]Nothing to back up — no existing files would be overwritten.[/dim]")
+
+
+@app.command()
+def restore(
+    backup_id: str = typer.Option(None, "--id", help="Backup id to restore (default: newest)"),
+    show_list: bool = typer.Option(False, "--list", "-l", help="List available backups"),
+) -> None:
+    """Restore your files from a backup (newest by default)."""
+    from maggy.services.snapshot import list_backups, restore_backup
+    backups = list_backups()
+    if show_list or not backups:
+        if not backups:
+            console.print("[yellow]No backups found.[/yellow]")
+            return
+        console.print("[bold]Backups (newest first):[/bold]")
+        for b in backups:
+            n = sum(len(v) for v in b["captured"].values())
+            console.print(f"  {b['id']} — {n} file(s)")
+        return
+    out = restore_backup(backup_id)
+    console.print(f"[green]✓ Restored backup {out['id']}[/green] — {out['restored']} file(s).")
+
+
+@app.command()
+def diff(
+    source: str = typer.Option(None, "--source", "-s", help="Install source (else marker/env)"),
+) -> None:
+    """Overview of what a bootstrap would change vs your current setup."""
+    from maggy.services.bootstrap import BootstrapError
+    from maggy.services.snapshot import diff_install
+    try:
+        d = diff_install(source)
+    except BootstrapError as e:
+        console.print(f"[red]{e}[/red]")
+        raise typer.Exit(1)
+    add = sum(len(v["add"]) for v in d.values())
+    chg = sum(len(v["change"]) for v in d.values())
+    same = sum(len(v["same"]) for v in d.values())
+    console.print(f"[bold]vs your setup:[/bold] [green]+{add} new[/green], "
+                  f"[yellow]~{chg} changed[/yellow], [dim]{same} identical[/dim]")
+    for cat, b in d.items():
+        if b["add"] or b["change"]:
+            parts = []
+            if b["add"]:
+                parts.append(f"[green]+{len(b['add'])}[/green]")
+            if b["change"]:
+                parts.append(f"[yellow]~{', '.join(b['change'][:6])}[/yellow]")
+            console.print(f"  {cat}: {'  '.join(parts)}")
+
+
+@app.command()
+def uninstall(
+    source: str = typer.Option(
+        None, "--source", "-s",
+        help="Path to the checkout used to install (else $MAGGY_BOOTSTRAP_DIR or marker)",
+    ),
+    yes: bool = typer.Option(
+        False, "--yes", "-y",
+        help="Actually remove. Without this it's a dry-run preview.",
+    ),
+) -> None:
+    """Remove what `maggy bootstrap` installed (skills, hooks, commands, ~/bin wrappers, plugins)."""
+    from maggy.services.bootstrap import BootstrapError
+    from maggy.services.uninstall import plan_uninstall, run_uninstall
+    try:
+        plan = plan_uninstall(source)
+    except BootstrapError as e:
+        console.print(f"[red]{e}[/red]")
+        raise typer.Exit(1)
+    if sum(len(v) for v in plan.values()) == 0:
+        console.print("[green]Nothing to remove — no bootstrap assets found.[/green]")
+        return
+    console.print("[yellow]Will remove:[/yellow]" if yes else "[yellow]Would remove (dry-run):[/yellow]")
+    for cat, names in plan.items():
+        if names:
+            extra = "…" if len(names) > 8 else ""
+            console.print(f"  {cat}: {len(names)} — {', '.join(names[:8])}{extra}")
+    if not yes:
+        console.print("\n[dim]Re-run with [bold]--yes[/bold] to remove. Left alone: the pip package, "
+                      "Maggy data (~/.maggy), and ~/.claude/settings.json — see UNINSTALL.md.[/dim]")
+        return
+    removed = run_uninstall(source)
+    n = sum(len(v) for v in removed.values())
+    console.print(f"[green]✓ Removed {n} item(s).[/green]")
+    console.print("[dim]Still installed (remove manually if you want): the package "
+                  "([bold]pip uninstall maggy-harness[/bold]), ~/.maggy data, and any hook lines in "
+                  "~/.claude/settings.json. See UNINSTALL.md.[/dim]")
+
+
+@app.command()
+def restart() -> None:
+    """Stop and restart the Maggy server."""
+    console.print("[dim]Stopping Maggy server…[/dim]")
+    _client._kill_stale_port()
+    console.print("[dim]Starting Maggy server…[/dim]")
+    if _client.ensure_server():
+        console.print("[green]Maggy restarted.[/green]")
+    else:
+        console.print("[red]Failed to restart.[/red]")
+        raise typer.Exit(1)
+
+
+@app.command()
+def status(json_out: bool = typer.Option(False, "--json")) -> None:
+    """Show server health and config summary."""
+    _ensure()
+    data = _client.health()
+    dump_json(data) if json_out else render_health(data)
+
+
+@app.command()
+def inbox(
+    refresh: bool = typer.Option(False, "--refresh"),
+    json_out: bool = typer.Option(False, "--json"),
+) -> None:
+    """Show AI-ranked task inbox."""
+    _ensure()
+    data = _client.inbox(refresh=refresh)
+    if json_out:
+        dump_json(data)
+    elif not data.get("items"):
+        console.print("[dim]No tasks in inbox.[/dim]")
+    else:
+        render_inbox(data)
+
+
+@app.command()
+def sessions(json_out: bool = typer.Option(False, "--json")) -> None:
+    """List active AI sessions across projects."""
+    _ensure()
+    data = _client.activity()
+    dump_json(data) if json_out else render_sessions(data)
+
+
+@app.command()
+def chat(
+    project: str = typer.Argument(None, help="Project key"),
+    direct: bool = typer.Option(False, "--direct"),
+) -> None:
+    """Interactive chat with a project's AI session."""
+    _ensure()
+    from maggy.cli_chat import run_chat
+    from maggy.cli_context import cwd_project
+    if project:
+        name, path = project, str(Path.cwd().resolve())
+    else:
+        name, path = cwd_project()
+    run_chat(_client, name, path, routed=not direct)
+
+
+@app.command()
+def spawn(
+    task: str = typer.Argument(..., help="Task description"),
+) -> None:
+    """Spawn a background AI session."""
+    _ensure()
+    from maggy.cli_context import cwd_project
+    from maggy.cli_sessions import spawn_session
+    name, _path = cwd_project()
+    spawn_session(_client, task, name)
+
+
+@app.command()
+def ps() -> None:
+    """List all managed sessions (chat + executor)."""
+    _ensure()
+    from maggy.cli_sessions import list_all
+    list_all(_client)
+
+
+@app.command()
+def kill(
+    session_id: str = typer.Argument(..., help="Session ID"),
+) -> None:
+    """Stop a managed session."""
+    _ensure()
+    from maggy.cli_sessions import kill_session
+    kill_session(_client, session_id)
+
+
+@app.command()
+def execute(
+    task_id: str = typer.Argument(..., help="Task ID"),
+    plan: bool = typer.Option(False, "--plan"),
+) -> None:
+    """Execute a task via the TDD pipeline."""
+    _ensure()
+    mode = "plan" if plan else "tdd"
+    data = _client.execute(task_id, mode)
+    console.print(
+        f"[green]Started[/green] session "
+        f"[bold]{data.get('session_id', '?')}[/bold] "
+        f"({mode} mode)",
+    )
+
+
+# Register analytics/reporting commands (route, budget, models, etc.)
+_register_analytics(app, _client, _ensure)

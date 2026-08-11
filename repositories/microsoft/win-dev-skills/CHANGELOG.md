@@ -1,0 +1,112 @@
+# Changelog
+
+All notable changes to this project are documented here.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+While the project is in `0.x` (preview), **minor** version bumps may include
+breaking changes — see the README warning. Once we ship `1.0.0` we will follow
+strict SemVer.
+
+## [Unreleased]
+
+<!--
+Maintainers: do NOT edit this section in feature PRs.
+The promotion PR (staging → main) moves entries from here into a new
+`## [X.Y.Z] — YYYY-MM-DD` section above and bumps the version in:
+  - plugins/winui/plugin.json (version)
+  - .github/plugin/marketplace.json (metadata.version, plugins[].version)
+  - .claude-plugin/marketplace.json (version, plugins[].version)
+The `version-bump` and `changelog-entry` CI jobs enforce this.
+-->
+
+### Added
+
+### Changed
+
+### Fixed
+
+### Removed
+
+### Deprecated
+
+## [0.5.0] — 2026-07-21
+
+### Added
+
+- `winui-search` now indexes a third source, **Reactor**
+  (`microsoft/microsoft-ui-reactor`): 93 C#-only declarative WinUI controls from the
+  ReactorGallery, surfaced alongside Gallery and Toolkit results. Searchable via
+  `--source reactor`; ships an embedded offline snapshot plus on-demand `update`
+  refresh.
+- `winui-ui-testing`: documents the new `winapp ui` input and capture verbs —
+  `send-keys` (synthetic keyboard, accelerators, per-character `KeyDown`),
+  `hover`, `drag`, `touch`, `pen`, and `record` (H.264 MP4 capture) — with usage
+  examples plus new rows in the "what to test" and assertion tables, and a
+  `RichEditBox`→`send-keys` gotcha.
+- `winui-dev-workflow`: documents WinUI crash diagnosis in `winapp run` — the
+  `--debug-output` stowed-exception triage pass (first-run debugger-component
+  download, `WINAPP_DBGTOOLS_DIR`) and the new `--symbols` flag for Microsoft
+  Symbol Server-backed native crash analysis; `BuildAndRun.ps1` gains an opt-in
+  `-Symbols` switch.
+
+### Changed
+
+- `winui-ui-testing` now targets **any Windows desktop app** (Win32, WPF, WinForms, WinUI 3, packaged or unpackaged) — the `winapp ui` UI Automation harness is framework-agnostic, not WinUI-only.
+- `BuildAndRun.ps1` defaults to `dotnet build` (was Visual Studio MSBuild) now that the Windows App SDK XAML-compiler bug is fixed; pass `-UseMSBuild` to opt back in.
+
+### Fixed
+
+- `winui-search`: restored the WinUI Gallery data refresh, which broke when upstream
+  `microsoft/WinUI-Gallery` reorganized and reformatted its samples — `ControlInfoData.json`
+  moved to `SampleSupport/Data/`, sample pages moved to per-control `Samples/{UniqueId}/`
+  folders, and the `ControlExample` schema was replaced with `--- header/xaml/c#`
+  `SampleDefinition` `.txt` bundles. `GalleryFetcher` now parses the new format (keeping a
+  fallback for the few legacy inline Accessibility pages) and the embedded gallery snapshot
+  was regenerated. Fixes #120.
+
+## [0.4.0] — 2026-06-25
+
+### Added
+
+- OpenClaw support: the `winui` plugin now ships a native OpenClaw manifest
+  (`openclaw.plugin.json`) and `package.json` entry point so all eight skills
+  load in OpenClaw (`Format: openclaw`). README documents the marketplace and
+  local-clone install routes.
+
+
+## [0.3.1] — 2026-05-19
+
+### Added
+
+- `winui-dev` agent: window sizing rubric, screenshot validation step, and
+  anti-self-delegation guardrails (#84).
+- `winui-search`: batched CLI mode, background cache refresh, BM25-based
+  ranking, and upgraded WinUI Gallery + Community Toolkit data fetchers (#83).
+
+### Changed
+
+- CI: `pr-validation` workflow now also runs on PRs targeting `staging`.
+- Bumped `coverlet.collector` from 10.0.0 to 10.0.1 (#87).
+
+## [0.3.0] — 2026-05-13
+
+Baseline entry covering everything currently shipped on `main` at the time the
+release process was introduced. Future releases will list per-PR changes here.
+
+### Added
+
+- Initial public preview of the `winui` plugin: `winui-dev` agent and the eight
+  skills (`winui-dev-workflow`, `winui-design`, `winui-code-review`,
+  `winui-ui-testing`, `winui-packaging`, `winui-wpf-migration`,
+  `winui-session-report`, `winui-setup`).
+- In-repo tools: `Microsoft.WindowsAppSDK.Analyzers` (Roslyn analyzer),
+  `winui-search` (Native AOT search over WinUI Gallery + Community Toolkit),
+  `winmd-cli` (Native AOT WinRT/.NET metadata indexer).
+- CI provenance jobs guarding the committed analyzer DLL and `winui-search.exe`
+  against source drift.
+- Marketplace manifest under `.github/plugin/marketplace.json` and Claude Code
+  marketplace manifest under `.claude-plugin/marketplace.json`.
+
+

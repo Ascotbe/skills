@@ -1,0 +1,40 @@
+packages:
+  - docs
+  - example
+  - playground
+
+verifyDepsBeforeRun: install
+
+minimumReleaseAgeExclude:
+  - "@nuxt/test-utils"
+  - ipx@4.0.0-beta.1
+  - node-mock-http@1.0.5
+  - nuxt
+  - nuxt-nightly
+  - '@nuxt/*'
+  - vue
+  - '@vue/*'
+
+overrides:
+  "@nuxt/image": "workspace:*"
+  "@nuxt/schema": "4.5.2"
+  "@types/node": "^24.13.3"
+  vite-plugin-vue-tracer: "^1.4.0"
+  vue: "3.5.38"
+  "@vue/compiler-core": "3.5.38"
+  "@vue/compiler-dom": "3.5.38"
+  "@vue/compiler-sfc": "3.5.38"
+  "@vue/compiler-ssr": "3.5.38"
+  "@vue/reactivity": "3.5.38"
+  "@vue/runtime-core": "3.5.38"
+  "@vue/runtime-dom": "3.5.38"
+  "@vue/server-renderer": "3.5.38"
+  "@vue/shared": "3.5.38"
+
+allowBuilds:
+  "@parcel/watcher": false
+  better-sqlite3: true
+  esbuild: false
+  sharp: true
+  unrs-resolver: false
+  vue-demi: false

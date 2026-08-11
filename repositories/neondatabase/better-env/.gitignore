@@ -1,0 +1,46 @@
+# dependencies (bun install)
+node_modules
+
+# stray npm/yarn/pnpm lockfiles — this repo uses bun (bun.lock is the source of truth)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# output
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+.fallow/
+
+# test artifacts
+.tmp/
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
+
+# Local Netlify folder
+.netlify

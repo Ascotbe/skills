@@ -1,0 +1,95 @@
+version: "2"
+
+run:
+  modules-download-mode: readonly
+
+linters:
+  default: none
+  enable:
+    - bodyclose
+    - copyloopvar
+    - dogsled
+    - dupl
+    - errcheck
+    - goconst
+    - gosec
+    - govet
+    - ineffassign
+    - misspell
+    - modernize
+    - nolintlint
+    - prealloc
+    - revive
+    - staticcheck
+    - unconvert
+    - unparam
+    - unused
+    - whitespace
+  settings:
+    nolintlint:
+      require-explanation: true
+      require-specific: true
+      allow-unused: false
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - staticcheck
+        text: "SA1019: res.BlocksDeleted"
+      - linters:
+          - staticcheck
+        text: "SA1019: client.Datasets.QueryLegacy"
+      - linters:
+          - staticcheck
+        text: "SA1019: client.QueryLegacy"
+      - linters:
+          - staticcheck
+        text: 'SA1019: "github.com/axiomhq/axiom-go/axiom/querylegacy"'
+      - linters:
+          - gosec
+        text: "G115: integer overflow conversion"
+      - linters:
+          - gosec
+        text: "G101: Potential hardcoded credentials"
+        path: internal/cmd/root/help_topic.go
+      - linters:
+          - gosec
+        text: "G705: XSS via taint analysis"
+        path: tools/
+      - linters:
+          - revive
+        text: "var-naming: avoid package names that conflict with Go standard library package names"
+    paths:
+      - .git
+      - .github
+      - .vscode
+      - bin
+      - dist
+      - man
+      - testdata
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  settings:
+    gofmt:
+      simplify: true
+    goimports:
+      local-prefixes:
+        - github.com/axiomhq/cli
+  exclusions:
+    generated: lax
+    paths:
+      - .git
+      - .github
+      - .vscode
+      - bin
+      - dist
+      - man
+      - testdata

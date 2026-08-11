@@ -1,0 +1,64 @@
+{
+  "name": "vitest-evals-workspace",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "build": "pnpm -r --if-present run build",
+    "build:action": "pnpm --filter @vitest-evals/github-reporter run build:action",
+    "evals": "node ./scripts/run-workspace-evals.mjs",
+    "evals:info": "node ./scripts/run-workspace-evals.mjs --info",
+    "evals:verbose": "node ./scripts/run-workspace-evals.mjs --info",
+    "evals:fail": "node ./scripts/run-workspace-evals.mjs --fail",
+    "docs": "pnpm --filter vitest-evals-docs run dev",
+    "docs:check": "node ./scripts/check-public-docs.mjs",
+    "docs:build": "pnpm --filter vitest-evals-docs run build",
+    "docs:preview": "pnpm --filter vitest-evals-docs run preview",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "prepare": "simple-git-hooks",
+    "release:check": "node ./scripts/check-release-config.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "dotenv -e .env -e .env.local -- vitest run packages apps scripts --config=./vitest.config.ts --reporter=./packages/vitest-evals/src/reporter.ts",
+    "test:watch": "dotenv -e .env -e .env.local -- vitest packages apps scripts --config=./vitest.config.ts --reporter=./packages/vitest-evals/src/reporter.ts",
+    "test:ci": "dotenv -e .env -e .env.local -- vitest run packages apps scripts --config=./vitest.config.ts --coverage --reporter=./packages/vitest-evals/src/reporter.ts --reporter=junit --outputFile=tests.junit.xml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getsentry/vitest-evals.git"
+  },
+  "author": "David Cramer",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/getsentry/vitest-evals/issues"
+  },
+  "homepage": "https://github.com/getsentry/vitest-evals#readme",
+  "description": "",
+  "devDependencies": {
+    "@ai-sdk/openai": "^3.0.48",
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^25.5.0",
+    "@vitest/coverage-v8": "^4.1.2",
+    "ai": "^6.0.141",
+    "autoevals": "^0.0.132",
+    "dotenv-cli": "^8.0.0",
+    "lint-staged": "^15.5.2",
+    "openai": "^6.33.0",
+    "simple-git-hooks": "^2.13.0",
+    "tinyrainbow": "^3.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.2",
+    "zod": "^4.3.6"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm exec lint-staged --concurrent false"
+  },
+  "lint-staged": {
+    "*": [
+      "biome format --write --no-errors-on-unmatched --files-ignore-unknown=true",
+      "biome lint --fix --no-errors-on-unmatched --files-ignore-unknown=true"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+# TW-Blocks Design System
+
+## Overview
+TW-Blocks is a semantic spacing system for Tailwind CSS v4 based on blocks and tabs.
+
+## For AI Coding Assistants
+Install the skill: npx skills add vercel-labs/tw-blocks
+
+## For Manual Installation
+pnpm add tw-blocks
+
+## Documentation
+- Getting Started: /docs/getting-started
+- Installation: /docs/installation
+- API Reference: /docs/api
+- Examples: /examples
+- Skill File: /SKILLS/tw-blocks/SKILL.md
+
+## Key Concepts
+- Block unit: Component sizes (default 32px / 2rem)
+- Tab unit: Padding/spacing (default 4px / 0.25rem)
+- 4:1 Ratio: 4 tabs = 1 block for harmonious layouts
+- All utilities support fractional values (0.5, 1.5, 2.5)
+
+## Installation
+```bash
+pnpm add tw-blocks
+```
+
+## Basic Usage
+```css
+@import "tailwindcss";
+@import "tw-blocks";
+```
+
+## Available Classes
+
+### Spacing (p-*, m-*, gap-*)
+- Tab scale: tab-0, tab-0.5, tab-1, tab-1.5, tab-2, tab-2.5, tab-3, tab-4, tab-5, tab-6, tab-8, tab-10, tab-12, tab-16, tab-20, tab-24, tab-32
+- Block scale: block-0, block-0.5, block-1, block-1.5, block-2, block-2.5, block-3, block-4, block-5, block-6, block-8, block-10, block-12, block-16
+
+### Sizing (w-*, h-*, size-*)
+- Use same tab/block values for consistent sizing
+- Examples: h-block-1 (32px), w-block-2 (64px), size-block-1
+
+### Border Radius (rounded-*)
+- Block radius: rounded-block-0.5, rounded-block-1
+- Tab radius: rounded-tab-1, rounded-tab-2, rounded-tab-3, rounded-tab-4
+
+## Example Patterns
+
+### Button
+```html
+<button class="h-block-1 px-tab-4 rounded-tab-2">Click me</button>
+```
+
+### Card
+```html
+<div class="p-tab-4 rounded-block-0.5">Card content</div>
+```
+
+### Input Field
+```html
+<input class="h-block-1 px-tab-3 rounded-tab-2" />
+```
+
+### Header
+```html
+<header class="h-block-2 px-tab-4">Header content</header>
+```
+
+### Sidebar
+```html
+<aside class="w-[240px] p-tab-3">Sidebar content</aside>
+```
+
+## API Format
+All documentation available in markdown format.
+Request with Accept: text/markdown header.

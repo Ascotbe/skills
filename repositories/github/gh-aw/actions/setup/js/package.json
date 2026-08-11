@@ -1,0 +1,37 @@
+{
+  "devDependencies": {
+    "@actions/artifact": "^6.2.1",
+    "@actions/core": "^3.0.1",
+    "@actions/exec": "^3.0.0",
+    "@actions/github": "^9.1.1",
+    "@actions/github-script": "github:actions/github-script#v9.0.0",
+    "@actions/glob": "^0.7.0",
+    "@actions/io": "^3.0.2",
+    "@github/copilot-sdk": "^1.0.8",
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/ui": "^4.1.10",
+    "minimatch": ">=10.2.6",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.0",
+    "vitest": "^4.1.9"
+  },
+  "overrides": {
+    "undici": "^6.23.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && vitest run --no-file-parallelism",
+    "test:js": "vitest run",
+    "test:js-integration-live-api": "vitest run --config vitest.integration.config.mjs --no-file-parallelism",
+    "test:js-integration-artifact": "vitest run --config vitest.artifact-integration.config.mjs --no-file-parallelism",
+    "test:js-watch": "vitest",
+    "test:js-coverage": "vitest run --coverage",
+    "format:cjs": "npx prettier --write '**/*.cjs' '**/*.ts' '**/*.json' --ignore-path ../../../.prettierignore",
+    "lint:cjs": "npx prettier --check '**/*.cjs' '**/*.ts' '**/*.json' --ignore-path ../../../.prettierignore",
+    "format:schema": "npx prettier --write ../../../pkg/workflow/schemas/github-workflow.json --ignore-path /dev/null",
+    "format:pkg-json": "npx prettier --write '../../../**/*.json' '!../../../pkg/workflow/js/**/*.json' --ignore-path ../../../.prettierignore",
+    "check:pkg-json": "npx prettier --check '../../../**/*.json' '!../../../pkg/workflow/js/**/*.json' --ignore-path ../../../.prettierignore"
+  }
+}

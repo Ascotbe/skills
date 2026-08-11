@@ -1,0 +1,32 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Core",
+      "description": "Start here: the core skill for all things Neon, plus Neon's Lakebase Postgres offering.",
+      "skills": [
+        "neon",
+        "neon-postgres"
+      ]
+    },
+    {
+      "title": "Database Workflows",
+      "description": "Provision, branch, and optimize Lakebase Postgres projects on Neon.",
+      "skills": [
+        "claimable-postgres",
+        "neon-postgres-branches",
+        "neon-postgres-egress-optimizer"
+      ]
+    },
+    {
+      "title": "Neon Services",
+      "description": "Use Neon services beyond Lakebase Postgres.",
+      "skills": [
+        "neon-ai-gateway",
+        "neon-functions",
+        "neon-object-storage"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<Project>
+
+  <PropertyGroup>
+    <ReadMePath>$(MSBuildProjectDirectory)\README.md</ReadMePath>
+    <ReadMeExists Condition="Exists('$(ReadMePath)')">true</ReadMeExists>
+    <PackageReadmeFile Condition="'$(PackageReadmeFile)' == '' And '$(ReadMeExists)' == 'true'">README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageThirdPartyNoticesFile Condition="'$(PackageThirdPartyNoticesFile)' == ''">$(RepoRoot)THIRD-PARTY-NOTICES.TXT</PackageThirdPartyNoticesFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <None Include="$(PackageThirdPartyNoticesFile)" Pack="true" PackagePath="." />
+  </ItemGroup>
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
+
+  <ItemGroup Condition="'$(ReadMeExists)' == 'true'">
+    <None Include="$(ReadMePath)" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <Import Project="$(RepositoryEngineeringDir)/NullablePolyfill.targets" />
+
+  <!-- HACK: This resolves issues in CI builds where the extensions.json file is mapped to the incorrect directory. We only want
+   to copy the updated extensions.json file once the `_FunctionsExtensionUpdateMetadata` target has completed. -->
+  <Target Name="_FunctionsAssignTargetPathsFix" AfterTargets="_FunctionsAssignTargetPaths" BeforeTargets="_FunctionsExtensionUpdateMetadata">
+    <ItemGroup>
+      <None Remove="$(_FunctionsIntermediateExtensionUpdatedJsonPath)"
+        CopyToOutputDirectory="PreserveNewest"
+        CopyToPublishDirectory="PreserveNewest"
+        TargetPath="$(_FunctionsExtensionsJsonName)" />
+      <None
+        Include="$(_FunctionsIntermediateExtensionUpdatedJsonPath)"
+        CopyToOutputDirectory="PreserveNewest"
+        CopyToPublishDirectory="PreserveNewest"
+        TargetPath="$(_FunctionsExtensionsJsonName)"
+        Condition="Exists('$(_FunctionsIntermediateExtensionUpdatedJsonPath)')"/>
+    </ItemGroup>
+  </Target>
+</Project>

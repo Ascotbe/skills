@@ -1,0 +1,20 @@
+# WebFetch inspection logs
+logs/
+
+# Internal planning docs
+docs/
+
+# macOS Finder metadata
+.DS_Store
+
+# Local secrets — never commit
+.env
+.env.*
+!.env.example
+
+# build output — rendered per-target trees
+dist/
+
+# Python bytecode
+__pycache__/
+*.pyc

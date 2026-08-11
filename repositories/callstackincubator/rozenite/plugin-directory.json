@@ -1,0 +1,90 @@
+[
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/redux-devtools-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/redux-devtools-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/network-activity-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/network-activity-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/react-navigation-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/react-navigation-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/tanstack-query-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/tanstack-query-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/expo-atlas-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/expo-atlas-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/overlay-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/overlay-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/controls-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/controls-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/rozenite-preview",
+    "githubUrl": "https://github.com/matinzd/rozenite-preview"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/performance-monitor-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/performance-monitor-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/storage-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/storage-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/sqlite-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/sqlite-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/file-system-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/file-system-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/rhf-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/rhf-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@rozenite/require-profiler-plugin",
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/require-profiler-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@ilteoood/zorro",
+    "githubUrl": "https://github.com/ilteoood/zorro"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@react-native-nitro-geolocation/rozenite-plugin",
+    "githubUrl": "https://github.com/jingjing2222/react-native-nitro-geolocation/tree/main/packages/rozenite-devtools-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/rozenite-graphql-client-devtool",
+    "githubUrl": "https://github.com/CodeByRahulSaini/rozenite-graphql-client-devtool"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/rozenite-assets-viewer",
+    "githubUrl": "https://github.com/CodeByRahulSaini/rozenite-assets-viewer"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/rozenite-growthbook-plugin",
+    "githubUrl": "https://github.com/valeriobelli/rozenite-growthbook-plugin"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/rozenite-zustand-devtools",
+    "githubUrl": "https://github.com/IronTony/rozenite-zustand-devtools"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/rozenite-navigation-inspector",
+    "githubUrl": "https://github.com/IronTony/rozenite-navigation-inspector"
+  },
+  {
+    "npmUrl": "https://www.npmjs.com/package/@avasapp/rozenite-plugin-ably",
+    "githubUrl": "https://github.com/avas-app/rozenite-plugin-ably"
+  }
+]

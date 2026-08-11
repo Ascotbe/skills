@@ -1,0 +1,11 @@
+name: cloudflare
+display-name: Cloudflare
+description: Cloudflare production operations — Workers monitoring, deployments, builds, logs, DNS, and observability via the Cloudflare API MCP server
+
+config-keys:
+  - account.id
+  - zone.id
+  - worker.name
+
+mcp:
+  url: https://mcp.cloudflare.com/mcp

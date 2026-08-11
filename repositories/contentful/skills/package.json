@@ -1,0 +1,38 @@
+{
+  "name": "@contentful/skills",
+  "version": "2.4.22",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentful/skills"
+  },
+  "bugs": {
+    "url": "https://github.com/contentful/skills/issues"
+  },
+  "homepage": "https://github.com/contentful/skills#readme",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.20.0",
+  "scripts": {
+    "lint": "oxlint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --import tsx/esm 'src/skills/**/*.test.ts'",
+    "build": "skill-kit build src/skills/contentful-personalization/skill.ts -o skills/contentful-personalization --mode node",
+    "validate": "python3 local-skills/skills/skill-authoring/scripts/quick_validate.py skills --all",
+    "update-licenses": "node ./scripts/update-licenses.mjs"
+  },
+  "devDependencies": {
+    "@contentful/skill-kit": "^1.6.6",
+    "@release-it/bumper": "^8.0.0",
+    "@release-it/conventional-changelog": "^12.0.0",
+    "@types/node": "^25.2.3",
+    "oxlint": "^1.61.0",
+    "prettier": "^3.8.3",
+    "release-it": "^21.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.0"
+  }
+}

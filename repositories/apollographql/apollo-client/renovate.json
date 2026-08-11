@@ -1,0 +1,51 @@
+{
+  "extends": ["apollo-open-source", "helpers:pinGitHubActionDigests"],
+  "ignorePaths": ["**/integration-tests/**"],
+  "dependencyDashboard": true,
+  "pathRules": [
+    {
+      "paths": ["docs/package.json"],
+      "extends": ["apollo-docs"]
+    }
+  ],
+  "packageRules": [
+    {
+      "groupName": "all @types",
+      "groupSlug": "all-types",
+      "matchPackagePatterns": ["@types/*"]
+    },
+    {
+      "groupName": "all devDependencies",
+      "groupSlug": "all-dev",
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "groupName": "all dependencies - patch updates",
+      "groupSlug": "all-patch",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["patch"]
+    }
+  ],
+  "ignoreDeps": [
+    "typedoc",
+    "react-17",
+    "react-dom-17",
+    "react-18",
+    "react-dom-18",
+    "@testing-library/react-12",
+    "@rollup/plugin-node-resolve",
+    "rollup",
+    "glob",
+    "prettier",
+    "eslint-plugin-react-compiler",
+    "graphql-17-alpha2",
+    "graphql-17-alpha9",
+    "rxjs-min",
+    "jsdom"
+  ],
+  "reviewers": [],
+  "reviewersFromCodeOwners": false,
+  "ignoreReviewers": ["team:@apollographql/client-typescript"],
+  "minimumReleaseAge": "7 days"
+}
