@@ -1,7 +1,0 @@
-{
-  "from": "<unix_ts>",
-  "metrics": [
-    "<list>",
-    "str"
-  ]
-}

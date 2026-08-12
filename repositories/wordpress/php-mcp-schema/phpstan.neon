@@ -1,5 +1,0 @@
-parameters:
-    phpVersion: 70400
-    level: max
-    paths:
-        - src

@@ -1,1 +1,0 @@
-../../../../../../skills/aspire-deployment/references/aws.md

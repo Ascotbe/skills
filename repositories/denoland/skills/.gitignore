@@ -1,6 +1,0 @@
-# Local settings (should not be committed)
-.claude/settings.local.json
-*.local.json
-
-# OS files
-.DS_Store

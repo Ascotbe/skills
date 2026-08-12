@@ -1,0 +1,13 @@
+---
+name: aiconfig-ai-metrics-d148d80159
+description: DEPRECATED redirect — this skill was renamed to built-in-metrics. Do
+  not use this skill; invoke built-in-metrics instead. Kept only so old references
+  to aiconfig-ai-metrics still point users to the new name.
+---
+# Deprecated — renamed to `built-in-metrics`
+
+This skill has been renamed. **Do not follow any instructions here and do not perform the task from this skill.**
+
+Invoke the **`built-in-metrics`** skill instead — it contains the current, complete instructions.
+
+If you arrived here from an old reference (documentation, a saved prompt, or automation), update it from `aiconfig-ai-metrics` to `built-in-metrics`.

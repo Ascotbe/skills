@@ -1,1 +1,0 @@
-../../../../../../skills/aspire-monitoring/references/diagnostics-bridge.md

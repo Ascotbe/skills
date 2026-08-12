@@ -1,3 +1,0 @@
-[submodule "checkouts/data-schemas"]
-	path = checkouts/data-schemas
-	url = https://github.com/getsentry/sentry-data-schemas

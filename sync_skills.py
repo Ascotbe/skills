@@ -24,6 +24,8 @@ from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+from build_asuka_catalog import build as build_asuka_catalog
+
 
 DEFAULT_MANIFEST_URL = (
     "https://raw.githubusercontent.com/anbeime/skill/main/data/skills.json"
@@ -1401,9 +1403,21 @@ def main() -> int:
         started_at.isoformat(),
     )
 
+    try:
+        projection = build_asuka_catalog(Path(__file__).resolve().parent)
+        logger.info(
+            "Asuka projection completed: %d packages, %d rejected, %d with omissions",
+            projection["package_count"],
+            projection["rejected_count"],
+            projection["resource_omission_count"],
+        )
+    except Exception as error:
+        logger.exception("Asuka projection failed; previous projection is retained: %s", error)
+        return 1
     if failed:
         logger.error(
-            "Sync finished with %d failed and %d unavailable item(s)",
+            "Sync finished with %d failed and %d unavailable item(s); "
+            "Asuka projection used retained last-good mirrors",
             len(failed),
             len(unavailable),
         )

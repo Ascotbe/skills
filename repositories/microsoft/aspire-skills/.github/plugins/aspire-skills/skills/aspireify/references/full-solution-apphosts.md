@@ -1,1 +1,0 @@
-../../../../../../skills/aspireify/references/full-solution-apphosts.md

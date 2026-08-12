@@ -1,3 +1,0 @@
-include LICENSE
-include sentry_sdk/py.typed
-graft tests

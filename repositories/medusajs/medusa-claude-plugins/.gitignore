@@ -1,5 +1,0 @@
-.claude/settings.local.json
-
-# Vercel OIDC token pulled during the skills-stats workflow
-.env*.local
-.vercel

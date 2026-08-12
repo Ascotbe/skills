@@ -1,5 +1,0 @@
-.no-space-around-ul {
-  & ul, & + ul {
-    margin: 0;
-  }
-}

@@ -1,4 +1,0 @@
-{
-  "extends": "./packages/cloudflare/tsconfig.json",
-  "include": ["packages/cloudflare/src"]
-}

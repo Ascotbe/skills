@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "noEmit": true, // Don't actually produce any compiled output.
-    "resolveJsonModule": true, // Makes require(package.json) acceptable (added).
-  }
-}

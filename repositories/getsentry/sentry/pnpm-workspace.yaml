@@ -1,4 +1,0 @@
-packages:
-  - api-docs
-  - static/eslint/eslintPluginScraps
-  - static/eslint/eslintPluginSentry

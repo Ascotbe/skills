@@ -1,1 +1,0 @@
-../../../../../../skills/aspire-deployment/references/docker-compose.md

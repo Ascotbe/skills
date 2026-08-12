@@ -1,6 +1,0 @@
-.gitignore export-ignore
-.gitattributes export-ignore
-.github export-ignore
-.gitmodules export-ignore
-.claude export-ignore
-benchmark export-ignore

@@ -1,4 +1,0 @@
-[submodule "database-skills"]
-	path = database-skills
-	url = https://github.com/planetscale/database-skills.git
-	branch = main

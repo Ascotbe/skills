@@ -1,1 +1,0 @@
-../../../../../skills/aspireify/SKILL.md

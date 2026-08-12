@@ -1,1 +1,0 @@
-../../../../../../skills/aspireify/references/typescript-authoring.md

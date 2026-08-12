@@ -1,1 +1,0 @@
-![Tags](./img/tags.png)

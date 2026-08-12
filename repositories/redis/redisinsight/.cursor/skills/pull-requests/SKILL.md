@@ -1,1 +1,0 @@
-../../../.ai/skills/pull-requests/SKILL.md

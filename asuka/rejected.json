@@ -1,0 +1,6221 @@
+{
+  "items": [
+    {
+      "repository": "alinaqi/claude-bootstrap",
+      "source_path": "skills/autonomous-testing/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "alinaqi/claude-bootstrap",
+      "source_path": "skills/build-in-public/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "alinaqi/claude-bootstrap",
+      "source_path": "skills/external-model-delegation/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "alinaqi/claude-bootstrap",
+      "source_path": "skills/model-routing/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "alinaqi/claude-bootstrap",
+      "source_path": "skills/visual-validation/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "alinaqi/claude-bootstrap",
+      "catalog_name": "alinaqi/claude-bootstrap",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/claude-for-legal",
+      "catalog_name": "cold-start-interview",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-for-legal",
+      "catalog_name": "customize",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-for-legal",
+      "catalog_name": "matter-workspace",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-for-legal",
+      "catalog_name": "policy-monitor",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-for-legal",
+      "catalog_name": "reg-gap-analysis",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-for-legal",
+      "catalog_name": "use-case-triage",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "catalog_name": "access",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "catalog_name": "anthropics-claude-plugins-official-skilld",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "catalog_name": "configure",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "catalog_name": "stripe-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/claude-plugins-public",
+      "catalog_name": "access",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-plugins-public",
+      "catalog_name": "configure",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/claude-skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "anthropics/cwc-workshops",
+      "source_path": "rightmodel/.claude/skills/eval-audit-and-sweep/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "anthropics/financial-services-plugins",
+      "catalog_name": "3-statements",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/financial-services-plugins",
+      "catalog_name": "check-deck",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/financial-services-plugins",
+      "catalog_name": "fsi-comps-analysis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "account-research",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "brand-voice",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "call-prep",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "campaign-planning",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "canned-responses",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "change-management",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "clinical-trial-protocol-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "compensation-benchmarking",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "competitive-analysis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "competitive-brief",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "compliance",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "contact-center/android",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "contact-center/ios",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "contact-center/web",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "data-exploration",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "data-validation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "design-system-management",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "employee-handbook",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "escalation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "feature-spec",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "interactive-dashboard-builder",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "knowledge-management",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "meeting-sdk/linux",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "metrics-tracking",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "nda-triage",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "people-analytics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "performance-analytics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "prospect",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "resource-planning",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "response-drafting",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "review-contract",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "roadmap-management",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "stakeholder-comms",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "start",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "ui-toolkit/web",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "user-research-synthesis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "ux-writing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "vendor-management",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "video-sdk/linux",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "video-sdk/web",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "video-sdk/windows",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "virtual-agent/android",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "virtual-agent/ios",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "catalog_name": "virtual-agent/web",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-audience-analysis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-brand-reputation-monitoring",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-competitor-intelligence",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-content-analytics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-ecommerce",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-influencer-discovery",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-lead-generation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-market-research",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/agent-skills",
+      "catalog_name": "apify-trend-analysis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/apify-mcp-server",
+      "catalog_name": "feature-spec",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "source_path": "skills/apify-google-maps-leads/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-audience-analysis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-brand-reputation-monitoring",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-competitor-intelligence",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-content-analytics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-influencer-discovery",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-lead-generation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-market-research",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "apify/awesome-skills",
+      "catalog_name": "apify-trend-analysis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "astronomer/agents",
+      "catalog_name": "discovering-data",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "astronomer/agents",
+      "catalog_name": "init",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "astronomer/agents",
+      "catalog_name": "initializing-warehouse",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "acul-screen-generator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-android",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-angular",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-aspnetcore-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-aspnetcore-authentication",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-branding",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-custom-domains",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-expo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-express",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-fastapi-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-fastify",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-fastify-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-flask",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-ionic-angular",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-ionic-react",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-ionic-vue",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-java-mvc-common",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-mfa",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-migration",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-nextjs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-nuxt",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-php",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-php-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-quickstart",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-react",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-react-native",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-spa-js",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-springboot-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-swift",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "auth0-vue",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "express-oauth2-jwt-bearer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "go-jwt-middleware",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "auth0/agent-skills",
+      "catalog_name": "stripe-projects-auth0",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "automattic/studio",
+      "source_path": "packages/data-liberation-agent/skills/liberate-local/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "automattic/studio",
+      "source_path": "packages/data-liberation-agent/skills/liberate/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "code-style",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "dev",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "federation",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "gitattributes",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "integrations",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "pr",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "release",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-activitypub",
+      "catalog_name": "test",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wordpress-agent-skills",
+      "catalog_name": "site-specification",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "automattic/wp-calypso",
+      "source_path": ".claude/skills/stepper-flow/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "aws/agent-toolkit-for-aws",
+      "catalog_name": "migrate-to-msk-express",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "aws/agent-toolkit-for-aws",
+      "catalog_name": "networkfirewall",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/agent-apps",
+      "catalog_name": "agent-framework-demo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "adding-builder-codes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "building-with-base-account",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "connecting-to-base-network",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "convert-farcaster-miniapp-to-app",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "converting-minikit-to-farcaster",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "deploying-contracts-on-base",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "migrating-an-onchainkit-app",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "registering-agent-base-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/base-skills",
+      "catalog_name": "running-a-base-node",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "adding-builder-codes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "building-with-base-account",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "connecting-to-base-network",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "convert-farcaster-miniapp-to-app",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "converting-minikit-to-farcaster",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "deploying-contracts-on-base",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "migrating-an-onchainkit-app",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "registering-agent-base-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "base/skills",
+      "catalog_name": "running-a-base-node",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "better-auth/skills",
+      "catalog_name": "better-auth/commands",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "better-auth/skills",
+      "catalog_name": "create-auth-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "better-auth/skills",
+      "catalog_name": "cross-cutting-security-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "better-auth/skills",
+      "catalog_name": "email & password best practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "source_path": "plugins/bitwarden-delivery-tools/skills/creating-pull-request/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "source_path": "plugins/bitwarden-delivery-tools/skills/decomposing-into-tasks/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "source_path": "plugins/bitwarden-delivery-tools/skills/developing-breakdown-plan/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "source_path": "plugins/bitwarden-delivery-tools/skills/labeling-changes/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "source_path": "plugins/bitwarden-product-analyst/skills/requirements-elicitation/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "source_path": "plugins/bitwarden-product-analyst/skills/work-breakdown/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "source_path": "plugins/bitwarden-security-engineer/skills/auditing-hackerone-vulns/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "atlassian-reader",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "coordinating-cross-team-breakdown",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "creating-pull-request",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "implementing-dapper-queries",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "implementing-ef-core",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "reviewing-incremental-changes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "writing-client-code",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "writing-database-queries",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "writing-server-code",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/ai-plugins",
+      "catalog_name": "writing-tech-breakdowns",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/android",
+      "catalog_name": "committing-android-changes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/android",
+      "catalog_name": "creating-android-pull-request",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "bitwarden/android",
+      "catalog_name": "perform-android-preflight-checklist",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "brave/brave-core",
+      "source_path": "agents/skills/uplift/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "browser-use/browser-harness",
+      "source_path": "skills/browser-harness/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "browser-use/browser-harness",
+      "source_path": "src/browser_harness/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "browser-use/browser-harness",
+      "catalog_name": "browser",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "browser-use/browsercode",
+      "catalog_name": "improve-codebase-architecture",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "browserbase/browse-plugin",
+      "catalog_name": "browser-automation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "browserbase/browse-plugin",
+      "catalog_name": "functions",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "browserbase/skills",
+      "catalog_name": "browserbase-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "browserbase/skills",
+      "catalog_name": "what-antibot",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "callstackincubator/agent-device",
+      "catalog_name": "react-devtools",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "callstackincubator/agent-skills",
+      "catalog_name": "github",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "callstackincubator/agent-skills",
+      "catalog_name": "vercel-react-native-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/cli",
+      "catalog_name": "clerk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/cli",
+      "catalog_name": "clerk-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "adding-auth",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "clerk-bapi",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "clerk-expo-patterns",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "clerk-new",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "customizing-auth-ui",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "managing-orgs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "syncing-users",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clerk/skills",
+      "catalog_name": "testing-auth",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clickhouse/agent-skills",
+      "catalog_name": "clickhousectl-cloud-deploy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clickhouse/agent-skills",
+      "catalog_name": "clickhousectl-local-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "clickhouse/clickhouse",
+      "source_path": ".claude/skills/create-test-datasets/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "clickhouse/clickhouse",
+      "source_path": ".claude/skills/patch-release-check/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "clickhouse/clickhouse",
+      "catalog_name": "install-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudai-x/threejs-skills",
+      "catalog_name": "CloudAI-X/threejs-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/bids",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "agents-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "building-ai-agent-on-cloudflare",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "building-mcp-server-on-cloudflare",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "changelog",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "cloudflare",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "dependabot-review",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "docs-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "durable-objects",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "npm-to-pnpm",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "sandbox-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "verify-dependabot-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "web-perf",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "workers-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/cloudflare-docs",
+      "catalog_name": "wrangler",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/com",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/csops",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/cto",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/data",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/devgtm",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/devtools",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/dlp",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/sal",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "cloudflare/skills",
+      "catalog_name": "building-ai-agent-on-cloudflare",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/skills",
+      "catalog_name": "building-mcp-server-on-cloudflare",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/skills",
+      "catalog_name": "cloudflare/building-ai-agent-on-cloudflare",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/skills",
+      "catalog_name": "cloudflare/building-mcp-server-on-cloudflare",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/skills",
+      "catalog_name": "cloudflare/commands",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/skills",
+      "catalog_name": "sandbox-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/workerd",
+      "catalog_name": "add-autogate",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/workerd",
+      "catalog_name": "add-compat-flag",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/workerd",
+      "catalog_name": "module-registry",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/workerd",
+      "catalog_name": "test-driven-investigation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "cloudflare/workerd",
+      "catalog_name": "verification-before-completion",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "authenticate-wallet",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "fund",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "monetize-service",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "pay-for-service",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "query-blockchain-data",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "query-onchain-data",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "search-for-service",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "send-usdc",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "trade",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/agentic-wallet-skills",
+      "catalog_name": "x402",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/cds",
+      "source_path": ".claude/skills/research.component-libs/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "coinbase/cds",
+      "catalog_name": "figma.audit-connect",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "coinbase/cds",
+      "catalog_name": "figma.connect-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "contentful/adn-tooling",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/brand-kit-assistant/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-assets/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-branches-aliases/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-data-modeling-best-practices/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-entries/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-environments-publishing/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-live-preview-visual-builder-support-assistant/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-localization/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-releases/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-roles-permissions/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-taxonomy/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-tokens-authentication/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-variants-personalization/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-webhooks/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/cms-workflows/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/developer-hub-app-architect/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/dx-delivery-sdk/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/dx-migrate-js-to-ts-sdk/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/launch-sync-environment-variables-from-env-example/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/launch-trigger-and-monitor-launch-deployments/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "contentstack/contentstack-agent-skills",
+      "source_path": "codex/migration-companion/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "coreyhaines31/marketingskills",
+      "catalog_name": "coreyhaines31/marketingskills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "dagster-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "dagster-conventions",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "dagster-integrations",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "dg",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "dg:create-project",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "dg:create-workspace",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "dg:prototype",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/dagster-claude-plugins",
+      "catalog_name": "integrations-index",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/erk",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dagster-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dagster-conventions",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dagster-integrations",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dg",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dg:create-project",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dg:create-workspace",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dg:launch",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dg:list",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dg:prototype",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "dg:scaffold",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dagster-io/skills",
+      "catalog_name": "integrations-index",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "agent-install",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "enable-ssi",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "eval-bootstrap",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "eval-session-classify",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "eval-trace-rca",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "experiment-analyzer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "experiment-analzyer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "experiment-analzyer-comparative",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "llm-obs-eval-bootstrap",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "llm-obs-eval-pipeline",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "llm-obs-experiment-analyzer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "llm-obs-experiment-py-bootstrap",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "llm-obs-session-classify",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "llm-obs-trace-rca",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "onboarding-summary",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "troubleshoot-ssi",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "datadog-labs/agent-skills",
+      "catalog_name": "verify-ssi",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "dbt-labs/dbt-agent-skills",
+      "catalog_name": "using-dbt-index",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "deepgram/deepgram-js-sdk",
+      "source_path": ".agents/skills/deepgram-js-text-intelligence/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "deepgram/deepgram-js-sdk",
+      "catalog_name": "deepgram-js-maintaining-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "denoland/skills",
+      "catalog_name": "deno-expert",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "denoland/skills",
+      "catalog_name": "deno-guidance",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "denoland/skills",
+      "catalog_name": "deno-project-templates",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "dmmulroy/cloudflare-skill",
+      "catalog_name": "dmmulroy/cloudflare-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "efremidze/swift-patterns-skill",
+      "catalog_name": "efremidze/swift-patterns-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "elevenlabs/packages",
+      "catalog_name": "elevenlabs:sdk-migration",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "elevenlabs/skills",
+      "catalog_name": "conversational-ai",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "elevenlabs/skills",
+      "catalog_name": "elevenlabs-transcribe",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "encoredev/skills",
+      "catalog_name": "encore-go-infrastructure",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "encoredev/skills",
+      "catalog_name": "encore-infrastructure",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "add-app-clip",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "building-native-ui",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo ui jetpack compose",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo ui swiftui",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo-api-routes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo-cicd-workflows",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo-deployment",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo/expo-app-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo/expo-deployment",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "expo/upgrading-expo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "native-data-fetching",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "upgrading-expo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "expo/skills",
+      "catalog_name": "use-dom",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "factory-ai/factory",
+      "reason": "repository_git_identity_unavailable"
+    },
+    {
+      "repository": "factory-ai/factory-plugins",
+      "catalog_name": "full-stack-playbook",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "factory-ai/factory-plugins",
+      "catalog_name": "refactoring-playbook",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "factory-ai/factory-plugins",
+      "catalog_name": "review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "factory-ai/factory-plugins",
+      "catalog_name": "tui-application-playbook",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "fal-ai-community/skills",
+      "source_path": "skills/fal-workflow/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "fal-ai-community/skills",
+      "catalog_name": "fal-ai-community/fal-audio",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "fal-ai-community/skills",
+      "catalog_name": "fal-ai-community/fal-generate",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "fal-ai-community/skills",
+      "catalog_name": "fal-ai-community/fal-image-edit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "fal-ai-community/skills",
+      "catalog_name": "fal-ai-community/fal-platform",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "fal-ai-community/skills",
+      "catalog_name": "fal-ai-community/fal-upscale",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "fal-ai-community/skills",
+      "catalog_name": "fal-ai-community/fal-workflow",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/dev-mode-mcp-server-guide",
+      "catalog_name": "figma-create-design-system-rules",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/dev-mode-mcp-server-guide",
+      "catalog_name": "figma-implement-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "catalog_name": "code-connect-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "catalog_name": "create-design-system-rules",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "catalog_name": "figma-code-connect-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "catalog_name": "figma-create-design-system-rules",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "catalog_name": "figma-implement-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "catalog_name": "implement-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "developing-genkit-dart",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "developing-genkit-go",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "developing-genkit-js",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "developing-genkit-python",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "firebase",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "firebase-ai-logic",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "firebase-firestore-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "firebase-firestore-enterprise-native-mode",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "firebase-firestore-standard",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "firebase-local-env-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/agent-skills",
+      "catalog_name": "firestore-security-rules-auditor",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-ai-logic",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-app-hosting-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-auth-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-crashlytics-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-data-connect",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-firestore-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-hosting-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/firebase-tools",
+      "catalog_name": "firebase-storage-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "developing-genkit-dart",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "developing-genkit-go",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "developing-genkit-js",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "developing-genkit-python",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "firebase-ai-logic",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "firebase-firestore-basics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "firebase-firestore-enterprise-native-mode",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "firebase-firestore-standard",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "firebase-local-env-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firebase/skills",
+      "catalog_name": "firestore-security-rules-auditor",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/cli",
+      "catalog_name": "firecrawl - web scraping and searching",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/cli",
+      "catalog_name": "firecrawl-browser",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/cli",
+      "catalog_name": "firecrawl-experimental",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/cli",
+      "catalog_name": "firecrawl-instruct",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/firecrawl-claude-plugin",
+      "catalog_name": "firecrawl-instruct",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/firecrawl-claude-plugin",
+      "catalog_name": "web-scraping",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/firecrawl-claude-skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "firecrawl/firecrawl-cli",
+      "catalog_name": "firecrawl-browser",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/firecrawl-cli",
+      "catalog_name": "firecrawl-instruct",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/openclaw",
+      "source_path": "extensions/lobster/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "firecrawl/openclaw",
+      "source_path": "skills/canvas/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "source_path": "skills/firecrawl-build/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "cloudflare-deploy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "develop-web-game",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "doc",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "figma",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "figma-implement-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-app-onboarding",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-build",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-build-crawl",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-build-map",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-crawl",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-interact",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-map",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-scrape",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "firecrawl-search",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "gh-address-comments",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "gh-fix-ci",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "imagegen",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "jupyter-notebook",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "linear",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "netlify-deploy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "notion-knowledge-capture",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "notion-meeting-intelligence",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "notion-research-documentation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "notion-spec-to-implementation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "openai-docs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "pdf",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "playwright",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "render-deploy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "screenshot",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "security-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "security-ownership-map",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "security-threat-model",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "sentry",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "skill-installer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "sora",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "speech",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "spreadsheet",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "transcribe",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "vercel-deploy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "firecrawl/skills",
+      "catalog_name": "yeet",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-checks-migration",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-cli-app-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-doc-validation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-long-lines",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-matcher-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-modern-features",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-package-maintenance",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-test-coverage",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "dart-test-fundamentals",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-accessibility",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-accessibility-audit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-adding-home-screen-widgets",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-animating-apps",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-animation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-app-size",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-architecting-apps",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-architecture",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-building-forms",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-building-layouts",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-building-plugins",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-caching",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-caching-data",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-concurrency",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-databases",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-embedding-native-views",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-environment-setup-linux",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-environment-setup-macos",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-environment-setup-windows",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-form",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-handling-concurrency",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-handling-http-and-json",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-home-screen-widget",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-http-and-json",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-implementing-navigation-and-routing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-improving-accessibility",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-interoperating-with-native-apis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-layout",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-localization",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-localizing-apps",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-managing-state",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-native-interop",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-performance",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-platform-views",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-plugins",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-reducing-app-size",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-routing-and-navigation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-setting-up-on-linux",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-setting-up-on-macos",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-setting-up-on-windows",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-state-management",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-testing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-testing-apps",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-theming",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-theming-apps",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "flutter-working-with-databases",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "grill-me",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/skills",
+      "catalog_name": "test-driven-development",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "flutter/website",
+      "catalog_name": "stage-site",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "fvadicamo/dev-agent-skills",
+      "catalog_name": "fvadicamo/dev-agent-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-ios-swift-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-python-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-react-native-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-react-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-ruby-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-setup-logging",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-setup-metrics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/agent-skills",
+      "catalog_name": "sentry-setup-tracing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/cli",
+      "source_path": "apps/cli-docs/public/.well-known/skills/sentry-cli/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "getsentry/cli",
+      "source_path": "packages/cli/.cursor/skills/sentry-cli/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "agents-md",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "brand-guidelines",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "claude-settings-audit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "code-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "code-simplifier",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "create-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "django-access-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "django-perf-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "doc-coauthoring",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "find-bugs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "iterate-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "security-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "skill-scanner",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "sred-work-summary",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/dotagents",
+      "catalog_name": "warden-lint-judge",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/junior",
+      "catalog_name": "deslop",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/junior",
+      "catalog_name": "slack-msw-tests",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry",
+      "catalog_name": "warden",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-ios-swift-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-python-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-react-native-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-react-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-ruby-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-setup-logging",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-setup-metrics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-agent-skills",
+      "catalog_name": "sentry-setup-tracing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-docs",
+      "catalog_name": "commit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-docs",
+      "catalog_name": "create-branch",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-ai",
+      "catalog_name": "generate-bug-report",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-ai",
+      "catalog_name": "sentry-code-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-ai",
+      "catalog_name": "sentry-feature-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-ai",
+      "catalog_name": "sentry-pr-code-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-ai",
+      "catalog_name": "sentry-workflow",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-code-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-feature-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-ios-swift-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-pr-code-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-setup-logging",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-setup-metrics",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-setup-tracing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-for-claude",
+      "catalog_name": "sentry-workflow",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-javascript",
+      "catalog_name": "upgrade-otel",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-mcp",
+      "catalog_name": "issue-triage",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-mcp",
+      "catalog_name": "qa",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-skills",
+      "catalog_name": "create-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/sentry-skills",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/skills",
+      "catalog_name": "create-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/skills",
+      "catalog_name": "getsentry/create-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/skills",
+      "catalog_name": "sentry-security-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/skills",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/skills",
+      "catalog_name": "warden-lint-judge",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/warden",
+      "catalog_name": "find-bugs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/warden",
+      "catalog_name": "find-warden-bugs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/warden",
+      "catalog_name": "notseer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/warden",
+      "catalog_name": "vercel-react-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/warden",
+      "catalog_name": "warden-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "getsentry/warden",
+      "catalog_name": "wrdn-skill-writer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "create-github-pull-request-from-specification",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "create-oo-component-documentation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "create-web-form",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "csharp-mcp-server-generator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "gh-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "make-skill-template",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "mcp-configure",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "model-recommendation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "my-issues",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "my-pull-requests",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "polyglot-test-agent",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "prompt-builder",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "suggest-awesome-github-copilot-prompts",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "sync-agents",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "update-oo-component-documentation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "web-coder",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "catalog_name": "winapp-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/copilot-plugins",
+      "catalog_name": "dependency-scanning",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/copilot-plugins",
+      "catalog_name": "secret-scanning",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/copilot-plugins",
+      "catalog_name": "workiq",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/gh-aw",
+      "catalog_name": "dictation instructions",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "github/synapsync",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "google-gemini/gemini-skill",
+      "catalog_name": "vertex-ai-api-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "google-gemini/gemini-skills",
+      "catalog_name": "vertex-ai-api-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "google-labs-code/stitch-sdk",
+      "catalog_name": "typed-service-contracts",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "google-labs-code/stitch-skills",
+      "catalog_name": "stitch-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "hashicorp/engineering-agent-skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "hashicorp/hashicorp-agent-skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "hashicorp/internal-agent-skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "heshamfs/materials-simulation-skills",
+      "catalog_name": "materials-simulation-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/chat-ui",
+      "catalog_name": "add-model-descriptions",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/diffusers",
+      "catalog_name": "testing-parity",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/kernels",
+      "source_path": "kernel-builder/skills/triton-kernels/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "gradio",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-dataset-viewer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-datasets",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-evaluation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-jobs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-model-trainer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-object-detection-trainer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-paper-pages",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-paper-publisher",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-tool-builder",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-trackio",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "hugging-face-vision-trainer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface-jobs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-datasets",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-evaluation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-jobs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-model-trainer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-paper-publisher",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-tool-builder",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huggingface/skills",
+      "catalog_name": "huggingface/hugging-face-trackio",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "huifer/claude-ally-health",
+      "source_path": ".claude/skills/food-database-query/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "huifer/claude-ally-health",
+      "source_path": ".claude/skills/sexual-health-analyzer/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "huifer/claude-ally-health",
+      "source_path": "skills/food-database-query/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "huifer/claude-ally-health",
+      "source_path": "skills/sexual-health-analyzer/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "huifer/claude-ally-health",
+      "catalog_name": "huifer/Claude-Ally-Health",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "ibelick/ui-skills",
+      "catalog_name": "ibelick/ui-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "jeffersonwarrior/claudisms",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "jthack/ffuf_claude_skill",
+      "catalog_name": "jthack/ffuf-claude-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "k-dense-ai/claude-scientific-skills",
+      "catalog_name": "K-Dense-AI/claude-scientific-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/deepagents",
+      "catalog_name": "blog-post",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "langchain-ai/deepagents",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "langchain-ai/deepagents",
+      "catalog_name": "social-media",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "langchain-ai/deepagents",
+      "catalog_name": "swarm",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "deep agents memory & filesystem",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "framework selection",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "framework-selection",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langchain agent starter kit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langchain middleware & hitl",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langchain rag pipeline",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langchain structured output & hitl",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langchain-agents",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langgraph execution control",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langgraph persistence & memory",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langsmith dataset",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langsmith datasets",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langsmith evaluators",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langsmith traces",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langsmith-dataset",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langsmith-evaluator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/langchain-skills",
+      "catalog_name": "langsmith-trace",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langchain-ai/skills-benchmarks",
+      "catalog_name": "langchain-agents",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langfuse/langfuse",
+      "catalog_name": "detect-prod-regressions",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langfuse/langfuse",
+      "catalog_name": "skill-developer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langfuse/skills",
+      "catalog_name": "langfuse-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langfuse/skills",
+      "catalog_name": "langfuse-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langfuse/skills",
+      "catalog_name": "langfuse-observability",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "langfuse/skills",
+      "catalog_name": "langfuse-prompt-migration",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "launchdarkly/agent-skills",
+      "catalog_name": "create-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "launchdarkly/agent-skills",
+      "catalog_name": "skill-name",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mapbox/mcp-devkit-server",
+      "catalog_name": "mapbox-cartography",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mapbox/mcp-devkit-server",
+      "catalog_name": "mapbox-integration-patterns",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mapbox/mcp-devkit-server",
+      "catalog_name": "mapbox-style-patterns",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mapbox/mcp-devkit-server",
+      "catalog_name": "mapbox-style-quality",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mapbox/mcp-devkit-server",
+      "catalog_name": "mapbox-token-security",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "massimodeluisa/recursive-decomposition-skill",
+      "catalog_name": "massimodeluisa/recursive-decomposition-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mastra-ai/mastra",
+      "source_path": ".agents/skills/testing-core-processors/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "mastra-ai/mastra",
+      "source_path": ".claude/skills/testing-core-processors/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "mastra-ai/mastra",
+      "source_path": "packages/codemod/.claude/skills/codemod-patterns/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "mastra-ai/mastra",
+      "catalog_name": "e2e-frontend-validation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mastra-ai/mastra",
+      "catalog_name": "tailwind-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mastra-ai/skills",
+      "catalog_name": "create-mastra",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mastra-ai/skills",
+      "catalog_name": "mastra-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mastra-ai/skills",
+      "catalog_name": "mastra-embedded-docs-look-up",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mastra-ai/skills",
+      "catalog_name": "mastra-embeded-docs-look-up",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "medusajs/medusa-agent-skills",
+      "source_path": "plugins/medusa-cloud/skills/mcloud-auth/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "medusajs/medusa-claude-plugins",
+      "source_path": "plugins/medusa-cloud/skills/mcloud-auth/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "microsoft/agent-framework",
+      "source_path": "dotnet/.github/skills/verify-samples-tool/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/agent-framework",
+      "catalog_name": "python-samples",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/agent-framework",
+      "catalog_name": "verify-samples-tool",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/agent-governance-toolkit",
+      "catalog_name": "agentmesh-governance",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/deploy/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/prepare/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/scaffold/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "catalog_name": "azd-deployment",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "catalog_name": "azure-ai-agents-py",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "catalog_name": "azure-ai-evaluation-py",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "catalog_name": "azure-ai-inference-py",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/agent-skills",
+      "catalog_name": "foundry-iq-py",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/ai-agents-for-beginners",
+      "catalog_name": "jupyter-notebook",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/ai-agents-for-beginners",
+      "catalog_name": "microsoft-docs",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": ".agents/skills/docs-grounding-verifier/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": ".apm/skills/docs-grounding-verifier/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "templates/hello-world/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s01_claude_md_only/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s02_github_dir_only/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s02b_copilot_instructions/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s03_ambiguous_multi/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s04_greenfield_explicit/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s05_apm_yml_multi/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s05b_apm_yml_singular/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s05c_apm_yml_both/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s06_dry_run/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s07_compile_all_single/.apm/skills/hello/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s07_compile_all_single/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s08_targets_cmd/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s09_unknown_target/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s10_agents_md_only/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s11_csv_multi_target/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s12_empty_repo/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s13_global_copilot/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s15_claude_rules_exists/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s16a_targets_inactive/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s16b_provenance_cwd/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s17_cursorrules_file/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s18_gemini_dir/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s19_opencode_dir/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s20_windsurf_dir/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s21_codex_dir/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s22_gemini_md_only/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s23_error_renderer/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s24_priority_override/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/s25_copilot_alias/.apm/skills/placeholder/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "source_path": "tests/integration/fixtures/target_resolution/shared/minimal_skill/.apm/skills/hello/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "apm-strategy",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "auth",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "cli-logging-ux",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "devx-ux",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "docs-sync",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "oss-growth",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "python-architecture",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/apm",
+      "catalog_name": "supply-chain-security",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/aspire",
+      "catalog_name": "aspire",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/aspire",
+      "catalog_name": "aspire-deployment",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/aspire",
+      "catalog_name": "aspireify",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/aspire-skills",
+      "source_path": ".github/plugins/aspire-skills/skills/aspire-deployment/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/aspire-skills",
+      "source_path": ".github/plugins/aspire-skills/skills/aspire-init/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/aspire-skills",
+      "source_path": ".github/plugins/aspire-skills/skills/aspire-monitoring/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/aspire-skills",
+      "source_path": ".github/plugins/aspire-skills/skills/aspire-orchestration/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/aspire-skills",
+      "source_path": ".github/plugins/aspire-skills/skills/aspire/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/aspire-skills",
+      "source_path": ".github/plugins/aspire-skills/skills/aspireify/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/deploy/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/prepare/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/scaffold/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "source_path": "skills/azure-app-onboard/deploy/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "source_path": "skills/azure-app-onboard/prepare/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "source_path": "skills/azure-app-onboard/scaffold/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "analyze-skill-issues",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "analyze-test-run",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-cost-estimation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-cost-optimization",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-hosted-copilot-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-keyvault-expiration-audit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-networking",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-nodejs-production",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-observability",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-postgres",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-quick-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-rbac",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-role-selector",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-security",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "azure-security-hardening",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "file-test-bug",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "investigate-integration-test",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "markdown-token-optimizer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "sensei",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "skill-authoring",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "skill-reviewer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/azure-skills",
+      "catalog_name": "submit-skill-fix-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/dataverse-skills",
+      "catalog_name": "dv-python-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/eval-guide",
+      "source_path": "skills/eval-guide/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "microsoft/eval-guide",
+      "source_path": "skills/eval-suite-planner/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "microsoft/eval-guide",
+      "catalog_name": "eval-guide",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/eval-guide",
+      "catalog_name": "eval-suite-planner",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/fabric-apps-analytic-templates",
+      "catalog_name": "data-discovery",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/fabric-apps-analytic-templates",
+      "catalog_name": "data-fetching",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/change/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/lint-check/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/package-info/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/review-pr/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/token-lookup/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/triage-issues/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/v9-component/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "source_path": ".claude/skills/visual-test/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/fluentui",
+      "catalog_name": "fluentui-migrate-v8-to-v9",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/onnxruntime",
+      "source_path": ".agents/skills/ort-ci/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "microsoft/playwright",
+      "catalog_name": "playwright-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/playwright",
+      "catalog_name": "playwright-mcp-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "add-connector",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "add-datasource",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "add-dataverse",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "add-sample-data",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "add-sharepoint",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "canvas-apps-edit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "canvas-apps-generate",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "code-apps-connectors",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "code-apps-create",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "code-apps-dataverse",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "code-apps-deploy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "code-apps-list-connections",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "deploy",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "edit-canvas-app",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "generate-canvas-app",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "list-connections",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "model-apps-genpage",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-activate-site",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-auth",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-backend",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-create-site",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-datamodel",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-deploy-site",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-seo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "power-pages-test-site",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "report-issue",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/power-platform-skills",
+      "catalog_name": "setup-datamodel",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/deploy/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/prepare/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/skills",
+      "source_path": ".github/plugins/azure-skills/skills/azure-app-onboard/scaffold/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/skills",
+      "catalog_name": "agents-v2-py",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills",
+      "catalog_name": "azd-deployment",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills",
+      "catalog_name": "azure-cost-optimization",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills",
+      "catalog_name": "azure-hosted-copilot-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills",
+      "catalog_name": "azure-observability",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills",
+      "catalog_name": "azure-rbac",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills",
+      "catalog_name": "entra-agent-id",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/skills-for-copilot-studio",
+      "catalog_name": "_project-context",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-copilot-studio",
+      "catalog_name": "authoring-tips",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-copilot-studio",
+      "catalog_name": "best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-copilot-studio",
+      "catalog_name": "patterns",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "activator-authoring-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "activator-consumption-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "best-practices-check",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "dataflows-authoring-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "dataflows-consumption-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "dataflows-save-as-authoring-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "eventhouse-authoring-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "eventhouse-consumption-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "eventstream-authoring-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "eventstream-consumption-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "powerbi-authoring-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "powerbi-consumption-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "quality-check",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "skill-test",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/skills-for-fabric",
+      "catalog_name": "spark-diagnostics-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "catalog_name": "add-policy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "catalog_name": "agent-sessions-layout",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "catalog_name": "anthropic-sdk-upgrader",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "catalog_name": "hygiene",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "catalog_name": "launch",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/vscode",
+      "catalog_name": "troubleshoot",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/vscode-docs",
+      "catalog_name": "release-note-reviewer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": ".copilot/skills/squad-version-check/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/dev/testdata/no-frontmatter/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/testdata/run/eval-skill-search/.github/skills/test-skill-a/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/testdata/run/eval-skill-search/.github/skills/test-skill-b/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/tokens/testdata/check/all-pass/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/tokens/testdata/check/legacy-json-only/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/tokens/testdata/check/no-config/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/tokens/testdata/check/some-exceed/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "source_path": "cmd/waza/tokens/testdata/count/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "microsoft/waza",
+      "catalog_name": "code-explainer",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "microsoft/waza",
+      "catalog_name": "{skill-name}",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "modal-labs/modal-client",
+      "catalog_name": "modal-client",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "mongodb/agent-skills",
+      "catalog_name": "atlas-stream-processing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/n8n",
+      "catalog_name": "n8n:setup-mcps",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "n8n-io/n8n",
+      "catalog_name": "setup-experiment",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-binary-and-data",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-code-nodes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-connections",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-credentials-and-security",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-data-tables",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-debugging",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-error-handling",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-expressions",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-loops",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-subworkflows",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "n8n-workflow-lifecycle",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "n8n-io/skills",
+      "catalog_name": "using-n8n-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "neondatabase/agent-skills",
+      "catalog_name": "neondatabase/using-neon",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "neondatabase/agent-skills",
+      "catalog_name": "plugin-manager",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "neondatabase/agent-skills",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "neondatabase/better-env",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "catalog_name": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "notmyself/claude-win11-speckit-update-skill",
+      "source_path": "skills/speckit-updater/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "notmyself/claude-win11-speckit-update-skill",
+      "catalog_name": "NotMyself/claude-win11-speckit-update-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "nuxt/image",
+      "catalog_name": "nuxt-image",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "nuxt/seo",
+      "catalog_name": "nuxt-seo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "nuxt/ui",
+      "catalog_name": "contributing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers",
+      "catalog_name": "obra/commands",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers",
+      "catalog_name": "obra/condition-based-waiting",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers",
+      "catalog_name": "obra/defense-in-depth",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers",
+      "catalog_name": "obra/root-cause-tracing",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers",
+      "catalog_name": "obra/sharing-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers",
+      "catalog_name": "obra/testing-anti-patterns",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers",
+      "catalog_name": "obra/testing-skills-with-subagents",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "obra/superpowers-lab",
+      "catalog_name": "obra/superpowers-lab",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "omkamal/pypict-claude-skill",
+      "catalog_name": "omkamal/pypict-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "op7418/nanobanana-ppt-skills",
+      "source_path": "SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "op7418/nanobanana-ppt-skills",
+      "catalog_name": "op7418/NanoBanana-PPT-Skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/openai-cookbook",
+      "catalog_name": "bootstrap-realtime-eval",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "agents-sdk",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "deploy-to-vercel",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "figma-create-design-system-rules",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "figma-implement-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "frontend-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "react-best-practices",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "shadcn",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "supabase-postgres-best-practices",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "openai/plugins",
+      "catalog_name": "web-design-guidelines",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "atlas",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "build-things",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "codex-readiness-integration-test",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "codex-readiness-unit-test",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "codex-wrapped",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "create-plan",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "develop-web-game",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "doc",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "frontend-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "gitlab-address-comments",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "openai-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "openai-docs",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "slides",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "sora",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openai/skills",
+      "catalog_name": "spreadsheet",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openshift/hypershift",
+      "catalog_name": "code formatting",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "openshift/oc",
+      "catalog_name": "pr review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "parallel-web/parallel-agent-skills",
+      "catalog_name": "setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pinecone-io/pckle-cli",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "pinecone-io/pckle-skill",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "pinecone-io/skills",
+      "catalog_name": "assistant",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pinecone-io/skills",
+      "catalog_name": "cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pinecone-io/skills",
+      "catalog_name": "help",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pinecone-io/skills",
+      "catalog_name": "mcp",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pinecone-io/skills",
+      "catalog_name": "query",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pinecone-io/skills",
+      "catalog_name": "quickstart",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/ai-plugin",
+      "catalog_name": "auditing-warehouse-data-health",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/ai-plugin",
+      "catalog_name": "planning-user-interviews",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/ai-plugin",
+      "catalog_name": "posthog-instrumentation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/ai-plugin",
+      "catalog_name": "query-examples",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/context-mill",
+      "catalog_name": "migrate-skills-yaml",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/posthog",
+      "source_path": ".agents/skills/debugging-table-access-denied/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "posthog/posthog",
+      "catalog_name": "auditing-warehouse-data-health",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/posthog",
+      "catalog_name": "making-scenes-tab-aware",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/posthog",
+      "catalog_name": "query-examples",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "posthog/posthog.com",
+      "source_path": ".claude/skills/tone-writing-style/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "posthog/skills",
+      "catalog_name": "query-examples",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/ignite",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-agent-personas",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-code-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-create-plan",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-create-project",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-create-spec",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-discussion",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-orchestrate-plan",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-pr-description",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-pr-local-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "prisma/prisma-next",
+      "catalog_name": "drive-pr-walkthrough",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "arm-import",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "arm-to-pulumi",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "cdk-convert",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "cdk-importer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "cdk-to-pulumi",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "cloudformation-id-lookup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "esc",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills",
+      "catalog_name": "terraform-to-pulumi",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "pulumi/agent-skills-private",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "redis/agent-skills",
+      "catalog_name": "redis-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "redis/agent-skills",
+      "catalog_name": "redis-development",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "redis/agent-skills",
+      "catalog_name": "redis-query-engine",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "redis/agent-skills",
+      "catalog_name": "redis-vector-search",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "redis/redisinsight",
+      "source_path": ".cursor/skills/branches/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "redis/redisinsight",
+      "source_path": ".cursor/skills/commits/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "redis/redisinsight",
+      "source_path": ".cursor/skills/feature-flags/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "redis/redisinsight",
+      "source_path": ".cursor/skills/pull-requests/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "remotion-dev/remotion",
+      "catalog_name": "make-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "remotion-dev/skills",
+      "catalog_name": "remotion-dev/remotion",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "resend/resend-skills",
+      "catalog_name": "resend-inbound",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "resend/resend-skills",
+      "catalog_name": "send-email",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "resend/resend-skills",
+      "catalog_name": "templates",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/rivet",
+      "source_path": ".opencode/skills/graphite-is-being-a-piece-of-shit-just-merge-my-stack/SKILL.md",
+      "reason": "frontmatter_missing"
+    },
+    {
+      "repository": "rivet-dev/rivet",
+      "catalog_name": "rivetkit-actors",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "multiplayer-game",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "rivetkit",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "rivetkit-actors",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "rivetkit-client-javascript",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "rivetkit-client-react",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "rivetkit-client-swift",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "rivetkit-client-swiftui",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "rivetkit-typescript",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rivet-dev/skills",
+      "catalog_name": "sandbox-agent",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "rootly-ai-labs/rootly-mcp-server",
+      "catalog_name": "Rootly-AI-Labs/rootly-incident-responder",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "api-reference",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "check-compatibility",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "check-org-details",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "fetch-api-reference",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "integrate-audio",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "integrate-character-embed",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "integrate-characters",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "integrate-documents",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "integrate-image",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "integrate-uploads",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "integrate-video",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "recipe-full-setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "runwayml",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "runwayml/skills",
+      "catalog_name": "setup-api-key",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/agent-context",
+      "catalog_name": "optimize-agent-prompt",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/agent-toolkit",
+      "catalog_name": "sanity-groq",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/agent-toolkit",
+      "catalog_name": "sanity-schema-manager",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/agent-toolkit",
+      "catalog_name": "sanity-typegen",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "find-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "next-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "next-cache-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "pnpm",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "sanity-live-cache-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "tsdown",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "turborepo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "vercel-react-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/next-sanity",
+      "catalog_name": "vitest",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "sanity-io/plugins",
+      "catalog_name": "i18n-array-groq-query-migration",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "scarletkc/vexor",
+      "catalog_name": "scarletkc/vexor",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "seanzor/claude-speed-reader",
+      "catalog_name": "SeanZoR/claude-speed-reader",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "shopify/shopify-ai-toolkit",
+      "catalog_name": "shopify-admin-execution",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "shopify/shopify-ai-toolkit",
+      "catalog_name": "shopify-app-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "shopify/shopify-ai-toolkit",
+      "catalog_name": "shopify-merchant-onboarding",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "shpigford/skills",
+      "source_path": "build/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "signoz/agent-skills",
+      "catalog_name": "signoz-clickhouse-query",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "signoz/agent-skills",
+      "catalog_name": "signoz-docs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "building-streamlit-chat-ui",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "building-streamlit-custom-components-v2",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "building-streamlit-dashboards",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "building-streamlit-multipage-apps",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "choosing-streamlit-selection-widgets",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "connecting-streamlit-to-snowflake",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "creating-streamlit-themes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "displaying-streamlit-data",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "improving-streamlit-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "optimizing-streamlit-performance",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "organizing-streamlit-code",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "setting-up-streamlit-environment",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "template-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "using-streamlit-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "using-streamlit-custom-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "using-streamlit-layouts",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "using-streamlit-markdown",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/agent-skills",
+      "catalog_name": "using-streamlit-session-state",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "streamlit/streamlit",
+      "catalog_name": "developing-with-streamlit",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "streamlit/streamlit",
+      "catalog_name": "implementing-new-features",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "stripe/com",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "supabase/agent-skills",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "supabase/supabase",
+      "catalog_name": "e2e-studio-tests",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "supabase/supabase",
+      "catalog_name": "studio-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "supabase/supabase",
+      "catalog_name": "use-static-effect-event",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "tavily-ai/skills",
+      "catalog_name": "crawl",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "tavily-ai/skills",
+      "catalog_name": "extract",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "tavily-ai/skills",
+      "catalog_name": "research",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "tavily-ai/skills",
+      "catalog_name": "search",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "tavily-ai/tavily-plugins",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "temporalio/skill-temporal-developer",
+      "catalog_name": "temporal development",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/ask-questions-if-underspecified",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/building-secure-contracts",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/claude-in-chrome-troubleshooting",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/culture-index",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/fix-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/insecure-defaults",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/static-analysis",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "trailofbits/skills",
+      "catalog_name": "trailofbits/testing-handbook-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/skills",
+      "catalog_name": "agents",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/skills",
+      "catalog_name": "config",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/skills",
+      "catalog_name": "realtime",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/skills",
+      "catalog_name": "setup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/skills",
+      "catalog_name": "tasks",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/trigger.dev",
+      "source_path": ".claude/skills/drizzle/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "upstash/context7",
+      "catalog_name": "context7-docs-lookup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/context7",
+      "catalog_name": "context7-mcp",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "upstash/context7",
+      "catalog_name": "ctx7-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/context7",
+      "catalog_name": "docs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/context7",
+      "catalog_name": "documentation-lookup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/context7-mcp",
+      "catalog_name": "context7-mcp",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "upstash/context7-mcp",
+      "catalog_name": "documentation-lookup",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/ratelimit-js",
+      "catalog_name": "ratelimit-ts",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/search-js",
+      "catalog_name": "upstash/search typescript sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/vector-js",
+      "catalog_name": "upstash/vector typescript sdk skil",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "upstash/workflow-js",
+      "catalog_name": "upstash/workflow typescript sdk skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-browser",
+      "catalog_name": "agent-browser-vercel-sandbox",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-browser",
+      "catalog_name": "next",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-browser",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "creating-pr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "find-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "frontend-design",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "gh-cli",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "hacked_skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "pdf",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "react-composition-patterns",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "remote_traversal_confirmed",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "subpath-escape",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "vercel-deploy",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "catalog_name": "vercel-labs/vercel-deploy-claimable",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/blob-success-fixture",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel-labs/deepsec",
+      "catalog_name": "deepsec",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/dx-agent-toolkit",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel-labs/json-render",
+      "catalog_name": "json-render-core",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/json-render",
+      "catalog_name": "json-render-image",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/json-render",
+      "catalog_name": "json-render-react",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/json-render",
+      "catalog_name": "json-render-react-email",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/json-render",
+      "catalog_name": "json-render-react-native",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/json-render",
+      "catalog_name": "json-render-remotion",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/json-render",
+      "catalog_name": "json-render-shadcn",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-browser",
+      "catalog_name": "next-browser",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-docs-agentic-rag",
+      "catalog_name": "ask-next",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "debug-tricks",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "directives",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "hydration-error",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "metadata",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-best-practice",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-cache-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-debug-tricks",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-fundamentals",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-parallel-routes",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-self-hosting",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "next-upgrade",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "upgrade",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "vercel-labs/next-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "vercel-labs/next-cache-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/next-skills",
+      "catalog_name": "vercel-labs/next-upgrade",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/portless",
+      "catalog_name": "skill-creator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/py-ai",
+      "catalog_name": "vercel-ai-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/py-ai",
+      "catalog_name": "vercel-python-services",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/skills",
+      "catalog_name": "__proto__",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/skills",
+      "catalog_name": "search-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/skills",
+      "catalog_name": "typescript-docs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "agent-browser",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "agent-browser-verify",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "ai-elements",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "ai-generation-persistence",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "ai-sdk",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "chat-sdk",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "cms",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "cron-jobs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "edge-runtime",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "email",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "geist",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "geistdocs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "investigation-mode",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "json-render",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "micro",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "ncc",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "next-cache-components",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "next-forge",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "next-upgrade",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "observability",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "payments",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "satori",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "sign-in-with-vercel",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "streamdown",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "styled-jsx",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "swr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "turborepo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "v0-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "vercel-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "vercel-cli",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "vercel-flags",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "vercel-queues",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "vercel-sandbox",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-plugin",
+      "catalog_name": "workflow",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel-labs/vercel-skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel-labs/zero-native",
+      "source_path": "skill-data/core/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "vercel-labs/zero-native",
+      "source_path": "skill-data/ts-core/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "vercel-labs/zero-native",
+      "source_path": "skill-data/ts-services/SKILL.md",
+      "reason": "frontmatter_yaml_invalid"
+    },
+    {
+      "repository": "vercel-labs/zero-native",
+      "catalog_name": "automate-zero-native",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel-labs/zero-native",
+      "catalog_name": "zero-native",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/ai",
+      "catalog_name": "security-review",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/example",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel/internal-agent-skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel/next.js",
+      "catalog_name": "next-cache-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/next.js",
+      "catalog_name": "next-compile",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/next.js",
+      "catalog_name": "next-ppr-optimizer",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "debug-tricks",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "directives",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "hydration-error",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "metadata",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "next-best-practices",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "next-cache-components",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "next-upgrade",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/nextjs-skills",
+      "catalog_name": "upgrade",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/skills",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel/slidev-server",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel/vercel-pdf-skill",
+      "reason": "repository_mirror_missing"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "agent-browser",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "agent-browser-verify",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "ai-elements",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "ai-generation-persistence",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "ai-sdk",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "chat-sdk",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "cms",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "cron-jobs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "email",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "geist",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "geistdocs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "investigation-mode",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "json-render",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "micro",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "next-cache-components",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "next-forge",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "next-upgrade",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "observability",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "payments",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "satori",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "sign-in-with-vercel",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "swr",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "turborepo",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "v0-dev",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "vercel-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "vercel-cli",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "vercel-flags",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "vercel-queues",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "vercel-sandbox",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "vercel/vercel-plugin",
+      "catalog_name": "workflow",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "wix/react-native-navigation",
+      "catalog_name": "rnn-codebase",
+      "reason": "catalog_skill_ambiguous"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wds-docs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-app-validation",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-backend-api",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-backend-event",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-context-provider",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-dashboard-menu-plugin",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-dashboard-modal",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-dashboard-page",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-dashboard-plugin",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-data-collection",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-embedded-script",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-extension-registration",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-orchestrator",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-service-plugin",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-site-component",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-site-plugin",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-cli-site-widget",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wix/skills",
+      "catalog_name": "wix-stores-versioning",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wrsmith108/varlock-claude-skill",
+      "catalog_name": "wrsmith108/varlock-claude-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "wshuyi/x-article-publisher-skill",
+      "catalog_name": "wshuyi/x-article-publisher-skill",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "zechenzhangagi/ai-research-skills",
+      "catalog_name": "zechenzhangAGI/AI-research-SKILLs",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "zhanghandong/makepad-skills",
+      "catalog_name": "ZhangHanDong/makepad-skills",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "zxkane/aws-skills",
+      "catalog_name": "zxkane/aws-skills",
+      "reason": "catalog_skill_not_found"
+    }
+  ]
+}

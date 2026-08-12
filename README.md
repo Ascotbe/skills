@@ -2,7 +2,7 @@
 
 > 私有项目 **Asuka** 的官方 Skill 镜像与分发源。
 
-本仓库集中收集公开发布的 Skill，为 Asuka Assistant V2 提供可检索、可追踪的候选内容。它不是面向任意助理机器人的通用技能市场，也不保存 Asuka 的私有源码、用户数据、运行凭据或任务上下文。
+本仓库集中收集公开发布的 Skill，为 Asuka Assistant V2 提供可检索、可追踪的候选内容。它不是面向任意助理机器人的通用技能市场，也不保存 Asuka 的私有源码、用户数据、运行凭据或任务上下文。上游仓库只在同步机器本地下载，不提交到本仓库。
 
 | 项目 | 说明 |
 | --- | --- |
@@ -27,7 +27,8 @@ Asuka 在代码中将本仓库固定为官方 Skill 仓库身份和信任根，�
 
 ```text
 公开上游目录
-    -> 本仓库同步、去重并建立 index.json
+    -> 本地同步、去重并建立 index.json
+    -> 生成 asuka/ 下的严格兼容 package 投影
     -> Asuka 固定远端仓库身份与 Git commit
     -> 从受版本控制的 SKILL.md 发现 package
     -> 校验路径、文件类型、大小、格式与内容哈希
@@ -97,13 +98,12 @@ python register_autostart.py --daily-at 03:00
 
 | 路径 | 内容 |
 | --- | --- |
-| `index.json` | 仓库摘要、Skill 明细、时间及详细数据路径 |
-| `repositories/<owner>/<repository>` | 每个 Git 来源的本地镜像 |
-| `external/` | 非 Git 来源的下载快照 |
-| `state/skills.json` | 最新 GitHub 技能目录数据 |
-| `state/official.json` | 从 skills.sh 规范化得到的目录数据 |
-| `state/repositories.json` | 仓库、目录来源与 Skill 的对应关系 |
-| `state/external-links.json` | 非 Git 来源条目 |
-| `state/last-run.json` | 最近一次同步结果 |
-| `logs/` | 同步日志与后台循环日志 |
+| `asuka/index.json` | Asuka package 数量、来源 commit、路径和内容哈希 |
+| `asuka/packages/<name>` | 可由 Asuka 运行时下载并严格校验的 package |
+| `asuka/rejected.json` | 无法唯一定位或不符合发布边界的候选 |
+| `asuka/resource-omissions.json` | 因单包安全上限未纳入的资源 |
+| `repositories/<owner>/<repository>` | 本地 Git 镜像，不进入版本控制 |
+| `index.json`、`external/`、`state/`、`logs/` | 本地索引、快照、运行状态和日志，不进入版本控制 |
 | `repository-overrides.json` | 已移除仓库到已验证公开镜像的映射 |
+
+同步结束会自动执行 `build_asuka_catalog.py`。生成器只收录根 Catalog 能在对应仓库唯一定位的 `SKILL.md`，把 frontmatter 规范为 `name` 与 `description`，并只复制 `scripts/`、`references/`、`assets/` 标准资源。每个 package 都记录固定上游 commit、原路径、成员 hash 和整包 hash；任何超限资源都会显式进入遗漏清单。

@@ -1,1 +1,0 @@
-../../../../../skills/aspire-monitoring/SKILL.md

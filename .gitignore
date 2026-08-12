@@ -1,15 +1,12 @@
 __pycache__/
 *.py[cod]
 
-# Runtime-only files. Downloaded repositories, snapshots, and catalog state are
-# intentionally tracked as a publishable snapshot.
-logs/
-state/sync-loop.pid
-repositories/**/.git/
-repositories/**/.sync-git/
-
-# Empty or locally-conflicted mirrors have no publishable worktree yet.
-repositories/factory-ai/factory/
-repositories/openai/openai-cookbook/
-repositories/sanity-io/next-sanity/
-repositories/sanity-io/plugins/
+# Runtime-only downloads. The publishable Asuka projection is generated under
+# asuka/; upstream mirrors and transient catalog responses stay local.
+/logs/
+/state/
+/external/
+/repositories/
+/index.json
+asuka.stage-*/
+asuka.previous-*/

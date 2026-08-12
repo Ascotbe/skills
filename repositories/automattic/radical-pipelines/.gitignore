@@ -1,7 +1,0 @@
-node_modules/
-.env
-.env.local
-.rp.local.md
-.worktrees/
-.claude/worktrees/
-.claude/scheduled_tasks.lock
