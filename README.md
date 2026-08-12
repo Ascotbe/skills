@@ -1,9 +1,23 @@
-# 技能仓库镜像
+# Asuka 官方 Skill 镜像
 
-本目录用于镜像两个技能目录：
+本仓库是私有项目 **Asuka** 的官方 Skill 镜像与分发源，不是面向任意助理机器人的通用技能市场。Asuka 是一个本地优先的 AI 工作台；其中 Assistant V2 提供任务型助手、多 Agent 编排、Skill 文档中心和受控运行时。本仓库为这些能力集中保存可检索、可追踪的 Skill 候选及其上游来源。
+
+Asuka 在代码中将 `github.com/ascotbe/skills` 固定为官方 Skill 仓库身份和信任根，不允许通过普通环境变量或客户端请求替换。Asuka 同步本仓库时会固定 Git commit，从受版本控制的 `SKILL.md` 发现 package，并校验仓库身份、路径、文件类型、大小、格式、内容哈希和 package 合同。只有通过校验且具备完整仓库证明的内容，才能作为官方 Skill 进入 Asuka Catalog；同步失败时继续使用上一版可用数据。
+
+本仓库只聚合公开可访问的上游内容，不绕过访问控制。被镜像或写入索引不等于已经通过 Asuka 的运行时校验，也不代表上游许可证被本仓库替代；使用时仍须遵守各上游仓库或 Skill 自身的许可证、版权要求和服务条款。
+
+当前镜像来源包括：
 
 - `https://github.com/anbeime/skill/blob/main/data/skills.json`
 - `https://www.skills.sh/official`
+
+## Asuka 接入边界
+
+- `index.json` 是本镜像的检索与追溯索引，不是 Asuka 的授权结果或执行证明。
+- Asuka 以固定仓库身份、精确 commit、相对 package 路径和 package hash 共同证明官方来源。
+- Asuka 对不可信仓库内容采用失败即关闭策略；校验异常不会把内容提升为官方 Skill。
+- Skill 被发现、同步或展示，不代表它已被任务选中或实际执行；实际调用以 Asuka 的结构化运行事件和操作回执为准。
+- 本仓库不保存 Asuka 私有项目源码、用户数据、运行凭据或任务上下文。
 
 ## 手动同步
 
