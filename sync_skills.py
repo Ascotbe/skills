@@ -36,6 +36,7 @@ REPOSITORY_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 CLONE_TEMP_PATTERN = re.compile(r"\.cloning-\d+-[0-9a-f]+$")
 ERROR_ALREADY_EXISTS = 183
 SYNC_MUTEX_NAME = "Local\\SkillRepositoriesSyncOperation"
+INDEX_SCHEMA_VERSION = 1
 
 
 @dataclasses.dataclass
@@ -104,6 +105,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--external-root", type=Path, default=base / "external")
     parser.add_argument("--state-root", type=Path, default=base / "state")
     parser.add_argument("--log-root", type=Path, default=base / "logs")
+    parser.add_argument("--index-path", type=Path, default=base / "index.json")
     parser.add_argument(
         "--overrides", type=Path, default=base / "repository-overrides.json"
     )
@@ -163,6 +165,203 @@ def atomic_write_bytes(path: Path, content: bytes) -> None:
 def atomic_write_json(path: Path, value: Any) -> None:
     content = json.dumps(value, ensure_ascii=False, indent=2).encode("utf-8")
     atomic_write_bytes(path, content)
+
+
+def load_index(path: Path) -> tuple[dict[str, dict[str, Any]], bool]:
+    """Load the existing root index, retaining timestamps across syncs."""
+    if not path.exists():
+        return {}, False
+    try:
+        value = json.loads(path.read_text(encoding="utf-8-sig"))
+    except (OSError, ValueError) as error:
+        logging.getLogger("skill-sync").warning(
+            "Ignoring invalid index %s: %s", path, error
+        )
+        return {}, False
+    entries = value.get("entries", []) if isinstance(value, dict) else []
+    if not isinstance(entries, list):
+        return {}, False
+    result: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        if isinstance(entry, dict) and isinstance(entry.get("id"), str):
+            result[entry["id"]] = entry
+    skills = value.get("skills", []) if isinstance(value, dict) else []
+    if isinstance(skills, list):
+        for skill in skills:
+            if isinstance(skill, dict) and isinstance(skill.get("id"), str):
+                result[skill["id"]] = skill
+    return result, bool(skills)
+
+
+def relative_index_path(path: str | Path, base: Path) -> str:
+    return Path(os.path.relpath(Path(path), base)).as_posix()
+
+
+def path_creation_time(path: Path, fallback: str) -> str:
+    try:
+        created = dt.datetime.fromtimestamp(path.stat().st_ctime).astimezone()
+    except OSError:
+        return fallback
+    return created.isoformat()
+
+
+def write_root_index(
+    args: argparse.Namespace,
+    repositories: list[dict[str, Any]],
+    external: list[dict[str, str]],
+    results: list[RepositoryResult],
+    generated_at: str,
+    started_at: str,
+) -> None:
+    """Write a compact root index that points at the detailed state files."""
+    index_path = args.index_path
+    previous, had_previous_skills = load_index(index_path)
+    result_by_key = {
+        f"github:{result.name.casefold()}": result
+        for result in results
+        if result.type == "GitHub"
+    }
+    result_by_external_link = {
+        result.name: result
+        for result in results
+        if result.type == "External"
+    }
+    base = Path(__file__).resolve().parent
+    entries: list[dict[str, Any]] = []
+    skills: list[dict[str, Any]] = []
+
+    for repository in repositories:
+        name = repository["repository"]
+        entry_id = f"github:{name.casefold()}"
+        result = result_by_key.get(entry_id)
+        old = previous.get(entry_id, {})
+        added_at = old.get("added_at") or path_creation_time(
+            Path(repository["local_path"]), started_at
+        )
+        updated_at = old.get("updated_at") or added_at
+        if result and result.status in {"Cloned", "Updated"}:
+            updated_at = generated_at
+        entries.append(
+            {
+                "id": entry_id,
+                "type": "repository",
+                "name": name,
+                "path": relative_index_path(repository["local_path"], base),
+                "sources": repository["sources"],
+                "skill_count": len(repository.get("skills", [])),
+                "status": result.status if result else old.get("status", "Pending"),
+                "added_at": added_at,
+                "updated_at": updated_at,
+            }
+        )
+        for skill in repository.get("skills", []):
+            source = str(skill.get("source", ""))
+            skill_name = str(skill.get("name", ""))
+            skill_link = str(skill.get("link", ""))
+            skill_id = ":".join(
+                (
+                    entry_id,
+                    source.casefold(),
+                    skill_name.casefold(),
+                    skill_link,
+                )
+            )
+            old_skill = previous.get(skill_id, {})
+            skill_added_at = old_skill.get("added_at")
+            if not skill_added_at:
+                skill_added_at = (
+                    generated_at if had_previous_skills else added_at
+                )
+            skill_updated_at = old_skill.get("updated_at") or skill_added_at
+            if result and result.status in {"Cloned", "Updated"}:
+                skill_updated_at = generated_at
+            skill_entry = {
+                "id": skill_id,
+                "name": skill_name,
+                "repository": entry_id,
+                "source": source,
+                "path": relative_index_path(repository["local_path"], base),
+                "status": result.status if result else old_skill.get("status", "Pending"),
+                "added_at": skill_added_at,
+                "updated_at": skill_updated_at,
+            }
+            for field in ("link", "category", "installs"):
+                if field in skill:
+                    skill_entry[field] = skill[field]
+            skills.append(skill_entry)
+
+    for item in external:
+        name = item["name"]
+        entry_id = f"external:{item['link']}"
+        result = result_by_external_link.get(name)
+        old = previous.get(entry_id, {})
+        target = args.external_root / safe_path_segment(name)
+        added_at = old.get("added_at") or path_creation_time(target, started_at)
+        updated_at = old.get("updated_at") or added_at
+        if result and result.status == "Downloaded":
+            updated_at = generated_at
+        entries.append(
+            {
+                "id": entry_id,
+                "type": "external",
+                "name": name,
+                "link": item["link"],
+                "path": relative_index_path(target, base),
+                "source": item["source"],
+                "category": item.get("category", ""),
+                "status": result.status if result else old.get("status", "Pending"),
+                "added_at": added_at,
+                "updated_at": updated_at,
+            }
+        )
+        skill_id = f"{entry_id}:skill"
+        old_skill = previous.get(skill_id, {})
+        skill_added_at = old_skill.get("added_at") or (
+            generated_at if had_previous_skills else added_at
+        )
+        skill_updated_at = old_skill.get("updated_at") or skill_added_at
+        if result and result.status == "Downloaded":
+            skill_updated_at = generated_at
+        skills.append(
+            {
+                "id": skill_id,
+                "name": name,
+                "repository": entry_id,
+                "source": item["source"],
+                "link": item["link"],
+                "category": item.get("category", ""),
+                "path": relative_index_path(target, base),
+                "status": result.status if result else old_skill.get("status", "Pending"),
+                "added_at": skill_added_at,
+                "updated_at": skill_updated_at,
+            }
+        )
+
+    entries.sort(key=lambda entry: (entry["type"], entry["name"].casefold()))
+    skills.sort(key=lambda entry: (entry["name"].casefold(), entry["id"].casefold()))
+    atomic_write_json(
+        index_path,
+        {
+            "schema_version": INDEX_SCHEMA_VERSION,
+            "generated_at": generated_at,
+            "data": {
+                "repositories": relative_index_path(
+                    args.state_root / "repositories.json", base
+                ),
+                "external_links": relative_index_path(
+                    args.state_root / "external-links.json", base
+                ),
+                "last_run": relative_index_path(args.state_root / "last-run.json", base),
+                "manifest": relative_index_path(args.state_root / "skills.json", base),
+                "official": relative_index_path(args.state_root / "official.json", base),
+            },
+            "skill_count": len(skills),
+            "repository_count": len(repositories),
+            "external_count": len(external),
+            "entries": entries,
+            "skills": skills,
+        },
+    )
 
 
 def fetch_bytes(
@@ -1111,6 +1310,7 @@ def main() -> int:
         args.external_root,
         args.state_root,
         args.log_root,
+        args.index_path.parent,
     ):
         directory.mkdir(parents=True, exist_ok=True)
     logger, log_path = setup_logging(args.log_root)
@@ -1167,6 +1367,14 @@ def main() -> int:
             "",
         )
         save_run_summary(args, started_at, source_counts, [result], log_path)
+        write_root_index(
+            args,
+            repositories,
+            external,
+            [result],
+            dt.datetime.now().astimezone().isoformat(),
+            started_at.isoformat(),
+        )
         logger.error("GitHub connectivity check failed; repository sync was skipped")
         return 1
 
@@ -1183,6 +1391,14 @@ def main() -> int:
         results.append(sync_external_item(item, args, logger))
     failed, unavailable = save_run_summary(
         args, started_at, source_counts, results, log_path
+    )
+    write_root_index(
+        args,
+        repositories,
+        external,
+        results,
+        dt.datetime.now().astimezone().isoformat(),
+        started_at.isoformat(),
     )
 
     if failed:
