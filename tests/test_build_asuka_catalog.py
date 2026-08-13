@@ -170,3 +170,23 @@ def test_owner_alias_and_identical_repository_copies_are_deduplicated(
     assert result["packages"][0]["source_path"] == (
         "plugins/one/skills/shared/SKILL.md"
     )
+
+
+def test_projection_disables_git_text_conversion() -> None:
+    """发布投影必须保留生成器计算 hash 时使用的原始字节。"""
+    root = Path(__file__).resolve().parents[1]
+    completed = subprocess.run(
+        [
+            "git",
+            "-C",
+            str(root),
+            "check-attr",
+            "text",
+            "--",
+            "asuka/packages/example/SKILL.md",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert completed.stdout.strip().endswith("text: unset")

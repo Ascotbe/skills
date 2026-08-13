@@ -960,6 +960,16 @@
       "reason": "catalog_skill_not_found"
     },
     {
+      "repository": "callstackincubator/rozenite",
+      "catalog_name": "rozenite-agent",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "callstackincubator/rozenite",
+      "catalog_name": "rozenite-agent-sdk",
+      "reason": "catalog_skill_not_found"
+    },
+    {
       "repository": "clerk/cli",
       "catalog_name": "clerk",
       "reason": "catalog_skill_not_found"
@@ -1998,11 +2008,6 @@
     },
     {
       "repository": "firecrawl/skills",
-      "source_path": "skills/firecrawl-build/SKILL.md",
-      "reason": "frontmatter_yaml_invalid"
-    },
-    {
-      "repository": "firecrawl/skills",
       "catalog_name": "cloudflare-deploy",
       "reason": "catalog_skill_not_found"
     },
@@ -2029,11 +2034,6 @@
     {
       "repository": "firecrawl/skills",
       "catalog_name": "firecrawl-app-onboarding",
-      "reason": "catalog_skill_not_found"
-    },
-    {
-      "repository": "firecrawl/skills",
-      "catalog_name": "firecrawl-build",
       "reason": "catalog_skill_not_found"
     },
     {
@@ -3344,11 +3344,6 @@
     {
       "repository": "mastra-ai/mastra",
       "source_path": ".agents/skills/testing-core-processors/SKILL.md",
-      "reason": "frontmatter_missing"
-    },
-    {
-      "repository": "mastra-ai/mastra",
-      "source_path": ".claude/skills/testing-core-processors/SKILL.md",
       "reason": "frontmatter_missing"
     },
     {
@@ -4711,11 +4706,6 @@
     },
     {
       "repository": "posthog/posthog",
-      "source_path": ".agents/skills/debugging-table-access-denied/SKILL.md",
-      "reason": "frontmatter_yaml_invalid"
-    },
-    {
-      "repository": "posthog/posthog",
       "catalog_name": "auditing-warehouse-data-health",
       "reason": "catalog_skill_not_found"
     },
@@ -5358,6 +5348,16 @@
     {
       "repository": "triggerdotdev/skills",
       "catalog_name": "tasks",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/skills",
+      "catalog_name": "trigger-agents",
+      "reason": "catalog_skill_not_found"
+    },
+    {
+      "repository": "triggerdotdev/skills",
+      "catalog_name": "trigger-config",
       "reason": "catalog_skill_not_found"
     },
     {

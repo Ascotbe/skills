@@ -107,3 +107,5 @@ python register_autostart.py --daily-at 03:00
 | `repository-overrides.json` | 已移除仓库到已验证公开镜像的映射 |
 
 同步结束会自动执行 `build_asuka_catalog.py`。生成器只收录根 Catalog 能在对应仓库唯一定位的 `SKILL.md`，把 frontmatter 规范为 `name` 与 `description`，并只复制 `scripts/`、`references/`、`assets/` 标准资源。每个 package 都记录固定上游 commit、原路径、成员 hash 和整包 hash；任何超限资源都会显式进入遗漏清单。
+
+`asuka/` 通过 `.gitattributes` 禁用文本换行转换，确保生成器记录的文件 hash 与 Git commit 中的实际字节在 Windows、Linux 下载后保持一致。
